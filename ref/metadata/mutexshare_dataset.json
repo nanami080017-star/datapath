@@ -1,0 +1,21 @@
+{
+  "name": "MutexShare-Case-Set",
+  "repository": "https://github.com/tianchen5246/MutexShare-Case-Set",
+  "commit": "6a75068034c4ce3b7b8b01d86b9361babff54ca2",
+  "path": "benchmarks/rtl/MutexShare-Case-Set",
+  "status": "downloaded",
+  "representation": "git clone with git metadata and history",
+  "case_count": 5000,
+  "rtl_files": 5000,
+  "sdc_files": 5000,
+  "library": "lib/gscl45nm.lib",
+  "library_sha256": "69c0641df1dc737e5c8dbd3950f2daf3b52c6e7767aa081e35e9b0739bf62d6f",
+  "retrieved_utc": "2026-10-28T10:12:09.344778+00:00",
+  "provenance": "User screenshot of problem FAQ explicitly links this self-validation dataset",
+  "verification": {
+    "case_0001_through_case_5000_complete": true,
+    "all_tc_v_and_tc_sdc_present": true,
+    "library_present": true,
+    "working_tree_clean": true
+  }
+}

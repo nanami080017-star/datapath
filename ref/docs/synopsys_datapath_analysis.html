@@ -1,0 +1,6235 @@
+<!DOCTYPE HTML>
+ 
+
+    <html lang="en">
+    
+
+    <head>
+	<meta charset="UTF-8"/>
+
+	<meta name="content-page-ref" content="hcJnSMvKhxXTRMOMd4Ch_sWTm46KiXEMAaKS1vioPe1tNR5AUhHs8_ysuYKslHOUVsVbTO1-Q4VcQjcJ7DIsRQsfx_m4MQefM8u1HrUD1MN9RL0-ULBHyHlt90UJAbhQ"/>
+<script>
+			var languageToLocale = { 'ko-kr': 'ko_KR', 'ja-jp': 'ja_JP', 'zh-cn': 'zh_CN', 'zh-tw': 'zh_TW' };
+		    var urlLanguage = (window.location.pathname.split('/')[1] || '').split('.')[0].toLowerCase();
+		    var currentCountryLanguage = languageToLocale[urlLanguage] || 'en_US';
+            var productInterestTags = '';
+            var solutionInterestTags = '';
+            window.adobeDataLayer = window.adobeDataLayer || [];
+            window.adobeDataLayer.push({
+               web: {
+                  webPageDetails: {
+                     name: 'SITB \u002D Q214 | Techniques for Improving QoR Using analyze_datapath_extraction',
+                     url: 'https:\/\/www.synopsys.com\/articles\/techniques\u002Dfor\u002Dimproving\u002Dqor.html',
+                     siteSection: 'Articles',
+                     server: window.location.hostname,
+                     pageViews: {
+                        value: 1,
+                     },
+                  },
+               },
+               _synopsys: {
+                  web: {
+                     webPageDetails: {
+                        articleAuthor: 'Synopsys Design Compiler Team',
+                        articlePublishDate: '2014\u002D04\u002D21',
+                        webURL: window.location.href,
+                        pageType: 'technical_article',
+                        siteSection: 'Articles',
+                        siteSubSection1: 'n\/a',
+                        siteSubSection2: 'n\/a',
+                        siteSubSection3: 'n\/a',
+                        siteSubSection4: 'n\/a',
+                        siteSubSection5: 'n\/a',
+                        siteName: 'synopsys',
+                        countryLanguage: currentCountryLanguage,
+                        pageTitle: 'SITB \u002D Q214 | Techniques for Improving QoR Using analyze_datapath_extraction',
+                        product: 'Silicon IP;Silicon IP|SoC Infrastructure IP',
+                        solution: '',
+                        marketingStage: '',
+                        contentType: 'Article',
+                        blogType: '',
+                        regions: '',
+                        ...(productInterestTags ? JSON.parse(productInterestTags) : {}),
+                        ...(solutionInterestTags ? JSON.parse(solutionInterestTags) : {})
+                     }
+                  }
+               }
+            });
+	</script>
+
+   
+
+	
+	<script src="https://assets.adobedtm.com/79b3942b8dfa/604ce2434de1/launch-2396cdda8e60.min.js?v=20260925" async></script>
+
+<script type="text/javascript" src="https://www.synopsys.com/content/dam/synopsys/util/gdpr/ot_banner_v1.js"></script>
+
+<link rel="preconnect" href="https://assets.adobedtm.com" crossorigin/>
+<link rel="dns-prefetch" href="//assets.adobedtm.com"/>
+<link rel="preconnect" href="https://cdn.cookielaw.org" crossorigin/>
+<link rel="dns-prefetch" href="//cdn.cookielaw.org"/>
+<link rel="preconnect" href="https://geolocation.onetrust.com" crossorigin>
+<link rel="dns-prefetch" href="//geolocation.onetrust.com">
+<link rel="preconnect" href="https://api.kickfire.com" crossorigin>
+<link rel="dns-prefetch" href="//api.kickfire.com">
+<link rel="preconnect" href="https://v2.d41.co" crossorigin>
+<link rel="dns-prefetch" href="//v2.d41.co">
+<link rel="preconnect" href="https://paapi3112.d41.co" crossorigin>
+<link rel="dns-prefetch" href="//paapi3112.d41.co">
+<link rel="preconnect" href="https://smetrics.synopsys.com" crossorigin>
+<link rel="dns-prefetch" href="//smetrics.synopsys.com">
+<link rel="preconnect" href="https://static.cloud.coveo.com" crossorigin/>
+<link rel="dns-prefetch" href="//static.cloud.coveo.com"/>
+<link rel="dns-prefetch" href="//www.googletagmanager.com"/>
+<link rel="dns-prefetch" href="//sfc.leadspace.com"/>
+<link rel="dns-prefetch" href="//s.go-mpulse.net"/>
+<link rel="preconnect" href="https://munchkin.marketo.net" crossorigin/>
+<link rel="dns-prefetch" href="//munchkin.marketo.net"/>
+<link rel="dns-prefetch" href="//googleads.g.doubleclick.net"/>
+<link rel="dns-prefetch" href="//script.crazyegg.com"/>
+<link rel="dns-prefetch" href="//www.facebook.com"/>
+<link rel="dns-prefetch" href="//js.adsrvr.org"/>
+<link rel="dns-prefetch" href="//insight.adsrvr.org"/>
+<link rel="dns-prefetch" href="//analytics.newscred.com"/>
+
+	
+    
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+	
+		<link rel="alternate" hreflang="en-us" href="https://www.synopsys.com/articles/techniques-for-improving-qor.html"/>
+	
+		<link rel="alternate" hreflang="x-default" href="https://www.synopsys.com/articles/techniques-for-improving-qor.html"/>
+	
+
+	
+	
+		<title>Enhancing QoR with Datapath Analysis Techniques | Synopsys IP</title>
+		<link rel="canonical" href="https://www.synopsys.com/articles/techniques-for-improving-qor.html"/>
+	
+
+	
+	    <meta name="description" content="Learn how the analyze_datapath_extraction command helps improve quality of results (QoR) in SoC designs with large datapath content."/>
+	
+	    <meta name="last-modified" content="2014-4-21 12:00:00 AM"/>
+	
+	    <meta property="og:description" content="Learn how the analyze_datapath_extraction command helps improve quality of results (QoR) in SoC designs with large datapath content."/>
+	
+	    <meta property="og:image" content="https://images.synopsys.com/is/image/synopsys/sitb-q214-techniques-for-improving-qor?$social-post$"/>
+	
+	    <meta property="og:title" content="Enhancing QoR with Datapath Analysis Techniques | Synopsys IP"/>
+	
+	    <meta property="og:type" content="website"/>
+	
+	    <meta property="og:url" content="https://www.synopsys.com/articles/techniques-for-improving-qor.html"/>
+	
+	    <meta name="searchBusinessArea" content="Silicon IP"/>
+	
+	    <meta name="searchContentType" content="Article"/>
+	
+	    <meta name="searchImage" content="https://images.synopsys.com/is/image/synopsys/56-bandwidth-latency-die-to-die-interfaces-data-centers-1?ts=1764870526959&amp;$responsive$"/>
+	
+	    <meta name="searchMarketingStageType"/>
+	
+	    <meta name="searchProductCategory" content="Silicon IP;Silicon IP|SoC Infrastructure IP"/>
+	
+	    <meta name="searchSolutionType"/>
+	
+	    <meta name="twitter:card" content="summary_large_image"/>
+	
+	    <meta name="twitter:description" content="Learn how the analyze_datapath_extraction command helps improve quality of results (QoR) in SoC designs with large datapath content."/>
+	
+	    <meta name="twitter:image" content="https://images.synopsys.com/is/image/synopsys/sitb-q214-techniques-for-improving-qor?$social-post$"/>
+	
+	    <meta name="twitter:site" content="@synopsys"/>
+	
+	    <meta name="twitter:title" content="Enhancing QoR with Datapath Analysis Techniques | Synopsys IP"/>
+	
+	<meta name="p:domain_verify" content="2070085ca3a586484558bf4ee3e19943"/>
+	<link rel="icon" href="/etc.clientlibs/synopsys/clientlibs/synopsys-pagelibs/resources/images/favicon.ico"/>
+
+	
+	
+		<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.synopsys.com/#organization","name":"Synopsys","url":"https://www.synopsys.com/","logo":{"@type":"ImageObject","url":"https://www.synopsys.com/content/dam/synopsys/logos/synopsys-logo-color.svg"}},{"@type":"WebSite","@id":"https://www.synopsys.com/#website","url":"https://www.synopsys.com/","name":"Synopsys","publisher":{"@id":"https://www.synopsys.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://www.synopsys.com/articles/techniques-for-improving-qor.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.synopsys.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://www.synopsys.com/articles.html"},{"@type":"ListItem","position":3,"name":"SITB - Q214 | Techniques for Improving QoR Using analyze_datapath_extraction","item":"https://www.synopsys.com/articles/techniques-for-improving-qor.html"}]},{"@type":"WebPage","@id":"https://www.synopsys.com/articles/techniques-for-improving-qor.html#webpage","url":"https://www.synopsys.com/articles/techniques-for-improving-qor.html","name":"Enhancing QoR with Datapath Analysis Techniques | Synopsys IP","description":"Learn how the analyze_datapath_extraction command helps improve quality of results (QoR) in SoC designs with large datapath content.","isPartOf":{"@id":"https://www.synopsys.com/#website"}},{"@type":"TechArticle","@id":"https://www.synopsys.com/articles/techniques-for-improving-qor.html#techarticle","isPartOf":{"@id":"https://www.synopsys.com/articles/techniques-for-improving-qor.html#webpage"},"headline":"Techniques for Improving QoR Using analyze_datapath_extraction","description":"Learn how the analyze_datapath_extraction command helps improve quality of results (QoR) in SoC designs with large datapath content.","image":"https://images.synopsys.com/is/image/synopsys/56-bandwidth-latency-die-to-die-interfaces-data-centers-1?ts=1764870526959&$responsive$","datePublished":"2014-04-21","dateModified":"2025-12-04","publisher":{"@id":"https://www.synopsys.com/#organization"},"mainEntityOfPage":{"@id":"https://www.synopsys.com/articles/techniques-for-improving-qor.html#webpage"},"proficiencyLevel":"Expert","articleSection":"Articles"}]}</script>
+	
+
+
+	
+
+	
+	
+	<script src="https://analytics.ahrefs.com/analytics.js" data-key="NzasMXLUJ1aZJXwITnEoZA" async></script>
+
+    
+
+    
+
+    
+<script src="/etc.clientlibs/synopsys/clientlibs/custom-jquery.min.9892f1198f0d15717d27595999e1bd04.js"></script>
+<script src="/etc.clientlibs/core/wcm/components/commons/datalayer/v1/clientlibs/core.wcm.components.commons.datalayer.v1.min.70264651675213ed7f7cc5a02a00f621.js"></script>
+<script src="/etc.clientlibs/synopsys/clientlibs/synopsys-headlibs.min.3a897ff7197ca1ff635805dd40d17a26.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/etc.clientlibs/synopsys/clientlibs/synopsys-blogs.min.ade276c20d2cc9c2b13111488f9cba16.css" type="text/css">
+
+
+
+    
+
+
+	
+</head>
+    <body data-template="silicon-ip-technical-bulletin-blog-article" data-content-type="eda" data-page-type="child-page" data-sticky-nav="true" class="page    publish " data-cmp-data-layer-enabled>
+
+            <script>
+               window.adobeDataLayer = window.adobeDataLayer || [];
+               adobeDataLayer.push({
+                   page: JSON.parse("{\x22page\u002D79d79c6399\x22:{\x22@type\x22:\x22synopsys\/components\/structure\/core\/page\x22,\x22repo:modifyDate\x22:\x222025\u002D12\u002D04T17:48:46Z\x22,\x22dc:title\x22:\x22SITB \u002D Q214 | Techniques for Improving QoR Using analyze_datapath_extraction\x22,\x22xdm:template\x22:\x22\/conf\/synopsys\/settings\/wcm\/templates\/silicon\u002Dip\u002Dtechnical\u002Dbulletin\u002Dblog\u002Darticle\x22,\x22xdm:language\x22:\x22en\x22,\x22xdm:tags\x22:[\x22Synopsys Design Compiler Team\x22,\x22Silicon IP\x22,\x22SoC Infrastructure IP\x22],\x22repo:path\x22:\x22\/content\/synopsys\/en\u002Dus\/articles\/techniques\u002Dfor\u002Dimproving\u002Dqor.html\x22}}"),
+                   event: 'cmp:show',
+                   eventInfo: {
+                       path: 'page.page\u002D79d79c6399'
+                   }
+               });
+           </script>
+
+
+	<script>
+
+	function hasEventInDataLayer(eventName) {
+	  if (typeof window.adobeDataLayer === 'undefined' || !Array.isArray(window.adobeDataLayer)) {
+		return false;
+	  }
+	  return window.adobeDataLayer.some(function(item) {
+		return item && item.event === eventName;
+	  });
+	}
+
+    function setPageViewEventInDataLayer(){
+        if (hasEventInDataLayer('page-view')) {
+          if(window.location.hostname !== 'www.synopsys.com'){
+        	  console.log('The "page-view" event has already been pushed to the dataLayer.');
+          }
+        } 
+        else{
+          if(window.location.hostname !== 'www.synopsys.com'){
+        	  console.log('Pushing  "page-view" event to the dataLayer.');
+          }
+          window.adobeDataLayer.push({
+                event: "page-view"
+          });
+        }
+    }
+
+	function setLeadInfoInDataLayer(obj){
+        if(window.location.hostname !== 'www.synopsys.com') console.log("--- adding ", obj, " to datalayer (window.adobeDataLayer[0].MarketoAPI)");
+    	window.adobeDataLayer[0].MarketoAPI = window.adobeDataLayer[0].MarketoAPI || {};
+    	window.adobeDataLayer[0].MarketoAPI.id = obj.id;
+    	window.adobeDataLayer[0].MarketoAPI.score = obj.score
+        window.adobeDataLayer[0].MarketoAPI.programIds = obj.programIds || [];
+    	window.adobeDataLayer[0].MarketoAPI.cached = obj.cached;
+        setPageViewEventInDataLayer();
+	}
+	
+    function getLead(retry){
+        const mkto_lead_id = Cookies.get("mkto_lead_id");
+        if (mkto_lead_id) {
+            const leadData = JSON.parse(mkto_lead_id);
+            if(window.location.hostname !== 'www.synopsys.com') console.log("--- mkto_lead_id cookie found: ", leadData);
+            setLeadInfoInDataLayer({ id: leadData.id, score: leadData.score, cached: true, programIds: leadData.programIds });
+
+            if(mkto_lead_id !== 'null'){    
+                // if mkto_lead_id contains valid value, then return the function
+                // if not, let the function proceed
+                return;
+            }
+        }
+
+        const mktoTrkCookie = Cookies.get("_mkto_trk");
+        if (!mktoTrkCookie) {
+        	setLeadInfoInDataLayer({ id: null, cached: false, score: null, programIds: [] });
+
+            // if we access page from private window or we remove _mkto_trk cookie, new _mkto_trk cookie appears. but its on available on page load. it taks time to load. Hence we retry.
+            // At this point _mkto_trk is not found, we will make 3 attempts to look for _mkto_trk cookie's existence before giving up.
+        	if(retry < 4){
+        		setTimeout(function(){
+                    retry++;
+                    if(window.location.hostname !== 'www.synopsys.com') console.log("--- _mkto_trk cookie not found. making another attempt...");
+                    getLead(retry);
+                }, 10000);
+        	}
+            return;
+        }
+
+        const cookieToken = mktoTrkCookie.split("&").map(it=>it.split(":")).filter(it=>it[0]=="token")[0][1];
+        
+        var msHost = 'https:\/\/api.synopsys.com';
+        var msEndpoint = msHost + "/api/v1/leads";
+
+        setTimeout(function(){
+            fetch(msEndpoint + "/" + cookieToken)
+            .then(resp => resp.json())
+            .then(lead => {
+                const leadId = lead.id ? lead.id : null;
+                const programIds = lead.programIds || [];
+                const score = lead.score!==undefined && lead.score!==null ? lead.score : null;
+                if (window.location.hostname !== 'www.synopsys.com') console.log("--- API Response :", lead, " Setting mkto_lead_id cookie to ", JSON.stringify({ id: lead.id, programIds: lead.programIds }));
+					Cookies.set('mkto_lead_id', JSON.stringify({ id: lead.id, score: score, programIds: lead.programIds }), { expires: 1 });
+					setLeadInfoInDataLayer({ id: leadId, cached: false, score: score, programIds: programIds });
+            })
+            .catch(error => {
+                console.log("--- Error while making call to " + msEndpoint + "/" + cookieToken, error);
+                setLeadInfoInDataLayer({ id: null, cached: false, score: null, programIds: [] });
+            });
+        }, 3000);
+    }
+
+    getLead(0);
+
+	setTimeout(function () {
+		if (!hasEventInDataLayer('page-view')) {
+			console.log('--- Fail-safe 5s: forcing page-view');
+			setPageViewEventInDataLayer();
+		}
+    }, 5000);
+
+</script>
+    
+
+
+
+
+    
+
+<!-- Ansys / Synopsys Cross Linking Utility Bar (Desktop) -->
+<div id="utility-nav-bar" class="container-fluid pre-header m-0 align-items-center" data-bc-variation="utility-nav" data-analytics-link-region="utility">
+    <div class="d-flex utility-logo-row">
+        <a href="https://www.synopsys.com" title="Synopsys" class="d-flex utility-nav-text-link">
+            Synopsys
+        </a>
+        <div class="vr opacity-100 align-self-center"></div>
+        <a href="https://ansys.synopsys.com" title="Ansys" class="d-flex ansys-logo-link utility-nav-text-link">
+            Ansys
+        </a>
+        <!-- <sly data-sly-test="true" data-sly-resource="breadcrumb"/>-->
+        
+
+<nav id="breadcrumb-93e9cbd99e" class="cmp-breadcrumb" aria-label="Breadcrumb" data-cmp-data-layer="{&#34;breadcrumb-93e9cbd99e&#34;:{&#34;@type&#34;:&#34;/apps/core/wcm/components/breadcrumb/v3/breadcrumb&#34;}}" role="navigation">
+    <ol class="cmp-breadcrumb__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+        
+        <li class="cmp-breadcrumb__item" data-cmp-data-layer="{&#34;breadcrumb-93e9cbd99e-item-bef440fc13&#34;:{&#34;@type&#34;:&#34;synopsys/components/content/breadcrumbV3/item&#34;,&#34;repo:modifyDate&#34;:&#34;2026-09-17T13:46:39Z&#34;,&#34;dc:title&#34;:&#34;Articles&#34;,&#34;xdm:linkURL&#34;:&#34;/articles.html&#34;}}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a class="cmp-breadcrumb__item-link" itemprop="item" data-cmp-clickable href="/articles.html">
+                <span itemprop="name">Articles</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+    
+        
+        <li class="cmp-breadcrumb__item cmp-breadcrumb__item--active" aria-current="page" data-cmp-data-layer="{&#34;breadcrumb-93e9cbd99e-item-79d79c6399&#34;:{&#34;@type&#34;:&#34;synopsys/components/content/breadcrumbV3/item&#34;,&#34;repo:modifyDate&#34;:&#34;2025-12-04T17:49:04Z&#34;,&#34;dc:title&#34;:&#34;SITB - Q214 | Techniques for Improving QoR Using analyze_datapath_extraction&#34;,&#34;xdm:linkURL&#34;:&#34;/articles/techniques-for-improving-qor.html&#34;}}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            
+                <span itemprop="name">SITB - Q214 | Techniques for Improving QoR Using analyze_datapath_extraction</span>
+            
+            <meta itemprop="position" content="2"/>
+        </li>
+    </ol>
+</nav>
+
+    
+
+
+    </div>
+    <div class="ms-auto d-flex">
+        <div class="dropdown d-flex align-items-center">
+            <button class="btn btn-default dropdown-toggle topbar-lang d-flex align-items-center" type="button" data-toggle="dropdown"></button>
+            <ul class="dropdown-menu global-nav-link-list">
+                <li class="title">Language</li>
+                <li><a class="dropdown-item" href="#" data-link="/content/synopsys/en-us.html">English</a></li>
+                <li><a class="dropdown-item" href="#" data-link="/content/synopsys/ja-jp.html">日本語</a></li>
+                <li><a class="dropdown-item" href="#" data-link="/content/synopsys/zh-cn.html">简体中文</a></li>
+                <li><a class="dropdown-item" href="#" data-link="/content/synopsys/zh-tw.html">繁體中文</a></li>
+                <li><a class="dropdown-item" href="#" data-link="/content/synopsys/ko-kr.html">한국어</a></li>
+            </ul>
+        </div>
+        <button id="askSynopsys" class="d-flex align-items-center position-relative">
+            <span>Ask</span>
+        </button>
+    </div>
+</div>
+<!-- Ansys / Synopsys Cross Linking Utility Bar (Desktop) -->
+
+    <div class="site-wrapper">
+        
+<div class="root synopsysContainer responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+<div id="experiencefragment-9ad7cf5720" class="cmp-experiencefragment cmp-experiencefragment--topnav">
+
+
+	
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="topNav image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+  <div id="topNav" class="component-nav-top " data-color-theme="dark" data-version="1.0.0" data-analytics-link-region="header">
+    <div class="nav-top-wrapper d-flex">
+      <a href="https://www.synopsys.com" class="logo d-block">
+        
+
+        
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276.32 60.13" class="d-block" width="166" role="img" aria-label="Synopsys"><g data-name="logo"><path d="M19.24 7c0-1.84-.92-3.23-5-3.23s-5 1.39-5 3.23v5a5.43 5.43 0 0 0 2 4.28L25 28.18A7.75 7.75 0 0 1 28.2 34v7.52c0 4.48-5.27 7-14 7C4.61 48.47 0 46.3 0 41.49V35h8.7v6.26c0 2.25 1.71 3.56 5.53 3.56 3.56 0 5.27-1.31 5.27-3.56v-6.69c0-1.65-.66-2.9-2.51-4.55L4.22 18.88c-2.37-2-3.69-3.62-3.69-6.06V7.09c0-4.68 4.88-7 13.7-7C24 .1 27.94 2.41 27.94 6.76v6.06h-8.7ZM103.13 8c0-4.68 3.55-8 15.29-8s15.28 3.36 15.28 8v32.33c0 4.68-3.56 8-15.29 8s-15.29-3.36-15.29-8Zm8.69 32.15c0 2.64 1.06 4.49 6.59 4.49s6.59-1.81 6.59-4.45v-32c0-2.64-1-4.48-6.58-4.48s-6.6 1.84-6.6 4.48ZM138.51.39h13.84c11.21 0 14.5 1.85 14.5 7.25v11.67c0 5.4-3.3 7.25-14.5 7.25h-5.14V48h-8.7Zm12.92 22.47c3.95 0 6.72-.52 6.72-3V7.05c0-2.44-2.77-3-6.72-3h-4.22v18.81ZM188.57 6.92c0-1.85-.92-3.23-5-3.23s-5 1.38-5 3.23v5a5.45 5.45 0 0 0 2 4.28l13.84 11.86a7.8 7.8 0 0 1 3.16 5.8v7.51c0 4.49-5.27 7-14 7-9.62 0-14.23-2.18-14.23-7v-6.51H178v6.26c0 2.24 1.71 3.56 5.53 3.56 3.56 0 5.27-1.32 5.27-3.56v-6.66c0-1.64-.65-2.9-2.5-4.54l-12.75-11.14c-2.38-2-3.69-3.62-3.69-6.06V7c0-4.68 4.87-7 13.71-7 9.75 0 13.7 2.3 13.7 6.66v6.06h-8.7ZM252.76 6.92c0-1.85-.92-3.23-5-3.23s-5 1.38-5 3.23v5a5.45 5.45 0 0 0 2 4.28l13.84 11.86a7.77 7.77 0 0 1 3.16 5.8v7.51c0 4.49-5.27 7-14 7-9.62 0-14.24-2.18-14.24-7v-6.51h8.71v6.26c0 2.24 1.72 3.56 5.54 3.56 3.56 0 5.27-1.32 5.27-3.56v-6.66c0-1.64-.66-2.9-2.5-4.54l-12.81-11.14c-2.37-2-3.69-3.62-3.69-6.06V7c0-4.67 4.88-7 13.71-7 9.75 0 13.71 2.31 13.71 6.66v6.06h-8.7ZM55.12.4h8.71L44.77 60.13h-8.71L55.12.4zM41.38 37.5 29.6.5h8.71l7.42 23.33-4.35 13.67zM224.35.4h8.71L214 60.13h-8.71L224.35.4zM210.66 37.39 198.87.4h8.71l7.43 23.32-4.35 13.67zM97.76 48V7.65c0-5.4-3.3-7.25-14.5-7.25H66.54V48h8.7V4.1h7.16c4 0 6.72.52 6.72 3V48ZM265.1 6.27a5.61 5.61 0 1 1 5.63 5.56 5.53 5.53 0 0 1-5.63-5.56Zm5.63 4.63a4.47 4.47 0 0 0 4.48-4.63 4.5 4.5 0 1 0-9 0 4.48 4.48 0 0 0 4.52 4.63Zm-1.18-1.42h-1V3.09H271c1.51 0 2.26.56 2.26 1.82a1.67 1.67 0 0 1-1.66 1.76l1.82 2.81h-1.08l-1.69-2.77h-1.12Zm1.16-3.59c.82 0 1.56-.06 1.56-1 0-.79-.72-.94-1.39-.94h-1.33v2Z"/></g></svg>
+        
+      </a>
+
+      <!-- 1st level menu -->
+      <nav class="main-nav">
+        <ul class="utility-nav-enabled">
+          <li class="main-nav-item has-dropdown " data-menu="Why Synopsys">
+            <span class="main-nav-item-header" tabindex="0">Why Synopsys</span>
+          </li>
+        
+          <li class="main-nav-item has-dropdown " data-menu="Solutions">
+            <span class="main-nav-item-header" tabindex="0">Solutions</span>
+          </li>
+        
+          <li class="main-nav-item has-dropdown " data-menu="Products">
+            <span class="main-nav-item-header" tabindex="0">Products</span>
+          </li>
+        
+          <li class="main-nav-item has-dropdown " data-menu="Support &amp; Training">
+            <span class="main-nav-item-header" tabindex="0">Support &amp; Training</span>
+          </li>
+        
+          <li class="main-nav-item has-dropdown " data-menu="Resources">
+            <span class="main-nav-item-header" tabindex="0">Resources</span>
+          </li>
+        </ul>
+        <ul class="utility-nav">
+          <li class="main-nav-item has-dropdown language" data-menu="Language Selector">
+            <span class="main-nav-item-header" tabindex="0">Language Selector</span>
+          </li>
+          <li data-menu="AI Assistant">
+            <button id="ai-assistant-chatbot-mob">
+              <span>Ask</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <!-- End 1st level menu -->
+
+
+      <div class="nav-items-right d-flex">
+        <!-- Magnify icon -->
+        <button class="icon-search" id="nav-coveo-search-btn">
+          <span class="visually-hidden">Search Synopsys.com</span>
+          <i class="fa-regular fa-magnifying-glass"></i>
+        </button>
+        <!-- End magnify icon -->
+
+        <!-- Menu CTA desktop -->
+        <a href="/contact-sales.html" target="_blank" class="component-button m-0 cta">Contact Sales</a>
+        <!-- End menu CTA desktop -->
+
+        <!-- mobile menu -->
+        <button class="navbar-toggler border-0" type="button" aria-expanded="false" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none" class="svg-open">
+            <path d="M0 2.75C0 2.33437 0.334375 2 0.75 2H13.25C13.6656 2 14 2.33437 14 2.75C14 3.16562 13.6656 3.5 13.25 3.5H0.75C0.334375 3.5 0 3.16562 0 2.75ZM0 7.75C0 7.33437 0.334375 7 0.75 7H13.25C13.6656 7 14 7.33437 14 7.75C14 8.16563 13.6656 8.5 13.25 8.5H0.75C0.334375 8.5 0 8.16563 0 7.75ZM14 12.75C14 13.1656 13.6656 13.5 13.25 13.5H0.75C0.334375 13.5 0 13.1656 0 12.75C0 12.3344 0.334375 12 0.75 12H13.25C13.6656 12 14 12.3344 14 12.75Z" fill="white"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none" class="svg-close">
+            <path d="M9.14062 9.84688C9.33438 10.0406 9.65312 10.0406 9.84688 9.84688C10.0406 9.65312 10.0406 9.33438 9.84688 9.14062L5.70625 5L9.84688 0.859375C10.0406 0.665625 10.0406 0.346875 9.84688 0.153125C9.65312 -0.040625 9.33438 -0.040625 9.14062 0.153125L5 4.29375L0.859375 0.153125C0.665625 -0.040625 0.346875 -0.040625 0.153125 0.153125C-0.040625 0.346875 -0.040625 0.665625 0.153125 0.859375L4.29375 5L0.153125 9.14062C-0.040625 9.33438 -0.040625 9.65312 0.153125 9.84688C0.346875 10.0406 0.665625 10.0406 0.859375 9.84688L5 5.70625L9.14062 9.84688Z" fill="black"/>
+          </svg>
+        </button>
+        <!--end mobile menu -->
+      </div>
+    </div>
+
+    
+  <!-- Mobile Menu CTA & Promo Card -->
+  <div class="cta-mobile-holder flex-column">
+    <a href="/contact-sales.html" target="_blank" class="component-button d-flex cta cta-mobile">Contact Sales</a>
+    <a class="utility-nav__promo-card-link" href="https://ansys.synopsys.com" target="_blank" rel="noopener noreferrer">
+      <div class="utility-nav__promo-card w-100 flex-column d-flex">
+        <div class="utility-nav__promo-row d-flex flex-row align-items-center">
+          <div class="utility-nav__promo-logo" aria-label="Ansys">
+            
+  <div class="component-image" data-analytics-link-region="body">
+    
+      
+      
+	<div data-asset-id="0d058662-fdee-470f-a540-3f45484f14b8" id="topNav-b02c5ae77c" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img src="/content/experience-fragments/synopsys/en-us/global/eda/topnav/master/_jcr_content/root/topnav_copy.coreimg.svg/1788529180937/ansys-part-of-synopsys-logo.svg" loading="lazy" class="img-responsive  _none_  svg" itemprop="contentUrl" alt="Ansys Home Page"/>
+		
+		
+	</div>
+	
+    
+
+
+    
+  </div>
+
+          </div>
+          <span class="utility-nav__promo-divider"></span>
+          <div class="utility-nav__promo-link-text d-flex align-items-center flex-row4">
+            ansys.com
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 -960 960 960" fill="currentColor" stroke="none" aria-hidden="true" class="utility-nav__promo-arrow">
+              <path d="m553.85-253.85-42.16-43.38L664.46-450H180v-60h484.46L511.69-662.77l42.16-43.38L780-480 553.85-253.85Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="utility-nav__promo-text"><p><b>Synopsys</b> and <b>Ansys</b> power the future of innovation—connecting silicon to systems.</p>
+</div>
+      </div>
+    </a>
+  </div>
+  <!-- End Mobile Menu CTA & Promo Card -->
+
+
+    <!-- Coveo Search - TD-->
+    <div id="modal-overlay-coveo-search"></div>
+    <div id="search-wrapper">
+      <div id="coveo-search-wrapper">
+        <div class="search-header">
+          <h5 class="p-0 m-0">Search Synopsys</h5>
+          <button class="close">Cancel</button>
+        </div>
+        
+
+  <section class="component-search clearfix">
+    <div id="searchbox" class="snps-searchbox" data-enable-history="true" data-endpoint="default">
+      <div class="coveo-search-section">
+        
+        <atomic-external id="coveoSearchboxExt">
+          <atomic-search-box class="CoveoSearchbox hydrated" data-atomic-rendered="true" data-atomic-loaded="true" number-of-queries="5" minimum-query-length="0" clear-filters="false"></atomic-search-box>
+        </atomic-external>
+
+        
+        <atomic-search-interface id="coveoSearchboxInterface"></atomic-search-interface>
+      </div>
+    </div>
+
+  </section>
+
+
+        <a href="" class="close-button"></a>
+
+        <h5 class="popular-content-header ">Popular Content</h5>
+        <div class="popular-content-wrapper">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="mediaLinkTile image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+  <section class="component-mediaLinkTile" data-analytics-link-region="card">
+    <a href="/resources/multiphysics-fusion-technology-for-multi-die.html" class="cta-link">
+      <div class="container">
+        <div class="row mediatext">
+          <div class="col-xs-12 col-sm-6 mediatext img-col">
+            
+  <div class="component-image" data-analytics-link-region="body">
+    
+      
+      
+	<div data-cmp-dmimage data-asset-id="39924be8-f999-409a-84f2-a1e0daa3f9ad" id="mediaLinkTile-0c7a82ded7" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img srcset="https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=375&amp;ts=1779811318702&amp;$responsive$&amp;fit=constrain&amp;dpr=off 375w,https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=480&amp;ts=1779811318702&amp;$responsive$&amp;fit=constrain&amp;dpr=off 480w,https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=730&amp;ts=1779811318702&amp;$responsive$&amp;fit=constrain&amp;dpr=off 730w,https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=992&amp;ts=1779811318702&amp;$responsive$&amp;fit=constrain&amp;dpr=off 992w,https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=1200&amp;ts=1779811318702&amp;$responsive$&amp;fit=constrain&amp;dpr=off 1200w" src="https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&ts=1779811318702&$responsive$&fit=constrain&dpr=off&wid=400" loading="lazy" class="img-responsive  _none_  " itemprop="contentUrl" width="400" height="225" alt="Multiphysics Fusion Technology for Multi-Die Designs Explained" title="multiphysics-for-multi-die-ebook-thumbnail.jpg"/>
+		
+		<meta itemprop="caption" content="multiphysics-for-multi-die-ebook-thumbnail.jpg"/>
+	</div>
+	
+    
+
+
+    
+  </div>
+
+          </div>
+          <div class="col-xs-12 col-sm-6 text-col">
+            <div class="title">
+              
+                Multiphysics Fusion Technology for Multi-Die Designs Explained
+              
+              <i class="arrow-icon fa-regular fa-chevron-right"></i>
+            </div>
+            <div class="subtitle">
+              
+                Unified multiphysics fusion helps multi-die teams validate earlier and sign off faster.
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+            
+
+        </div>
+
+    
+</div>
+<div class="mediaLinkTile image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+  <section class="component-mediaLinkTile" data-analytics-link-region="card">
+    <a href="/resources/rethinking-automotive.html" class="cta-link">
+      <div class="container">
+        <div class="row mediatext">
+          <div class="col-xs-12 col-sm-6 mediatext img-col">
+            
+  <div class="component-image" data-analytics-link-region="body">
+    
+      
+      
+	<div data-cmp-dmimage data-asset-id="8ed87ae5-d5c6-46f7-9017-39b2faa24f63" id="mediaLinkTile-33e2deafc3" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img srcset="https://images.synopsys.com/is/image/synopsys/automotive-executive-guide-teal-bkgd-thumbnail-1?qlt=82&amp;wid=375&amp;ts=1779811330499&amp;$responsive$&amp;fit=constrain&amp;dpr=off 375w,https://images.synopsys.com/is/image/synopsys/automotive-executive-guide-teal-bkgd-thumbnail-1?qlt=82&amp;wid=480&amp;ts=1779811330499&amp;$responsive$&amp;fit=constrain&amp;dpr=off 480w,https://images.synopsys.com/is/image/synopsys/automotive-executive-guide-teal-bkgd-thumbnail-1?qlt=82&amp;wid=730&amp;ts=1779811330499&amp;$responsive$&amp;fit=constrain&amp;dpr=off 730w,https://images.synopsys.com/is/image/synopsys/automotive-executive-guide-teal-bkgd-thumbnail-1?qlt=82&amp;wid=992&amp;ts=1779811330499&amp;$responsive$&amp;fit=constrain&amp;dpr=off 992w,https://images.synopsys.com/is/image/synopsys/automotive-executive-guide-teal-bkgd-thumbnail-1?qlt=82&amp;wid=1200&amp;ts=1779811330499&amp;$responsive$&amp;fit=constrain&amp;dpr=off 1200w" src="https://images.synopsys.com/is/image/synopsys/automotive-executive-guide-teal-bkgd-thumbnail-1?qlt=82&ts=1779811330499&$responsive$&fit=constrain&dpr=off&wid=400" loading="lazy" class="img-responsive  _none_  " itemprop="contentUrl" width="400" height="225" alt="Automotive Executive Guide: Rethinking Automotive Development"/>
+		
+		
+	</div>
+	
+    
+
+
+    
+  </div>
+
+          </div>
+          <div class="col-xs-12 col-sm-6 text-col">
+            <div class="title">
+              
+                Automotive Executive Guide: Rethinking Automotive Development
+              
+              <i class="arrow-icon fa-regular fa-chevron-right"></i>
+            </div>
+            <div class="subtitle">
+              
+                A guide to virtualization in software-defined vehicles for automotive leaders.
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+            
+
+        </div>
+
+    
+</div>
+<div class="mediaLinkTile image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+  <section class="component-mediaLinkTile" data-analytics-link-region="card">
+    <a href="/resources/mastering-ai-chip-complexity-ebook.html" class="cta-link">
+      <div class="container">
+        <div class="row mediatext">
+          <div class="col-xs-12 col-sm-6 mediatext img-col">
+            
+  <div class="component-image" data-analytics-link-region="body">
+    
+      
+      
+	<div data-cmp-dmimage data-asset-id="13ac8053-6e13-40dd-810a-e63d71d24a47" id="mediaLinkTile-e9dcd13d2f" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img srcset="https://images.synopsys.com/is/image/synopsys/mastering-ai-chip-complexity?qlt=82&amp;wid=375&amp;ts=1779811359019&amp;$responsive$&amp;fit=constrain&amp;dpr=off 375w,https://images.synopsys.com/is/image/synopsys/mastering-ai-chip-complexity?qlt=82&amp;wid=480&amp;ts=1779811359019&amp;$responsive$&amp;fit=constrain&amp;dpr=off 480w,https://images.synopsys.com/is/image/synopsys/mastering-ai-chip-complexity?qlt=82&amp;wid=730&amp;ts=1779811359019&amp;$responsive$&amp;fit=constrain&amp;dpr=off 730w,https://images.synopsys.com/is/image/synopsys/mastering-ai-chip-complexity?qlt=82&amp;wid=992&amp;ts=1779811359019&amp;$responsive$&amp;fit=constrain&amp;dpr=off 992w,https://images.synopsys.com/is/image/synopsys/mastering-ai-chip-complexity?qlt=82&amp;wid=1200&amp;ts=1779811359019&amp;$responsive$&amp;fit=constrain&amp;dpr=off 1200w" src="https://images.synopsys.com/is/image/synopsys/mastering-ai-chip-complexity?qlt=82&ts=1779811359019&$responsive$&fit=constrain&dpr=off&wid=400" loading="lazy" class="img-responsive  _none_  " itemprop="contentUrl" width="1200" height="675" alt="Mastering AI Chip Complexity"/>
+		
+		
+	</div>
+	
+    
+
+
+    
+  </div>
+
+          </div>
+          <div class="col-xs-12 col-sm-6 text-col">
+            <div class="title">
+              
+                Mastering AI Chip Complexity
+              
+              <i class="arrow-icon fa-regular fa-chevron-right"></i>
+            </div>
+            <div class="subtitle">
+              
+                This eBook explores AI chip design trends, challenges, <br/>
+              
+                 and strategies for first-pass silicon success.
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+            
+
+        </div>
+
+    
+</div>
+
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Coveo Search - TD-->
+
+    <!-- 2nd lvl menu subnav -->
+
+    <div id="morph-dropdown-wrapper">
+      <svg width="100%" height="100%" viewBox="0 0 21 11" xmlns="http://www.w3.org/2000/svg" class="triangle main">
+        <path d="M9.46 0.66 C10.26 -0.22 11.65 -0.22 12.44 0.66 L21.39 10.66 L0.51 10.66 L9.46 0.66 Z" fill="white"/>
+      </svg>
+      <svg width="100%" height="100%" viewBox="0 0 21 11" xmlns="http://www.w3.org/2000/svg" class="triangle triangle_shadow">
+        <path d="M9.46 0.66 C10.26 -0.22 11.65 -0.22 12.44 0.66 L21.39 10.66 L0.51 10.66 L9.46 0.66 Z" fill="white"/>
+      </svg>
+
+      <div class="header w-100">
+        <button class="back">Back</button>
+      </div>
+      <div class="dropdown-list">
+        
+          <div class="dropdown " data-menu="Why Synopsys">
+            
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="subNavLinks image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-subnav d-flex two-column " data-total-columns="two-column" data-analytics-link-region="utility">
+    
+    
+    
+      
+    
+      
+      
+    
+      
+
+    
+    <div class="w-100 d-flex">
+      <div class="col col-sm-6">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="Our Company" data-analytics-link-region="header">
+    
+    
+      <span class="header-item " data-submenu-mobile="Our Company">
+      
+
+      
+        Our Company
+      
+      
+      </span>
+    
+    <ul class="nav-list" data-submenu-mobile="Our Company">
+      <li class=" ">
+        <a href="/company.html">
+          
+          <div class="nav-item-title">
+            About Us
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="https://careers.synopsys.com/" target="_blank" rel="noreferer noopener">
+          
+          <div class="nav-item-title">
+            Careers
+            <i class="fa-regular fa-arrow-up-right-from-square external-link-icon"></i>
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/partners.html">
+          
+          <div class="nav-item-title">
+            Ecosystem Partners
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/company/contact-synopsys/office-locations.html">
+          
+          <div class="nav-item-title">
+            Global Offices
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="https://investor.synopsys.com/overview/default.aspx" target="_blank" rel="noreferer noopener">
+          
+          <div class="nav-item-title">
+            Investors
+            <i class="fa-regular fa-arrow-up-right-from-square external-link-icon"></i>
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/company/management-team.html">
+          
+          <div class="nav-item-title">
+            Leadership
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/company/responsible-business.html">
+          
+          <div class="nav-item-title">
+            Responsible Business
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+      </div>
+      <div class="col col-sm-6 m-0 light-grey-bg align-items-center ">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="topNavAd image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+    <section class="component-topNavAd " data-analytics-link-region="header">
+      
+  
+
+  <div class="cmp-video" data-video-id="6358098178112" data-provider="Brightcove" data-mode="modal" data-video-lang="5748441669001" data-analytics-link-region="body">
+      <script>
+  var contentSegment= "4:M:75-100";
+    var contentType="video";
+	var globalSingleton = false;
+    var globalSingleton25 = false;
+	var globalSingleton75 = false;
+	var globalSingletonPause = false;
+    var globalSingletonPlay = false;
+    var globalSingletonEnded= false;
+	   $('body').on('click', '.video-button', function(){
+           setTimeout(function(){
+               if($('.cmp-video__player--modal video').attr('id'))
+{
+              		   if(globalSingletonPlay == false)
+    {
+
+        	 var cmpPlayerID = $('.cmp-video__player--modal video').attr('id');
+
+
+          var myPlayer = videojs(cmpPlayerID);
+		globalSingletonPlay=true;
+     window.adobeDataLayer = window.adobeDataLayer || [];
+          window.adobeDataLayer.push({
+              event: "videoStarts",
+              web: {
+              webPageDetails: {
+              URL: window.location.href
+              }
+              },//end of web
+              _synopsys:{
+                 videos:{
+                      videoName:  myPlayer.mediainfo.name,
+                      contentSegment:"1:M:0-25",
+                   videoStarts: {
+                      value: 1
+                     }
+                  },//video
+               web:{
+                 webPageDetails:{
+                      contentType:contentType,
+
+                          },//end of web page details
+                   }//end of web
+                  }//synopsys
+            }//end of push
+            );
+
+	}
+	 var cmpPlayerID = $('.cmp-video__player--modal video').attr('id');
+        var progressFlag50 = false;
+        var progressFlag25 = false;
+        var progressFlag75 = false;
+		        videojs.getPlayer(cmpPlayerID).on('timeupdate',function(){
+					var myPlayer = this;
+                    var name=myPlayer.mediainfo.name;
+
+                    var duration = myPlayer.duration();
+                    var currTime = myPlayer.currentTime();
+                                        			 var perc = (currTime / duration * 100).toFixed(2);
+
+					  if(perc <=25.55)
+                         contentSegment="1:M:0-25";
+                     if(perc >25.55 && perc<=50.55)
+                         contentSegment="2:M:25-50";
+                     if(perc >50.55 && perc<=75.55)
+                         contentSegment="3:M:50-75";
+                     if(perc >75.55 && perc<=100.55)
+                         contentSegment="4:M:75-100";
+					 var isPaused = myPlayer.paused();
+					 if(isPaused && globalSingletonPause==false )
+                       {
+        globalSingletonPause=true;
+         window.adobeDataLayer = window.adobeDataLayer || [];
+          window.adobeDataLayer.push({
+              event: "videoPauses",
+              web: {
+              webPageDetails: {
+              URL: window.location.href
+              }
+              },
+              _synopsys:{
+                 videos:{
+                      videoName:name,
+                      contentSegment: contentSegment,
+                       videoTimeSpent: {
+                      value: currTime
+                   },
+                    videoPauses: {
+                      value: 1
+                   }
+
+               },
+               web:{
+                 webPageDetails:{
+                      contentType: contentType,
+                   },
+               }
+               }
+            }
+            );
+        }
+var isEnded= myPlayer.ended();
+
+                if(isEnded && globalSingletonEnded==false)
+                {
+                globalSingletonEnded=true;
+                window.adobeDataLayer = window.adobeDataLayer || [];
+          window.adobeDataLayer.push({
+              event: "videoCompletes",
+              web: {
+              webPageDetails: {
+              URL: window.location.href
+              }
+              },
+              _synopsys:{
+                 videos:{
+                      videoName: name,
+                      contentSegment: contentSegment,
+                       videoTimeSpent: {
+                      value: currTime
+                   },
+                   videoCompletes: {
+                      value: 1
+                   },
+                   videoSegmentViewed: {
+                      value: 1
+                   }
+               },
+               web:{
+                 webPageDetails:{
+                      contentType:contentType,
+
+                   },
+               }
+               }
+            }
+            );  }
+		if( perc >= 50  && perc < 50.55 && globalSingleton == false) {
+        		globalSingleton= true;
+                 window.adobeDataLayer = window.adobeDataLayer || [];
+          window.adobeDataLayer.push({
+                        event: "videoMilestone50",
+                         web: {
+              webPageDetails: {
+              URL: window.location.href
+              }
+              },
+              _synopsys:{
+                 videos:{
+                      videoName: name,
+                      contentSegment:contentSegment,
+                    videoTimeSpent: {
+                      value: currTime
+                   },
+                   videoMilestone50: {
+                      value: 1
+                   },
+                   videoSegmentViewed: {
+                      value: 1
+                   }
+
+
+
+               },
+               web:{
+                 webPageDetails:{
+                      contentType:contentType,
+
+                   },
+               }
+               }
+
+          });
+
+
+
+
+}
+		if( perc >= 25 && perc < 25.55 && globalSingleton25 == false) {
+        		globalSingleton25= true;
+                 window.adobeDataLayer =  window.adobeDataLayer || [];
+          window.adobeDataLayer.push({
+                        event: "videoMilestone25",
+                         web: {
+              webPageDetails: {
+              URL: window.location.href
+              }
+              },
+              _synopsys:{
+                 videos:{
+                      videoName: name,
+                      contentSegment: contentSegment,
+                    videoTimeSpent: {
+                      value: currTime
+                   },
+                   videoMilestone25: {
+                      value: 1
+                   },
+                   videoSegmentViewed: {
+                      value: 1
+                   }
+
+
+
+               },
+               web:{
+                 webPageDetails:{
+                      contentType: contentType,
+
+                   },
+               }
+               }
+
+          });
+
+
+
+
+}
+	if( perc >= 75 && perc < 75.55 && globalSingleton75 == false) {
+        		globalSingleton75= true;
+                 window.adobeDataLayer =  window.adobeDataLayer || [];
+          window.adobeDataLayer.push({
+                        event: "videoMilestone75",
+                         web: {
+              webPageDetails: {
+              URL: window.location.href
+              }
+              },
+              _synopsys:{
+                 videos:{
+                      videoName: name,
+                      contentSegment:contentSegment,
+                    videoTimeSpent: {
+                      value: currTime
+                   },
+                   videoMilestone75: {
+                      value: 1
+                   },
+                   videoSegmentViewed: {
+                      value: 1
+                   }
+
+
+
+               },
+               web:{
+                 webPageDetails:{
+                      contentType:contentType,
+
+                   },
+               }
+               }
+
+          });
+        }	});
+        }
+		   },1500);
+		   globalSingleton= false;
+           globalSingleton25 = false;
+	       globalSingleton75 = false;
+	       globalSingletonPause = false;
+    	   globalSingletonPlay = false;
+           globalSingletonEnded= false;
+	   });
+
+
+</script>
+
+    
+    <div class="cmp-video__player-container embed-responsive embed-responsive-16by9">
+      
+      <div class="cmp-video__thumbnail">
+        <div style="display: none" class="cmp-video__thumbnail-img cmp-video__thumbnail-img--authored"></div>
+			<div class="video-button-container video-button">
+               <i class="fa-solid fa-play"></i>
+			</div>
+            
+      </div>
+
+      
+      
+    
+    
+  <div class="cmp-video__player--inline embed-responsive-item"></div>
+
+
+    </div>
+
+      
+
+      
+
+    
+    <div class="modal-template" style="display: none">
+      <div class="modal fade modal--video" tabindex="-1" role="dialog" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                  <div class="embed-responsive embed-responsive-16by9">
+
+                    
+                    
+    
+    
+  <div class="cmp-video__player--modal embed-responsive-item"></div>
+
+
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+
+  </div>
+
+      
+      <a href="/company.html">
+        <div class="title">
+          Why Synopsys?
+        </div>
+        <div class="description m-0 p-0">
+          <p>Our Technology, Your Innovation™. Trusted industry leader.</p>
+
+        </div>
+        <div class="cta">
+          Learn more
+        </div>
+      </a>
+    </section>
+</div>
+
+    
+</div>
+
+      </div>
+    </div>
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+
+    
+
+    
+
+  </div>
+
+</div>
+
+    
+</div>
+
+          </div>
+        
+          <div class="dropdown " data-menu="Solutions">
+            
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="subNavLinks image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-subnav d-flex three-column " data-total-columns="three-column" data-analytics-link-region="utility">
+    
+    
+    
+      
+    
+      
+      
+    
+      
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    <div class="w-100 d-flex">
+        <div class="col col-xs-12 col-sm-4 one">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="Industry" data-analytics-link-region="header">
+    
+    
+      <span class="header-item " data-submenu-mobile="Industry">
+      
+
+      
+        Industry
+      
+      
+      </span>
+    
+    <ul class="nav-list" data-submenu-mobile="Industry">
+      <li class=" ">
+        <a href="/ai/ai-chip-development.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/ai-chip-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            AI Infrastructure​
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/ai/physical-ai.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/physical-ai-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Physical AI
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/automotive.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/automotive-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Automotive
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/aerospace-government.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/aerospace-1-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Aerospace &amp; Government
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/designware-ip/ip-market-segments/edge-ai.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/edge-ai-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Edge AI
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/hpc-data-center.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/hpc-data-centers-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Data Center
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/5g.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/mobile-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Mobile
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/synopsys/clientlibs/footnote.min.7bae995a0d554a44e5619750d753a512.css" type="text/css">
+<script src="/etc.clientlibs/synopsys/clientlibs/footnote.min.a4814b3ec1d358e065ceb35ea5c95dee.js"></script>
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-normal" style="color: #111C24;">
+            
+                
+            
+        </h2>
+        
+        
+        <div class="buttons align-left">
+            <a href="/solutions.html" class="cta-link">
+                <span class="cta-text"> View all Solutions</span>
+                <i class="arrow-icon fa-regular fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </section>
+
+
+            
+
+        </div>
+
+    
+
+
+</div>
+
+    
+</div>
+
+        </div>
+        <div class="col col-xs-12 col-sm-4 two">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="Technology" data-analytics-link-region="header">
+    
+    
+      <span class="header-item " data-submenu-mobile="Technology">
+      
+
+      
+        Technology
+      
+      
+      </span>
+    
+    <ul class="nav-list" data-submenu-mobile="Technology">
+      <li class=" ">
+        <a href="/ai.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/ai-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Artificial Intelligence
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/cloud.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/cloud-network-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Cloud
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/electronics-digital-twin.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/edt-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Electronics Digital Twins
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/multiphysics-fusion.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/multiphysics-fusion-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Multiphysics Fusion
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/energy-efficient.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/energy-efficient-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Energy-Efficient SoCs
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/multi-die-design.html">
+          <img loading="lazy" src="/content/dam/synopsys/icon/multi-die-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Multi-Die Design
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="https://ansys.synopsys.com/products/optics" target="_blank" rel="noreferer noopener">
+          <img loading="lazy" src="/content/dam/synopsys/icon/optical-black.svg" class="nav-item-logo" width="22" height="22"/>
+          <div class="nav-item-title">
+            Photonics &amp; Optics
+            <i class="fa-regular fa-arrow-up-right-from-square external-link-icon"></i>
+            
+          </div>
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+        </div>
+        <div class="col col-xs-12 col-sm-4 light-grey-bg align-items-center three">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="topNavAd image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+    <section class="component-topNavAd hideOnMobile" data-analytics-link-region="header">
+      
+      
+  <div class="component-image" data-analytics-link-region="body">
+    
+      
+      
+	<div data-cmp-dmimage data-asset-id="39924be8-f999-409a-84f2-a1e0daa3f9ad" id="topNavAd-2615db38ad" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img srcset="https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=375&amp;ts=1779811207614&amp;$responsive$&amp;fit=constrain&amp;dpr=off 375w,https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=480&amp;ts=1779811207614&amp;$responsive$&amp;fit=constrain&amp;dpr=off 480w,https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=730&amp;ts=1779811207614&amp;$responsive$&amp;fit=constrain&amp;dpr=off 730w,https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=992&amp;ts=1779811207614&amp;$responsive$&amp;fit=constrain&amp;dpr=off 992w,https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&amp;wid=1200&amp;ts=1779811207614&amp;$responsive$&amp;fit=constrain&amp;dpr=off 1200w" src="https://images.synopsys.com/is/image/synopsys/multiphysics-for-multi-die-ebook-thumbnail?qlt=82&ts=1779811207614&$responsive$&fit=constrain&dpr=off&wid=400" loading="lazy" class="img-responsive  _none_  " itemprop="contentUrl" width="400" height="225" alt="Multiphysics Fusion Technology for Multi-Die Designs Explained" title="multiphysics-for-multi-die-ebook-thumbnail.jpg"/>
+		
+		<meta itemprop="caption" content="multiphysics-for-multi-die-ebook-thumbnail.jpg"/>
+	</div>
+	
+    
+
+
+    
+  </div>
+
+      <a href="/resources/multiphysics-fusion-technology-for-multi-die.html">
+        <div class="title">
+          Multiphysics Fusion Technology for Multi-Die Designs Explained
+        </div>
+        <div class="description m-0 p-0">
+          <p>Unified multiphysics fusion helps multi-die teams validate earlier and sign off faster.</p>
+
+        </div>
+        <div class="cta">
+          Download eBook
+        </div>
+      </a>
+    </section>
+</div>
+
+    
+</div>
+
+        </div>
+    </div>
+    
+
+    
+    
+    
+
+
+    
+
+    
+
+  </div>
+
+</div>
+
+    
+</div>
+
+          </div>
+        
+          <div class="dropdown " data-menu="Products">
+            
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="subNavLinks image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-subnav d-flex five-column " data-total-columns="five-column" data-analytics-link-region="utility">
+    
+    
+    
+      
+    
+      
+      
+    
+      
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    <div class="w-100 d-flex">
+      <div class="col col-sm-3 left-col">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="By Function" data-analytics-link-region="header">
+    
+    
+      <span class="header-item " data-submenu-mobile="By Function">
+      
+
+      
+        By Function
+      
+      
+      </span>
+    
+    <ul class="nav-list" data-submenu-mobile="By Function">
+      <li class=" ">
+        <a href="/implementation-and-signoff/custom-design-platform.html">
+          
+          <div class="nav-item-title">
+            Analog Design
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/implementation-and-signoff/fusion-design-platform.html">
+          
+          <div class="nav-item-title">
+            Digital Design
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/implementation-and-signoff/test-automation.html">
+          
+          <div class="nav-item-title">
+            Design for Test
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/verification.html">
+          
+          <div class="nav-item-title">
+            Verification
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/verification/virtual-prototyping.html">
+          
+          <div class="nav-item-title">
+            Virtual Prototyping
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/verification/emulation-prototyping.html">
+          
+          <div class="nav-item-title">
+            Hardware Assisted Verification
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/implementation-and-signoff/signoff.html">
+          
+          <div class="nav-item-title">
+            Signoff
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/solutions/silicon-lifecycle-management.html">
+          
+          <div class="nav-item-title">
+            Silicon Lifecycle Management
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/manufacturing.html">
+          
+          <div class="nav-item-title">
+            Manufacturing
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/designware-ip.html">
+          
+          <div class="nav-item-title">
+            SoC Integration
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+
+        
+        <div>
+          <a class="sub-nav-footer cta" href="/products.html" target="_blank" rel="noreferer noopener" style="color: #111C24;">View all Products</a>
+        </div>
+      </div>
+      <div class="light-grey-bg middle-right-col">
+        <div class="col col-sm-3">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="Synopsys.ai" data-analytics-link-region="header">
+    
+      <a href="/ai.html" class="header-item " data-submenu-mobile="Synopsys.ai">
+      <img loading="lazy" src="/content/dam/synopsys/icon/ai-black.svg" class="nav-header-logo" width="22" height="22"/>
+
+      
+        Synopsys.ai
+      
+      
+      </a>
+    
+    
+    <ul class="nav-list" data-submenu-mobile="Synopsys.ai">
+      <li class=" hasSubtitle">
+        <a href="/ai/ai-powered-eda.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            AI-enabled EDA
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Design, Automation, Insights
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/ai/ai-powered-eda.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            AI-powered Optimization
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Design, Verification, Test, Analog
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/ai/ai-powered-eda.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            AI-powered Analytics
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Design, Process Control, Production
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/ai/generative-ai.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            GenAI
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            24/7 Expert Copilot
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/ai/agentic-ai.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Agentic AI
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Multi-Agent Workflows
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+        </div>
+        <div class="col col-sm-3">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="EDA" data-analytics-link-region="header">
+    
+      <a href="/silicon-design.html" class="header-item " data-submenu-mobile="EDA">
+      <img loading="lazy" src="/content/dam/synopsys/icon/silicon-design-black.svg" class="nav-header-logo" width="22" height="22"/>
+
+      
+        EDA
+      
+      
+      </a>
+    
+    
+    <ul class="nav-list" data-submenu-mobile="EDA">
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/physical-implementation/fusion-compiler.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Fusion Compiler
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Synthesis &amp; Implementation
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/custom-design-platform/custom-compiler.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Custom Compiler
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Analog &amp; Custom IC Design
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/3dic-design.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            3DIC Compiler
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Multi-die Design
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/signoff/primetime.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            PrimeTime
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Design Signoff
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/verification/simulation/vcs.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            VCS
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Logic Simulation
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/test-automation.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            TestMAX
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            IC Test
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/physical-verification.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            IC Validator
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Physical Verification
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/signoff/redhawk-sc.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            RedHawk-SC
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Digital Power Integrity Signoff
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+        </div>
+        <div class="col col-sm-3">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="System" data-analytics-link-region="header">
+    
+      <a href="/systems.html" class="header-item " data-submenu-mobile="System">
+      <img loading="lazy" src="/content/dam/synopsys/icon/systems-black.svg" class="nav-header-logo" width="22" height="22"/>
+
+      
+        System
+      
+      
+      </a>
+    
+    
+    <ul class="nav-list" data-submenu-mobile="System">
+      <li class=" hasSubtitle">
+        <a href="/verification/virtual-prototyping/platform-architect.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Platform Architect
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            SoC Architecture Exploration
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/verification/emulation-prototyping/emulation.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            ZeBu
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            IC Emulation
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/verification/emulation-prototyping/prototyping.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            HAPS
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            IC Prototyping
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/verification/virtual-prototyping/virtualizer.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Virtualizer
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Virtual Prototyping
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/fpga-based-design/synplify.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Synplify
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Complete FPGA Flow
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/solutions/multiphysics-fusion.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Multiphysics
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            3DIC Package Analysis
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="https://ansys.synopsys.com/products/electronics/ansys-hfss" target="_blank" rel="noreferer noopener" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            HFSS
+            <i class="fa-regular fa-arrow-up-right-from-square external-link-icon"></i>
+            
+          </div>
+          <span class="nav-item-subtitle">
+            EM Analysis
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="https://ansys.synopsys.com/products/electronics/ansys-icepak" target="_blank" rel="noreferer noopener" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Icepak
+            <i class="fa-regular fa-arrow-up-right-from-square external-link-icon"></i>
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Thermal Analysis
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+        </div>
+        <div class="col col-sm-3">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="IP" data-analytics-link-region="header">
+    
+      <a href="/designware-ip.html" class="header-item " data-submenu-mobile="IP">
+      <img loading="lazy" src="/content/dam/synopsys/icon/silicon-ip-black.svg" class="nav-header-logo" width="22" height="22"/>
+
+      
+        IP
+      
+      
+      </a>
+    
+    
+    <ul class="nav-list" data-submenu-mobile="IP">
+      <li class=" hasSubtitle">
+        <a href="/designware-ip/interface-ip.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Interface IP
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            PCIe, DDR, MIPI, USB...
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/designware-ip/memories-logic-libraries.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Foundation IP
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Logic, Memory, IO...
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/designware-ip/security-ip.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Security IP
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            RoT, Cryptography...
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/designware-ip/soc-infrastructure-ip.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            SoC Infrastructure IP
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            AMBA, Foundation, VIP...
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/designware-ip/ip-market-segments.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            IP by Markets
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            Automotive, HPC, Edge AI
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/solutions/silicon-lifecycle-management/environmental-monitors/slm-pvt-monitor-ip.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            SLM IP
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            In-Chip Monitor IP
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/verification/verification-ip.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            Verification IP
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            AMBA, Ethernet, MIPI...
+          </span>
+        </a>
+      </li>
+    
+      <li class=" hasSubtitle">
+        <a href="/implementation-and-signoff/test-automation/synopsys-ip-sms.html" class="hasSubtitle">
+          
+          <div class="nav-item-title">
+            SMS IP
+            
+            
+          </div>
+          <span class="nav-item-subtitle">
+            STAR Memory System IP
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+
+
+    
+
+    
+
+  </div>
+
+</div>
+
+    
+</div>
+
+          </div>
+        
+          <div class="dropdown " data-menu="Support &amp; Training">
+            
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="subNavLinks image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-subnav d-flex two-column-simple " data-total-columns="two-column-simple" data-analytics-link-region="utility">
+    
+    
+    
+      
+    
+      
+      
+    
+      
+
+    
+    
+    
+
+    
+    <div class="w-100 d-flex">
+      <div class="col col-sm-6" data-column-no="one">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="SolvNetPlus" data-analytics-link-region="header">
+    
+      <a href="https://solvnetplus.synopsys.com/" class="header-item " data-submenu-mobile="SolvNetPlus">
+      <img loading="lazy" src="/content/dam/synopsys/icon/gear-black.svg" class="nav-header-logo" width="22" height="22"/>
+
+      
+        SolvNetPlus
+      
+      <span class="nav-list-header-subtitle">
+        SolvNetPlus gives instant access to docs, downloads, training, and self-help support resources online.
+      </span>
+      </a>
+    
+    
+    
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+      </div>
+      <div class="col col-sm-6" data-column-no="two">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="Training &amp; Education" data-analytics-link-region="header">
+    
+      <a href="https://training.synopsys.com/learn" target="_blank" class="header-item " data-submenu-mobile="Training &amp; Education">
+      <img loading="lazy" src="/content/dam/synopsys/icon/training-black.svg" class="nav-header-logo" width="22" height="22"/>
+
+      
+        Training &amp; Education
+      
+      <span class="nav-list-header-subtitle">
+        Synopsys provides training delivered by subject matter experts, offering both public and private courses.
+      </span>
+      </a>
+    
+    
+    
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+      </div>
+    </div>
+    
+
+    
+    
+    
+
+    
+    
+    
+
+
+    
+
+    
+
+  </div>
+
+</div>
+
+    
+</div>
+
+          </div>
+        
+          <div class="dropdown " data-menu="Resources">
+            
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="subNavLinks image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-subnav d-flex three-column " data-total-columns="three-column" data-analytics-link-region="utility">
+    
+    
+    
+      
+    
+      
+      
+    
+      
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    <div class="w-100 d-flex">
+        <div class="col col-xs-12 col-sm-4 one">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="Learn" data-analytics-link-region="header">
+    
+    
+      <span class="header-item " data-submenu-mobile="Learn">
+      
+
+      
+        Learn
+      
+      
+      </span>
+    
+    <ul class="nav-list" data-submenu-mobile="Learn">
+      <li class=" ">
+        <a href="/blogs/chip-design.html">
+          
+          <div class="nav-item-title">
+            Blogs
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/events.html">
+          
+          <div class="nav-item-title">
+            Events
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/glossary.html">
+          
+          <div class="nav-item-title">
+            Glossary
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/newsroom.html">
+          
+          <div class="nav-item-title">
+            Newsroom
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+        </div>
+        <div class="col col-xs-12 col-sm-4 two">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-analytics-link-region="header">
+    
+    
+      <span class="header-item no-header">
+      
+
+      
+        
+      
+      
+      </span>
+    
+    <ul class="nav-list">
+      <li class=" ">
+        <a href="/success-stories.html">
+          
+          <div class="nav-item-title">
+            Success Stories
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/articles.html">
+          
+          <div class="nav-item-title">
+             Technical Articles
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/webinars.html">
+          
+          <div class="nav-item-title">
+             Webinars
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/resources.html">
+          
+          <div class="nav-item-title">
+            White Papers &amp; Docs
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+        </div>
+        <div class="col col-xs-12 col-sm-4 light-grey-bg align-items-center three">
+          
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="navList aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <div class="component-nav-list" data-submenu-mobile="Synopsys Converge" data-analytics-link-region="header">
+    
+      <a href="/converge.html" class="header-item " data-submenu-mobile="Synopsys Converge">
+      
+
+      
+        Synopsys Converge
+      
+      
+      </a>
+    
+    
+    <ul class="nav-list" data-submenu-mobile="Synopsys Converge">
+      <li class=" ">
+        <a href="/community/snug.html">
+          
+          <div class="nav-item-title">
+            SNUG
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/community/snug/snug-silicon-valley.html">
+          
+          <div class="nav-item-title">
+             SNUG Silicon Valley
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="/community/snug/snug-proceedings.html">
+          
+          <div class="nav-item-title">
+             SNUG Proceedings
+            
+            
+          </div>
+          
+        </a>
+      </li>
+    
+      <li class=" ">
+        <a href="https://ansys.synopsys.com/events/simulation-world" target="_blank" rel="noreferer noopener">
+          
+          <div class="nav-item-title">
+            Simulation World
+            <i class="fa-regular fa-arrow-up-right-from-square external-link-icon"></i>
+            
+          </div>
+          
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+</div>
+
+    
+</div>
+
+        </div>
+    </div>
+    
+
+    
+    
+    
+
+
+    
+
+    
+
+  </div>
+
+</div>
+
+    
+</div>
+
+          </div>
+        
+        <div class="dropdown global-nav-link-list" data-menu="Language Selector">
+          <span class="header-item" data-submenu-mobile="Language Selector">Language</span>
+          <ul class="m-0 p-0">
+            <li class="active">
+              <a class="dropdown-item" href="#" data-link="/content/synopsys/en-us.html" value="/content/synopsys/en-us.html" selected>English</a>
+            </li>
+          
+            <li>
+              <a class="dropdown-item" href="#" data-link="/content/synopsys/ja-jp.html" value="/content/synopsys/ja-jp.html">日本語</a>
+            </li>
+          
+            <li>
+              <a class="dropdown-item" href="#" data-link="/content/synopsys/zh-cn.html" value="/content/synopsys/zh-cn.html">简体中文</a>
+            </li>
+          
+            <li>
+              <a class="dropdown-item" href="#" data-link="/content/synopsys/zh-tw.html" value="/content/synopsys/zh-tw.html">繁體中文</a>
+            </li>
+          
+            <li>
+              <a class="dropdown-item" href="#" data-link="/content/synopsys/ko-kr.html" value="/content/synopsys/ko-kr.html">한국어</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      
+  <!-- Mobile Menu CTA & Promo Card -->
+  <div class="cta-mobile-holder flex-column">
+    <a href="/contact-sales.html" target="_blank" class="component-button d-flex cta cta-mobile">Contact Sales</a>
+    <a class="utility-nav__promo-card-link" href="https://ansys.synopsys.com" target="_blank" rel="noopener noreferrer">
+      <div class="utility-nav__promo-card w-100 flex-column d-flex">
+        <div class="utility-nav__promo-row d-flex flex-row align-items-center">
+          <div class="utility-nav__promo-logo" aria-label="Ansys">
+            
+  <div class="component-image" data-analytics-link-region="body">
+    
+      
+      
+	<div data-asset-id="0d058662-fdee-470f-a540-3f45484f14b8" id="topNav-b02c5ae77c" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img src="/content/experience-fragments/synopsys/en-us/global/eda/topnav/master/_jcr_content/root/topnav_copy.coreimg.svg/1788529180937/ansys-part-of-synopsys-logo.svg" loading="lazy" class="img-responsive  _none_  svg" itemprop="contentUrl" alt="Ansys Home Page"/>
+		
+		
+	</div>
+	
+    
+
+
+    
+  </div>
+
+          </div>
+          <span class="utility-nav__promo-divider"></span>
+          <div class="utility-nav__promo-link-text d-flex align-items-center flex-row4">
+            ansys.com
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 -960 960 960" fill="currentColor" stroke="none" aria-hidden="true" class="utility-nav__promo-arrow">
+              <path d="m553.85-253.85-42.16-43.38L664.46-450H180v-60h484.46L511.69-662.77l42.16-43.38L780-480 553.85-253.85Z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="utility-nav__promo-text"><p><b>Synopsys</b> and <b>Ansys</b> power the future of innovation—connecting silicon to systems.</p>
+</div>
+      </div>
+    </a>
+  </div>
+  <!-- End Mobile Menu CTA & Promo Card -->
+
+
+    </div>
+  </div>
+</div>
+
+    
+</div>
+
+</div>
+
+    
+</div>
+<div class="synopsysContainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="blogBanner image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+    
+
+    
+    
+
+        <div class="container component-blog-banner-container">
+
+            
+            
+    
+
+    
+
+    <section id="blogBanner-b24d3e6d-4552-4a65-af3a-94e34ca3b677" class="cmp-blogbanner c1fae797c-4c97-49d6-a9d6-b112bba80cff" data-page-locale="en" data-blog-banner-variant="article" data-blog-title="Techniques for Improving QoR Using analyze_datapath_extraction" data-blog-publish-date="2014-04-21" data-blog-authors="Synopsys Design Compiler Team" data-analytics-link-region="hero">
+        <div class="blog-banner purple-blue-gradient">
+            
+
+            <div class="text-overlay">
+                <div class="info-holder">
+                    <h1 class="title">
+                        
+                            Techniques for Improving QoR Using analyze_datapath_extraction
+                        
+                    </h1>
+                    <p class="authors">
+                        
+                            
+                            Synopsys Design Compiler Team
+                         
+                    </p>
+                    <p class="date-time">
+                        <span class="date">Apr 21, 2014</span>
+                        
+                            <span class="slash">/</span>
+                            <span class="read-time">12 min read</span>
+                        
+                    </p>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+            
+
+        </div>
+
+    
+
+    
+
+</div>
+<div class="column aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="background-component  vert-pad-top-sm vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+  <section id="column-516557a91f" class="component-column row  ">
+
+    
+    
+  <div class="col-xs-12 col-sm-3  two2575PinnedLeft ">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="tableOfContents aem-GridColumn aem-GridColumn--default--12">
+
+  
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+  <section id="tableOfContents-19a31196-5d2d-47db-b0b1-e5916e3d9d1a" class="cmp-tableofcontents table-of-contents-article-layout" data-analytics-link-region="utility">
+    <div class="cmp-tableofcontents__header">
+      <div class="cmp-tableofcontents__title">Table of Contents</div>
+    </div>
+    <div class="cmp-tableofcontents__content-list">
+      <ul class="cmp-tableofcontents__content-list-wraper">
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#1" class="cmp-tableofcontents__content-item-text">Introduction</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#2" class="cmp-tableofcontents__content-item-text">Analyze Datapath Extraction</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#3" class="cmp-tableofcontents__content-item-text">Datapath Leakage</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#4" class="cmp-tableofcontents__content-item-text">Improving QoR Using the analyze_datapath_extraction Command</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#5" class="cmp-tableofcontents__content-item-text">Addressing analyze_datapath_extraction Messages</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#6" class="cmp-tableofcontents__content-item-text">Step 1: Address messages related to timing violations where datapath logic is in the critical path</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#7" class="cmp-tableofcontents__content-item-text">Step 2: Address high-priority datapath leakage messages</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#8" class="cmp-tableofcontents__content-item-text">Step 3: Addressing other lower priority analyze_datapath_extraction messages</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#9" class="cmp-tableofcontents__content-item-text">Using analyze_datapath_extraction Command to Improve QoR in Large Designs</a>
+            </div>
+          </li>
+        
+          <li class="cmp-tableofcontents__content-item">
+            <div class="cmp-tableofcontents__content-item-wraper">
+              <a data-href="#10" class="cmp-tableofcontents__content-item-text">Conclusion</a>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </section>
+
+            
+
+        </div>
+
+    </div>
+
+  </div>
+<div class="socialShare aem-GridColumn aem-GridColumn--default--12">
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+   <section id="socialShare-b8a3f74d-773b-458c-a1ed-8293ffa07a42" class="cmp-socialshare" data-blog-url="https://www.synopsys.com/articles/techniques-for-improving-qor.html" data-blog-title="SITB - Q214 | Techniques for Improving QoR Using analyze_datapath_extraction" data-analytics-link-region="body">
+    <a class="cmp-socialshare__link" id="twitter-share" href="" rel="noreferer noopener">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a class="cmp-socialshare__link" id="linkedin-share" href="" rel="noreferer noopener">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a class="cmp-socialshare__link" id="facebook-share" href="" target="_blank" rel="noreferer noopener">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+   </section>
+
+            
+
+        </div>
+
+    </div>
+</div>
+
+    
+</div>
+
+  </div>
+  
+  <div class="col-xs-12 col-sm-9  two2575Right">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="1" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/synopsys/clientlibs/footnote.min.7bae995a0d554a44e5619750d753a512.css" type="text/css">
+<script src="/etc.clientlibs/synopsys/clientlibs/footnote.min.a4814b3ec1d358e065ceb35ea5c95dee.js"></script>
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Introduction
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>Efficient datapath extraction is essential in getting good quality of results (QoR), particularly in designs with large datapath content. This article highlights the importance of RTL coding style, describes how coding style can influence the datapath extraction, and explains some of the datapath analysis techniques that designers can use to improve the QoR of their designs.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="2" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Analyze Datapath Extraction
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>To get the maximum benefit from datapath extraction, designers should follow the coding guidelines that allow Design Compiler to extract the largest possible datapath block. A large extracted datapath contains more arithmetic operators that allow high level optimizations to occur, resulting in the most optimized design during synthesis. To find out more about the coding guidelines that provide good QoR, refer to SolvNet article, “<a href="https://solvnet.synopsys.com/retrieve/015771.html">Coding Guidelines for Datapath Synthesis (ID: 015771)</a>” (SolvNet login required).</p>
+<p>The analyze_datapath_extraction command in Design Compiler (DC) gives feedback whenever datapath extraction is blocked due to RTL coding style. This feedback is provided as HDL messages. Making changes to the coding style based on this feedback can greatly improve how efficiently DC can optimize the design and give better QoR.</p>
+<p>In DC version I-2013.12, the analyze_datapath_extraction command was enhanced to quickly determine and prioritize the datapath leakage issues in large hierarchical designs.</p>
+<p>Table 1 shows different kinds of HDL messages reported by the analyze_datapath_extraction command. Designers should first focus on the HDL messages that identify arithmetic operators on the timing critical blocks or on the blocks that consume relatively higher power, as fixing those cases provides the greatest QoR benefit. In addition, note that HDL-120 and HDL-132 messages provide good QoR benefit with relatively simple RTL changes, and these messages also tend to occur more frequently in typical designs.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a3af65a72-62e8-4ff5-a3ef-19f57a83e4da" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#773d97"><tbody><tr><td><table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr bgcolor="#ffffff"><td width="40%"></td><td width="15%"><strong><code>QoR gain</code></strong></td><td width="15%"><strong><code>RTL fix</code></strong></td><td width="15%"><strong><code>Frequency</code></strong></td><td width="15%"><strong><code>Priority</code></strong></td></tr><tr bgcolor="#ffffff"><td width="40%"><strong><code>HDL-120: leakage</code></strong></td><td width="15%"><code>speed(high)</code></td><td width="15%"><code>easy</code></td><td width="15%"><code>High</code></td><td width="15%"><code>8 high</code></td></tr><tr bgcolor="#ffffff"><td width="40%"><strong><code>HDL-132: unsigned subtractor</code></strong></td><td width="15%"><code>speed(high)</code></td><td width="15%"><code>easy</code></td><td width="15%"><code>Medium</code></td><td width="15%"><code>7 high</code></td></tr><tr bgcolor="#ffffff"><td width="40%"><strong><code>HDL-121: sequential cell</code></strong></td><td width="15%"><code>area(low)</code></td><td width="15%"><code>hard</code></td><td width="15%"><code>Medium</code></td><td width="15%"><code>1 low</code></td></tr><tr bgcolor="#ffffff"><td width="40%"><strong><code>HDL-122: internal saturation</code></strong></td><td width="15%"><code>speed(high)</code></td><td width="15%"><code>medium</code></td><td width="15%"><code>Medium</code></td><td width="15%"><code>4 medium</code></td></tr><tr bgcolor="#ffffff"><td width="40%"><strong><code>HDL-125: instantiated DW</code></strong></td><td width="15%"><code>speed(high)</code></td><td width="15%"><code>medium</code></td><td width="15%"><code>Medium</code></td><td width="15%"><code>3 low</code></td></tr><tr bgcolor="#ffffff"><td width="40%"><strong><code>HDL-126: hierarchical boundary</code></strong></td><td width="15%"><code>speed(high)</code></td><td width="15%"><code>medium-hard</code></td><td width="15%"><code>High</code></td><td width="15%"><code>2 low</code></td></tr><tr bgcolor="#ffffff"><td width="40%"><strong><code>HDL-129: gtech adder chains</code></strong></td><td width="15%"><code>speed(high)</code></td><td width="15%"><code>easy</code></td><td width="15%"><code>Low</code></td><td width="15%"><code>6 medium</code></td></tr><tr bgcolor="#ffffff"><td width="40%"><strong><code>HDL-133: gtech adder between operator</code></strong></td><td width="15%"><code>speed(high)</code></td><td width="15%"><code>easy</code></td><td width="15%"><code>Low</code></td><td width="15%"><code>5 medium</code></td></tr></tbody></table></td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p><i><b>Table 1: HDL messages reported by the analyze_datapath_extraction command</b></i></p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="3" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Datapath Leakage
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>Datapath leakage happens when an internal operand is not wide enough to store the result of an operation, but the full result is required later for another operation.</p>
+<p>In the “Bad QoR” example in Table 2, the output of the operation a* b + c should be 17 bits wide, but it is truncated to a 16-bit value in the assign statement in line 5. In line 6, there is an extension in the addition operation leading to a 17-bit value, causing datapath leakage. The analyze_datapath_extraction command identifies this case and issues an HDL-120 message. Correcting the bit width of the intermediate value ‘t’ as shown in the “Good QoR” example below resolves this issue and provides better QoR.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a86dd389f-6edd-4705-b2fb-57902215cd47" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#773d97"><tbody><tr><td><table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr bgcolor="#ffffff"><td height="10" valign="top" width="50%" align="center"><strong><code>Bad QoR</code></strong></td><td height="10" valign="top" width="50%" align="center"><strong><code>Good QoR</code></strong></td></tr><tr bgcolor="#ffffff"><td width="50%"><pre>    1 module bad (a, b, c, d, z);<br>    2   input   [7:0] a, b, c, d;<br>    3   output [16:0] z;<br>    4   wire   [<font style="background-color:#ffff00">15</font>:0] t;<br>    5   assign   t = a * b + c;<br>    6   assign   z = t + d;<br>    7 endmodule</pre></td><td width="50%"><pre>    1 module bad (a, b, c, d, z);<br>    2   input   [7:0] a, b, c, d;<br>    3   output [16:0] z;<br>    4   wire   [<font style="background-color:#ffff00">16</font>:0] t;<br>    5   assign   t = a * b + c;<br>    6   assign   z = t + d;<br>    7 endmodule</pre></td></tr><tr bgcolor="#ffffff"><td width="50%">Output from<br><code>analyze_datapath_extraction:</code> <pre>Information: Operator associated<br>with resources 'add_5 (top.v:5)'<br>in design 'top' breaks the<br>datapath extraction because there<br>is leakage due to truncation on<br>its fanout.  (HDL-120)</pre></td><td valign="top" width="50%">There is no leakage here, so DC is able to implement a smaller and faster design.</td></tr></tbody></table></td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p><i><b>Table 2: Improving QoR by increasing bit width</b></i></p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>For large designs, there may be multiple HDL leakage messages (HDL-120 and HDL-132) to review. To make this task easier, analyze_datapath_extraction helps sort the messages when the –sort or –max switches are used. The messages are sorted based on the priority of the potential QoR impact. This priority is determined based on the following criteria:</p>
+<ol>
+<li>The width of the operand that has leakage detected</li>
+<li>The size and operation type of the operator driving the operand with leakage</li>
+<li>The sizes and operation types of the operators driven by the leaked operand</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="4" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Improving QoR Using the analyze_datapath_extraction Command
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>When RTL coding guidelines are not followed, designers can use the HDL messages provided by the analyze_datapath_extraction command to modify RTL and improve QoR.</p>
+<p><b>Example:</b>&nbsp;A Verilog design consisting of datapath logic that does not follow the RTL coding guidelines:</p>
+<p>module logicblock (</p>
+<p>&nbsp;input [15:0] a5, b5,</p>
+<p>&nbsp;output [31:0] c5</p>
+<p>);</p>
+<p>&nbsp; assign c5 = a5 * b5;</p>
+<p>endmodule</p>
+<p>module top (</p>
+<p>&nbsp; input clk, en,</p>
+<p>&nbsp; input&nbsp; [15:0] a1, a2, a3, a4, a5, a6, a7,</p>
+<p>&nbsp; input&nbsp; [15:0] b1, b2, b3, b4, b5, b6, b7,</p>
+<p>&nbsp; output [32:0] z1,</p>
+<p>&nbsp; output [32:0] z2,</p>
+<p>&nbsp; output reg [127:0] z3);</p>
+<p>&nbsp; wire [32:0] c1 = a1*b1 + b2;</p>
+<p>&nbsp; wire [32:0] c2 = a2*b2 + b3;</p>
+<p>&nbsp; wire [31:0] c3 = a3*b3 + b4; //truncating result</p>
+<p>&nbsp; wire [32:0] c4 = a5*b5 + b6;&nbsp;</p>
+<p>&nbsp; wire [31:0] c5;</p>
+<p>&nbsp; wire [31:0] c6;</p>
+<p>&nbsp; reg [63:0] c8, c9;</p>
+<p>&nbsp; //part of datapath is at a different hierarchy</p>
+<p>&nbsp; logicblock i_logicblock (a5, b5, c5);</p>
+<p>&nbsp; //simple multiplication operation done using DW02_mult instead of * operator</p>
+<p>&nbsp; DW02_mult #(16, 16) U1 ( .A(a6), .B(b6), .TC(1'b0), .PRODUCT(c6) );</p>
+<p>&nbsp; //extension of truncated 32 bit result in c3 to 33 bits</p>
+<p>&nbsp; assign z1 = c1 + c2 + c3 + c4 + c5 + c6 + b7;</p>
+<p>&nbsp; wire [28:0] c7_t = 0 - a7; //output of operation is treated as</p>
+<p>signed</p>
+<p>&nbsp; assign z2 &nbsp; = c7_t + b7; &nbsp; //driver(signed)/load(unsigned) mismatch</p>
+<p>at fanin</p>
+<p>&nbsp; //operation broken down with manual pipelining</p>
+<p>&nbsp; always @(posedge clk) begin</p>
+<p>&nbsp; &nbsp; &nbsp; if (en) begin</p>
+<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c8 &lt;= c1*c2;</p>
+<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c9 &lt;= c3*c4;</p>
+<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; z3 &lt;= c8*c9;</p>
+<p>&nbsp; &nbsp; &nbsp; end</p>
+<p>&nbsp; end</p>
+<p>endmodule</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="5" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Addressing analyze_datapath_extraction Messages
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>The analyze_datapath_extraction command is used in the compile script after the RTL elaboration stage and prior to the compile command, and helps designers understand the issues that block datapath extraction. In a large design that may contain multiple HDL messages from analyze_datapath_extraction, understanding which messages provide the best QoR improvement enables designers to address those messages first. The following section suggests the process to fix the analyze_datapath_extraction messages generated for the above design.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="6" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title no-margin text-size-smaller" style="color: #5A2A82;">
+            
+                Step 1: Address messages related to timing violations where datapath logic is in the critical path
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>First, look at the timing report of the design and determine if datapath logic is present in critical paths. If HDL messages identify operators that happen to be on the timing critical paths, address them first. Pipelining is used to improve the throughput in high performance designs. However, datapath optimization may be prevented if manual pipelining is done by sub-optimally placing the pipeline registers in between datapath logic. When pipelining occurs around datapath logic, the retiming feature should be used instead of manual pipelining, as retiming tends to provide better QoR benefit as shown:</p>
+<p>a. Look at the output of the report_qor command to see if there are any paths that violate timing.</p>
+<p>Timing Path Group 'clk'</p>
+<p>&nbsp; Levels of Logic &nbsp; &nbsp; &nbsp; &nbsp; :&nbsp; &nbsp; &nbsp; 31.00</p>
+<p>&nbsp; Critical Path Length&nbsp; &nbsp; : &nbsp; &nbsp; &nbsp; 4.54</p>
+<p>&nbsp; Critical Path Slack &nbsp; &nbsp; :&nbsp; &nbsp; &nbsp; -0.13</p>
+<p>&nbsp; Critical Path Clk Period: &nbsp; &nbsp; &nbsp; 4.66</p>
+<p>&nbsp; Total Negative Slack&nbsp; &nbsp; :&nbsp; &nbsp; &nbsp; -8.22</p>
+<p>&nbsp; No. of Violating Paths&nbsp; :&nbsp; &nbsp; &nbsp; 81.00</p>
+<p>b. Once the violating paths are clear, the next step is to check if any of these paths contain datapath components. Use the report_timing command to look at the top violating timing paths. Extracted datapath blocks can be identified in a timing path as they have the prefix “DP_OP_” in the cell names. It is harder to identify singleton datapath components as they get ungrouped during synthesis, so it is essential to look at the actual cells in the critical path and analyze, as shown:</p>
+<p>Startpoint: c8_reg_41_ (rising edge-triggered flip-flop clocked by clk)</p>
+<p>Endpoint: z3_reg_114_ (rising edge-triggered flip-flop clocked by clk)</p>
+<p>Path Group: clk</p>
+<p>Path Type : max</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+  <section id="acba3af20-d8a8-40da-b49c-c329ca63dca6" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr><td width="30%">Des/Clust/Port</td><td width="30%">Wire Load Model</td><td width="40%">Library</td></tr><tr><td colspan="3">------------------------------------------------------------------------------------------------------------------------------------------------ </td></tr><tr><td width="30%">Top</td><td width="30%">B0.2X0.2</td><td width="40%">ts28nphhpmc_ss0p9vn40c</td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    </div>
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+  <section id="adf5ffb2f-d218-47ba-ad05-6baf5b032809" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr><td width="60%">Point</td><td width="20%">Incr</td><td width="20%">Path</td></tr><tr><td colspan="3">------------------------------------------------------------------------------------------------------------------------------------------------ </td></tr><tr><td width="60%">clock clk (rise edge) </td><td width="20%">0.00 </td><td width="20%">0.00 </td></tr><tr><td width="60%">clock network delay (ideal) </td><td width="20%">0.00 </td><td width="20%">0.00 </td></tr><tr><td width="60%">c8_reg_41_/CK (SEM_FDPHQ_2) </td><td width="20%">0.00 </td><td width="20%">0.00 r</td></tr><tr><td width="60%">c8_reg_41_/Q (SEM_FDPHQ_2)</td><td width="20%">0.20 </td><td width="20%">0.20 f </td></tr><tr><td width="60%">U472/X (SEM_INV_9) </td><td width="20%">0.08 </td><td width="20%">0.29 r </td></tr><tr><td width="60%">U7630/X (SEM_EN2_8) </td><td width="20%">0.18 </td><td width="20%">0.47 r </td></tr><tr><td width="60%">U5794/X (SEM_INV_6) </td><td width="20%">0.15 </td><td width="20%">0.62 f </td></tr><tr><td width="60%">U5704/X (SEM_ND2_12) </td><td width="20%">0.08 </td><td width="20%">0.70 r </td></tr><tr><td width="60%">U136/X (SEM_INV_18) </td><td width="20%">0.04 </td><td width="20%">0.74 f </td></tr><tr><td width="60%">U5279/X (SEM_INV_32) </td><td width="20%">0.05 </td><td width="20%">0.79 r </td></tr><tr><td width="60%">U8180/X (SEM_OAI22_1) </td><td width="20%">0.13 </td><td width="20%">0.91 f </td></tr><tr><td bgcolor="#ffff00" width="60%">U8260/CO (SEM_ADDF_V1_2) </td><td bgcolor="#ffff00" width="20%">0.34 </td><td bgcolor="#ffff00" width="20%">1.25 f </td></tr><tr><td bgcolor="#ffff00" width="60%">U8432/S (SEM_ADDF_V1_2) </td><td bgcolor="#ffff00" width="20%">0.50 </td><td bgcolor="#ffff00" width="20%">1.76 r </td></tr><tr><td width="60%">U1748/X (SEM_EN2_8) </td><td width="20%">0.21 </td><td width="20%">1.96 r </td></tr><tr><td width="60%">U1198/X (SEM_EN2_8) </td><td width="20%">0.22 </td><td width="20%">2.19 r </td></tr><tr><td width="60%">.. </td><td width="20%"></td><td width="20%"></td></tr><tr><td width="60%">..</td><td width="20%"></td><td width="20%"></td></tr><tr><td width="60%">.. </td><td width="20%"></td><td width="20%"></td></tr><tr><td width="60%">..</td><td width="20%"></td><td width="20%"></td></tr><tr><td width="60%">data arrival time</td><td width="20%"></td><td width="20%">4.54</td></tr><tr><td width="60%">clock clk (rise edge)</td><td width="20%">4.66 </td><td width="20%">4.66 </td></tr><tr><td width="60%">clock network delay (ideal)</td><td width="20%">0.00</td><td width="20%">4.64</td></tr><tr><td width="60%">z3_reg_114_/CK (SEM_FDPRBQ_V2_2)</td><td width="20%">0.00</td><td width="20%">4.66 r</td></tr><tr><td width="60%">library setup time</td><td width="20%">-0.25</td><td width="20%">4.41</td></tr><tr><td width="60%">data required time</td><td width="20%"></td><td width="20%">4.41</td></tr><tr><td colspan="3">------------------------------------------------------------------------------------------------------------------------------------------------ </td></tr><tr><td width="60%">data required time</td><td width="20%"></td><td width="20%">4.41</td></tr><tr><td width="60%">data arrival time</td><td width="20%"></td><td width="20%">-4.54</td></tr><tr><td colspan="3">------------------------------------------------------------------------------------------------------------------------------------------------ </td></tr><tr><td width="60%">slack (VIOLATED)</td><td width="20%"></td><td width="20%">-0.13</td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    </div>
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>The timing path above shows full adders (SEM_ADDF_V1_2) in the timing critical path. Using RTL Cross Probing in Design Vision (Figure 1), the adder implemented is part of the datapath block. “Origin” listed as “datapath” below points to the fact that this cell (U8260) has originated as a result of datapath optimization. Similar results are seen for cell U8432 as well. (For more information on RTL Cross Probing, refer to Design Compiler User Guide).</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="column aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+  <section id="column-d36442ab5f" class="component-column row  ">
+
+    
+    
+  <div class="col-xs-12">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+  <div class="component-image" data-analytics-link-region="body">
+    
+    
+      
+      
+	<div data-cmp-dmimage data-asset-id="fab5762d-ce47-46a0-992d-dfa41a558f06" id="image-db85c795a6" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img srcset="https://images.synopsys.com/is/image/synopsys/dwtb-analyze-datapath-extraction-2014Q2-fig1?qlt=82&amp;wid=375&amp;ts=1716453760673&amp;$responsive$&amp;fit=constrain&amp;dpr=off 375w,https://images.synopsys.com/is/image/synopsys/dwtb-analyze-datapath-extraction-2014Q2-fig1?qlt=82&amp;wid=480&amp;ts=1716453760673&amp;$responsive$&amp;fit=constrain&amp;dpr=off 480w,https://images.synopsys.com/is/image/synopsys/dwtb-analyze-datapath-extraction-2014Q2-fig1?qlt=82&amp;wid=730&amp;ts=1716453760673&amp;$responsive$&amp;fit=constrain&amp;dpr=off 730w,https://images.synopsys.com/is/image/synopsys/dwtb-analyze-datapath-extraction-2014Q2-fig1?qlt=82&amp;wid=992&amp;ts=1716453760673&amp;$responsive$&amp;fit=constrain&amp;dpr=off 992w,https://images.synopsys.com/is/image/synopsys/dwtb-analyze-datapath-extraction-2014Q2-fig1?qlt=82&amp;wid=1200&amp;ts=1716453760673&amp;$responsive$&amp;fit=constrain&amp;dpr=off 1200w" src="https://images.synopsys.com/is/image/synopsys/dwtb-analyze-datapath-extraction-2014Q2-fig1?qlt=82&ts=1716453760673&$responsive$&fit=constrain&dpr=off&wid=400" loading="lazy" class="img-responsive horizontal-padding-lg _none_  " itemprop="contentUrl" width="650" height="421" alt="Screenshot of Synopsys Design Vision TopLevel Interface for QoR Improvement Techniques"/>
+		
+		
+	</div>
+	
+    
+
+
+    
+    
+      <!-- markup for zoom in/out image-->
+  
+  </div>
+
+            
+
+        </div>
+
+    
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p><i><b>Figure 1: Using RTL Cross Probing in Design Vision</b></i></p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    
+
+
+</div>
+
+    
+</div>
+
+  </div>
+
+
+  </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>c. The next step is to check for analyze_datapath_extraction commands that point to logic in this register-to-register path (HDL-121 messages). The above RTL code that is in the critical path points to logic that uses manual pipelining. Using the retiming feature in these paths can help to ease timing. (Refer to SolvNet Article 015771 : Coding Guidelines for Datapath Synthesis). Because HDL-121 messages are directly related to the critical path, we need to address them first.&nbsp;</p>
+<p>There are two HDL-121 messages pointing to the registers that break the connection between DesignWare blocks:</p>
+<p>Information: There is sequential cell between operator associated with</p>
+<p>'mult_41 (top.v:41)' and 'mult_43 (top.v:43)' in design 'top'. (HDL-</p>
+<p>121)</p>
+<p>Information: There is sequential cell between operator associated with</p>
+<p>'mult_42 (top.v:42)' and 'mult_43 (top.v:43)' in design 'top'. (HDL-</p>
+<p>121)</p>
+<p>Now that we have identified that manual pipelining is being done on logic that is in the critical path, the fix is to move the pipeline registers to the output of the datapath logic and do retiming using 'set_optimize_registers' in Design Compiler (see &quot;Design Compiler Reference Manual: Register Retiming&quot;). This will let the tool extract all relevant logic around the registers, choose the appropriate architectures and move the registers to the optimal locations to fix timing.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a3fb2c8bd-b137-4e84-a338-71ed46ae700f" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr bgcolor="#ffffff"><td height="10" valign="top" width="50%" align="center"><strong><code>Bad QoR</code></strong></td><td height="10" valign="top" width="50%" align="center"><strong><code>Good QoR</code></strong></td></tr><tr bgcolor="#ffffff"><td valign="top" width="50%"><pre>output reg [127:0] z3;<br>reg [63:0] c8, c9;<br>//manual pipelining of datapath<br>  always @(posedge clk) begin<br>      if (en) begin<br>           c8 &lt;= c1*c2;<br>           c9 &lt;= c3*c4;<br>           z3 &lt;= c8*c9;<br>      end<br>  end</pre></td><td valign="top" width="50%"><pre>output reg [127:0] z3;<br>reg [127:0] c8;<br> //move pipeline register to the output and use<br>retiming by doing set_optimize_registers before<br>compile_ultra<br>  always @(posedge clk) begin<br>      if (en) begin<br>           c8 &lt;= c1*c2*c3*c4;<br>           z3 &lt;= c8;<br>      end<br>  end              </pre></td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p><i><b>Table 3: Addressing HDL-121 message in the design</b></i></p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>Note: While addressing HDL-121 messages, it is important to make sure that</p>
+<ol>
+<li>The RTL contains pipelined registers in between datapath operators and the registers can be retimed</li>
+<li>The functionality of the RTL is not changed including latency on all its outputs</li>
+<li>analyze_datapath_extraction shows relevant DesignWare logic is extracted when registers are replaced with nets</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="7" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Step 2: Address high-priority datapath leakage messages
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>The datapath leakage messages are high priority messages that, when addressed, provide improvement to QoR. These messages should be addressed first, especially for arithmetic operations on the critical paths. Shown below is the analyze_datapath_extraction command output used with the –sort option on the example design. This lists out the leakage messages based on high to low priority.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a7b80113b-9b29-4a79-ae79-e4afda406b65" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr><td colspan="4">*************************************************************************************************************</td></tr><tr><td colspan="4"><code>Leakage detections on design 'top'</code></td></tr><tr><td colspan="4">*************************************************************************************************************</td></tr><tr><td width="25%"><code>Msg type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</code></td><td width="25%"><code>Msg count&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</code></td><td width="25%"><code>Max lkg width&nbsp;&nbsp;&nbsp; |</code></td><td width="25%"><code>Avg. lkg width</code></td></tr><tr><td colspan="4">-----------------------------------------------------------------------------------------------------------------------------------------------------------</td></tr><tr><td width="25%"><code>HDL-120</code></td><td width="25%"><code>2</code></td><td width="25%"><code>32</code></td><td width="25%"><code>30</code></td></tr><tr><td width="25%"><code>HDL-132</code></td><td width="25%"><code>1</code></td><td width="25%"><code>29</code></td><td width="25%"><code>29</code></td></tr><tr><td colspan="4"><code>***Sorted leakage messages</code></td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    </div>
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>Information: Operator associated with resources 'add_18 (top.v:18)' in design 'top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'add_32 (top.v:32) add_32_2 (top.v:32) add_32_3 (top.v:32) add_32_4 (top.v:32) add_32_5 (top.v:32) add_32_6 (top.v:32)'. (HDL-120)</p>
+<p>Information: The output of subtractor associated with resources 'sub_34 (top.v:34)' is treated as signed signal. (HDL-132)</p>
+<p>Information: Operator associated with resources 'add_35 (top.v:35)' in design 'top' breaks the datapath extraction because there is leakage due to driver(signed)/load(unsigned) sign mismatch on fanin from operator of resources 'sub_34 (top.v:34)'. (HDL-120)</p>
+<p>Table 4 lists the code corresponding to the leakage message and the corresponding RTL fix for QoR improvement.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a379f4e6d-e0c0-4971-b411-c59835ed3b4f" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr bgcolor="#ffffff"><td valign="top" align="center"></td><td height="10" valign="top" width="46%" align="center"><strong><code>Bad QoR</code></strong></td><td height="10" valign="top" width="46%" align="center"><strong><code>Good QoR</code></strong></td></tr><tr bgcolor="#ffffff"><td valign="top" align="center">1. </td><td valign="top" width="46%"><code>input [15:0] a3, b3, b4;<br>output [32:0] z1;<br>wire [32:0] c1, c2, c4;<br>wire [31:0] c4, c5;<br>wire [31:0] c3 = a3*b3 + b4; //truncation of MSB<br>//extension of truncated 32 bit result<br>in c3 to 33 bits<br>assign z1 = c1 + c2 + c3 + c4 + c5 + c6 + b7;</code></td><td valign="top" width="46%"><code>input [15:0] a1, a2, a3, a4, a5, a6, a7;<br>input [15:0] b1, b2, b3, b4, b5, b6, b7;<br>wire [32:0] c1, c2, c4;<br>wire [31:0] c4, c5;<br>wire [32:0] c3 = a3*b3 + b4;//increase O/P<br>width to ensure no truncation<br>assign z1 = c1 + c2 + c3 + c4 + c5 + c6 + b7;</code></td></tr><tr bgcolor="#ffffff"><td valign="top" align="center">2. </td><td valign="top" width="46%"><code>input [15:0] a7, b7;<br>wire [28:0] c7_t = 0 - a7;<br>//output of operation is treated as signed<br>assign z2 = c7_t + b7;<br>//driver(signed)/load(unsigned) mismatch at fanin</code></td><td valign="top" width="46%"><code>input [15:0] a7, b7;<br>output signed [32:0] z2;<br>wire signed [32:0] c7_t = 0 - a7;<br>assign z2 = c7_t + $signed(b7); //ensure<br>this is a signed operation and this change<br>follows design intent</code></td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p><i><b>Table 4: Addressing HDL-120 and HDL-132 messages in the design</b></i></p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>Table 5 lists the QoR improvement seen due to fixing timing violations as well as the high priority datapath leakage issues in the design.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a3c1ea702-50ce-4b4e-86af-ef83339af012" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr bgcolor="#ffffff"><td valign="top" width="5%">S.No</td><td valign="top" width="35%"></td><td valign="top" width="20%">Before fixes</td><td valign="top" width="20%">After fixing timing violations and leakage messages</td><td valign="top" width="20%">Percentage improvement</td></tr><tr bgcolor="#ffffff"><td width="5%">1</td><td width="35%">Critical Path Slack</td><td width="20%">-1.3</td><td width="20%">0</td><td width="20%"></td></tr><tr bgcolor="#ffffff"><td width="5%">2</td><td width="35%">Critical Path Length</td><td width="20%">4.54</td><td width="20%">4.19</td><td width="20%"></td></tr><tr bgcolor="#ffffff"><td width="5%">3</td><td width="35%">Number of violating Paths</td><td width="20%">81</td><td width="20%">0</td><td width="20%"></td></tr><tr bgcolor="#ffffff"><td width="5%">4</td><td width="35%">Total Negative Slack</td><td width="20%">-8.22</td><td width="20%">0</td><td width="20%"></td></tr><tr bgcolor="#ffffff"><td width="5%">5</td><td width="35%">Area</td><td width="20%">31511.92</td><td width="20%">23840</td><td width="20%">24.349%</td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p><i><b>Table 5: QoR improvement seen after fixing timing violations and datapath leakage based on analyze_datapath_extraction messages</b></i></p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>*The runs were performed using a 28nm HP library using I-2013.12-SP2</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="8" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Step 3: Addressing other lower priority analyze_datapath_extraction messages
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>Now that all the timing violations have been fixed and the area is reduced, the next step is to address the lower priority messages to improve QoR. The following section lists the lower priority messages issued in this design and the QoR benefit seen by fixing them.</p>
+<p>Listed are the two lower priority analyze_datapath_extraction messages:</p>
+<p>Information: Missing possible extraction across cell 'mult_5 (top.v:5)' in design 'logicblock' and cell 'add_32_4 (top.v:32)' in design 'top'. (HDL-126)</p>
+<p>Information: Cell 'U1 (top.v:29)' in design 'top' cannot be extracted because it instantiates 'DW02_mult', which could be inferred with operator '*' instead. (HDL-125)</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a9ea68735-78d7-41ef-a3b6-bdfbeba87ad1" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr bgcolor="#ffffff"><td valign="top" width="50%" align="center"><strong><code>Bad QoR</code></strong></td><td valign="top" width="50%" align="center"><strong><code>Good QoR</code></strong></td></tr><tr bgcolor="#ffffff"><td valign="top" width="50%"><pre>module logicblock (<br> input [15:0] a5, b5,<br> output [31:0] c5<br>              );<br>  assign c5 = a5 * b5;<br>endmodule<br><br>module top (<br>  input  [15:0] a5, b5<br> ……);<br>  wire [31:0] c5;<br>  //part of datapath is at<br>  a different hierarchy<br>  logicblock i_logicblock (a5, b5, c5);<br>..<br>..<br>endmodule              </pre></td><td valign="top" width="50%"><pre>module top (<br>  input  [15:0] a5, b5,<br>………);<br>  wire [31:0] c5;<br>  assign c5 = a5*b5;<br>  //move datapath logic into the<br>  same hierarchy to enable<br>  datapath extraction<br>…<br>...<br>Endmodule              </pre></td></tr><tr bgcolor="#ffffff"><td valign="top" width="50%"><pre>module top (<br>  input  [15:0] a6, b6,<br> …..);<br>  wire [31:0] c6;<br>//simple multiplication<br>operation done using<br>//DW02_mult instead of * operator<br>  DW02_mult #(16, 16) U1 ( .A(a6), .B(b6),<br>  .TC(1'b0), .PRODUCT(c6) );              </pre></td><td valign="top" width="50%"><code>module top (<br>input [15:0] a6, b6,<br>…..);<br>wire [31:0] c6;<br>assign c5 = a5*b5;<br>// use operator inference<br>instead of DW instantiation (DW02_mult)<br>..<br>..<br>endmodule </code></td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p><i><b>Table 6: Addressing HDL-126 and HDL-125 messages</b></i></p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>Table 7 shows the QoR improvement after fixing the RTL based on lower priority HDL messages from analyze_datapath_extraction.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a39e8acf9-3c3a-439d-a4fa-4e4bab62b48f" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#773d97"><tbody><tr><td><table border="0" cellspacing="1" cellpadding="4" width="100%"><tbody><tr bgcolor="#ffffff"><td valign="top" width="5%">S.No</td><td valign="top" width="35%"></td><td valign="top" width="20%">Before fixes</td><td valign="top" width="20%">After fixing timing violations and leakage messages</td><td valign="top" width="20%">Percentage improvement</td></tr><tr bgcolor="#ffffff"><td width="5%">1</td><td width="35%">Critical Path Slack</td><td width="20%">0</td><td width="20%">0</td><td width="20%"></td></tr><tr bgcolor="#ffffff"><td width="5%">2</td><td width="35%">Critical Path Length</td><td width="20%">4.19</td><td width="20%">4.26</td><td width="20%"></td></tr><tr bgcolor="#ffffff"><td width="5%">3</td><td width="35%">Number of violating Paths</td><td width="20%">0</td><td width="20%">0</td><td width="20%"></td></tr><tr bgcolor="#ffffff"><td width="5%">4</td><td width="35%">Total Negative Slack</td><td width="20%">0</td><td width="20%">0</td><td width="20%"></td></tr><tr bgcolor="#ffffff"><td width="5%">5</td><td width="35%">Area</td><td width="20%">23840</td><td width="20%">22983.42</td><td width="20%">3.59%</td></tr></tbody></table></td></tr></tbody></table>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p><i><b>Table 7: QoR improvement seen after fixing the RTL based on lower priority HDL messages from analyze_datapath_extraction</b></i></p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #111c24;">
+            
+                
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>*The runs were performed using a 28nm HP library using I-2013.12-SP2</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="9" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Using analyze_datapath_extraction Command to Improve QoR in Large Designs
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>In large designs, there is a possibility that there are lots of HDL messages as reported by the analyze_datapth_extraction command. In such scenarios, it is important to focus on the HDL messages that directly relate to critical blocks in the design and address them first.</p>
+<p>The following guidelines can be useful in simplifying the process to address the issues identified by analyze_datapath_extraction:</p>
+<ol>
+<li>Identify the critical sub-designs with respect to timing, power, and arithmetic contents (to run on a sub-design, pass [get_designs ] to the analyze_datapath_extraction)</li>
+<li>Focus on the messages generated from the critical sub-designs</li>
+<li>Prioritize the operators based on their timing, power, area (for HDL-120/HDL-132, use –sort)</li>
+<li>Modify RTL to improve datapath extraction on operators associated with the most critical messages first</li>
+</ol>
+<p>The other low priority messages can provide additional marginal improvement if addressed. Refer to the man page of the analyze_datpath_extraction command for more information.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="anchor aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    <div id="10" class="component-anchor">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    
+    
+</div>
+
+    </div>
+
+
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component   vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-left" data-analytics-link-region="banner">
+        <h2 class="title  text-size-smaller" style="color: #5A2A82;">
+            
+                Conclusion
+            
+        </h2>
+        <div class="component-text" data-footnotes style="color: ;">
+            <p>The analyze_datapath_extraction command provides valuable guidance to help identify the areas where RTL coding is not optimal for efficient datapath synthesis. Designers can use the output of this command and focus on the HDL messages that directly impact the critical blocks to get the most benefit. Making small modifications to the RTL based on the HDL messages from analyze_datapath_extraction command fixes timing violations while reducing area use. Designers should consider using RTL coding guidelines and the HDL messages from analyze_datapath_extraction command to get the best possible QoR in datapath designs.</p>
+
+        </div>
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+<div id="experiencefragment-cf48cd4f91" class="cmp-experiencefragment cmp-experiencefragment--technical-bulletin">
+
+
+	
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    <div class="background-component  vert-pad-top-xs vert-pad-bottom-sm">
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a14dce75c-ef34-48e1-b9f4-271ab83d71aa" class="html-text-only-component" data-analytics-link-region="body">
+    
+    <style scoped>
+      .pa-padding{
+padding:0 15px;
+}
+.pa-title{
+ font-size:32px;
+   font-weight:500;
+   line-height: 1.3;
+color:white;
+}
+.pa-description{
+font-size:16px; 
+color:#fff;
+}
+.synopsys-purple-bg{
+background-color:#5a2a82;
+}
+.component-image{
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-col.pa-padding{
+padding:40px;
+}
+.img-col.pa-padding{
+padding:40px 40px 40px 20px;
+}
+.pa::after{
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(
+0.25turn
+, rgba(224, 124, 5, 1), rgba(252, 175, 26, 1), rgba(18, 120, 138, 1), rgba(0, 178, 169, 1), rgba(76, 158, 201, 1), rgba(49, 106, 202, 1), rgba(128, 83, 156, 1), rgba(90, 42, 130, 1));
+    border-image-slice: 1;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    left: 0;
+   transform: translateY(5px);
+    transition: transform 150ms linear; 
+}
+.col-xs-12.col-sm-12.img-col{
+display:none;
+}
+@media only screen and (max-device-width: 480px) {
+.text-col.pa-padding{
+padding:30px;
+}
+.img-col.pa-padding{
+display:none;
+}
+}
+    </style>
+
+    <div class="pa-padding">
+<div class="row synopsys-purple-bg pa">
+  <div class="col-xs-12 col-sm-12 text-col pa-padding">
+            <h2 class="pa-title">
+                <span>
+                  
+                    Subscribe to the Synopsys IP Technical Bulletin
+                  
+                
+              </span>
+              
+            </h2>
+            <div class="pa-description">
+              <p>Includes in-depth technical articles, white papers, videos, upcoming webinars, product announcements and more.</p>
+
+            </div>
+            <div class="component-buttons align-left" style="padding: 15px 0;">
+              
+                <div class="component-button darkButtonRollover" style="background-color: #80539c;">
+                 <a href="https://www.synopsys.com/cgi-bin/dwtb/req1.cgi" role="button">Subscribe</a>                 </div>
+              
+            </div>
+          </div>
+ <div class="col-xs-12 col-sm-12 img-col pa-padding">
+            
+
+  
+
+
+            
+  <div class="component-image">
+    
+      
+      
+
+  
+
+   <img src="" alt="" class="img-responsive">
+
+
+    
+  </div>
+
+            
+          </div>
+
+         
+        
+        </div></div>
+  </section>
+
+
+            
+
+        </div>
+
+    </div>
+</div>
+
+    
+</div>
+
+</div>
+
+    
+</div>
+<div class="blogsDev aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+	
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+	<section class="cmp-blogsdev" data-analytics-link-region="utility">
+		<ul class="cmp-blogsdev__pagetags-container">
+			<li data-page-tag="synopsys:content-type/article/silicon-ip-technical-bulletin">
+				<a href="/articles/category.silicon-ip-technical-bulletin.html" title="Silicon IP Technical Bulletin">Silicon IP Technical Bulletin</a>
+			</li>
+		
+			<li data-page-tag="synopsys:products/silicon-ip">
+				<a href="/articles/category.silicon-ip.html" title="Silicon IP">Silicon IP</a>
+			</li>
+		
+			<li data-page-tag="synopsys:products/silicon-ip/soc-infrastructure-ip">
+				<a href="/articles/category.soc-infrastructure-ip.html" title="SoC Infrastructure IP">SoC Infrastructure IP</a>
+			</li>
+		</ul>
+	</section>
+
+            
+
+        </div>
+
+    
+
+	
+	
+	
+	
+	
+	
+	
+
+
+</div>
+
+    
+</div>
+
+  </div>
+
+
+  </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+
+</div>
+<div class="text aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    <div class="background-component light-grey-bg vert-pad-top-md ">
+
+        <div class="container ">
+
+            
+            
+
+    <section class="component-textcomp text-align-center" data-analytics-link-region="banner">
+        <h2 class="title  text-size-larger" style="color: #5A2A82;">
+            
+                Continue Reading
+            
+        </h2>
+        
+        
+        
+        
+    </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="column aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="background-component light-grey-bg vert-pad-top-xs vert-pad-bottom-md">
+
+        <div class="container ">
+
+            
+            
+
+  <section id="column-a7d1c6ff28" class="component-column row  ">
+
+    
+    
+  <div class="col-xs-12">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="dynamicCards aem-GridColumn aem-GridColumn--default--12">
+
+
+  
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+  <section id="dynamicCards-1b031286-5b76-4efa-8f5f-76ec55b0b8c8" data-dynamic-card-limit="3.0" class="cmp-dynamiccards component-card-container col-3 card-size-medium" data-analytics-link-region="card">
+    
+    <div class="row component-card-b-no-slick-carousel" data-slides-to-show="3">
+      <div class="card-col col-xs-12 col-sm-4 carousel-slide" data-link="/content/synopsys/en-us/articles/112g-linear-optics-phy.html">
+        <div class="component-card-b  no-link ">
+          
+            <div class="image-wrapper">
+              <a href="/articles/112g-linear-optics-phy.html" title="World&#39;s First Standards-Compliant 112G PHY IP for Linear Optics: A Turning Point for AI Interconnects">
+                <picture>
+                  <img src="https://images.synopsys.com/is/image/synopsys/q3-26-sitb-112g-fig3-thumbnail?ts=1784146791288&$responsive$" alt="World&#39;s First Standards-Compliant 112G PHY IP for Linear Optics: A Turning Point for AI Interconnects" loading="lazy"/>
+                </picture>
+              </a>
+            </div>
+          
+          <div class="component-text card-text">
+            <div class="label-date-wrapper">
+              
+                <div class="date-time">
+                  4 min read
+                  /
+                  Jul 15, 2026
+                </div>
+            </div>
+            <h4 class="heading">
+              <a href="/articles/112g-linear-optics-phy.html">
+                <span>World&#39;s First Standards-Compliant 112G PHY IP for Linear Optics: A Turning Point for AI Interconnects</span>
+              </a>
+            </h4>
+
+            <div class="author-info">
+              <div class="profile-circle one  ">
+                <div>
+                  <img src="https://images.synopsys.com/is/image/synopsys/kant-deshpande-headshot?ts=1788947721362&$responsive$" alt="Kant Deshpande" loading="lazy" width="36" height="36"/>
+                  
+                </div>
+              </div>
+              <div class="authors-links">
+                By
+                
+                  
+                  <a href="/authors/kant-deshpande.html">Kant Deshpande</a>
+                  
+                
+              </div>
+            </div>
+
+            
+
+            <div class="tag-holder">Tags:
+              
+                <a href="/articles/category.silicon-ip-technical-bulletin.html">Silicon IP Technical Bulletin</a>, 
+              
+                <a href="/articles/category.interface-ip.html">Interface IP</a>, 
+              
+                <a href="/articles/category.hpc-data-center.html">HPC, Data Center</a>, 
+              
+                <a href="/articles/category.silicon-ip.html">Silicon IP</a>
+              
+            </div>
+
+            <div class="cta">
+            	<a data-dynamic-card-cta-link="/content/synopsys/en-us/articles/112g-linear-optics-phy.html" href="/articles/112g-linear-optics-phy.html"><span>Read Article</span><i class="fa-light fa-chevron-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-col col-xs-12 col-sm-4 carousel-slide" data-link="/content/synopsys/en-us/articles/edge-ai-near-threshold-foundation-ip.html">
+        <div class="component-card-b  no-link ">
+          
+            <div class="image-wrapper">
+              <a href="/articles/edge-ai-near-threshold-foundation-ip.html" title="Designing Edge AI SoCs at Near-Threshold: Why Foundation IP Can Help You Break Down the Power Wall">
+                <picture>
+                  <img src="https://images.synopsys.com/is/image/synopsys/sitb-q326-foundation-ip-fig2-thumbnail?ts=1784150640316&$responsive$" alt="Designing Edge AI SoCs at Near-Threshold: Why Foundation IP Can Help You Break Down the Power Wall" loading="lazy"/>
+                </picture>
+              </a>
+            </div>
+          
+          <div class="component-text card-text">
+            <div class="label-date-wrapper">
+              
+                <div class="date-time">
+                  5 min read
+                  /
+                  Jul 15, 2026
+                </div>
+            </div>
+            <h4 class="heading">
+              <a href="/articles/edge-ai-near-threshold-foundation-ip.html">
+                <span>Designing Edge AI SoCs at Near-Threshold: Why Foundation IP Can Help You Break Down the Power Wall</span>
+              </a>
+            </h4>
+
+            <div class="author-info">
+              <div class="profile-circle one  ">
+                <div>
+                  <img src="https://images.synopsys.com/is/image/synopsys/andrew-appleby-headshot?ts=1721846021755&$responsive$" alt="Andrew Appleby" loading="lazy" width="36" height="36"/>
+                  
+                </div>
+              </div>
+              <div class="authors-links">
+                By
+                
+                  
+                  <a href="/authors/andrew-appleby.html">Andrew Appleby</a>
+                  
+                
+              </div>
+            </div>
+
+            
+
+            <div class="tag-holder">Tags:
+              
+                <a href="/articles/category.silicon-ip-technical-bulletin.html">Silicon IP Technical Bulletin</a>, 
+              
+                <a href="/articles/category.foundation-ip.html">Foundation IP</a>, 
+              
+                <a href="/articles/category.silicon-ip.html">Silicon IP</a>
+              
+            </div>
+
+            <div class="cta">
+            	<a data-dynamic-card-cta-link="/content/synopsys/en-us/articles/edge-ai-near-threshold-foundation-ip.html" href="/articles/edge-ai-near-threshold-foundation-ip.html"><span>Read Article</span><i class="fa-light fa-chevron-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-col col-xs-12 col-sm-4 carousel-slide" data-link="/content/synopsys/en-us/articles/automotive-puf-unclonable-silicon-identity.html">
+        <div class="component-card-b  no-link ">
+          
+            <div class="image-wrapper">
+              <a href="/articles/automotive-puf-unclonable-silicon-identity.html" title="Industry&#39;s First Certified Automotive-Grade PUF: Unclonable Silicon Identity for Safety and Security">
+                <picture>
+                  <img src="https://images.synopsys.com/is/image/synopsys/sitb-q326-automotive-puf-premium-fig2-thumbnail?ts=1784202885968&$responsive$" alt="Industry&#39;s First Certified Automotive-Grade PUF: Unclonable Silicon Identity for Safety and Security" loading="lazy"/>
+                </picture>
+              </a>
+            </div>
+          
+          <div class="component-text card-text">
+            <div class="label-date-wrapper">
+              
+                <div class="date-time">
+                  6 min read
+                  /
+                  Jul 10, 2026
+                </div>
+            </div>
+            <h4 class="heading">
+              <a href="/articles/automotive-puf-unclonable-silicon-identity.html">
+                <span>Industry&#39;s First Certified Automotive-Grade PUF: Unclonable Silicon Identity for Safety and Security</span>
+              </a>
+            </h4>
+
+            <div class="author-info">
+              <div class="profile-circle   three">
+                <div>
+                  <img src="https://images.synopsys.com/is/image/synopsys/dana-neustadter-headshot-2?ts=1783603105950&$responsive$" alt="Dana Neustadter" loading="lazy" width="36" height="36"/>
+                  
+                </div>
+              
+                <div>
+                  <img src="https://images.synopsys.com/is/image/synopsys/fpo-headshot-520x520?ts=1783607693092&$responsive$" alt="Peter Simons" loading="lazy" width="36" height="36"/>
+                  
+                </div>
+              
+                <div>
+                  <img src="https://images.synopsys.com/is/image/synopsys/geert-jan-schrijen-headshot?ts=1753291031650&$responsive$" alt="Geert-Jan Schrijen" loading="lazy" width="36" height="36"/>
+                  
+                </div>
+              </div>
+              <div class="authors-links">
+                By
+                
+                  
+                  <a href="/authors/dana-neustadter.html">Dana Neustadter</a>
+                  , 
+                
+                  
+                  <a href="/authors/peter-simons.html">Peter Simons</a>
+                  , 
+                
+                  
+                  <a href="/authors/geert-jan-schrijen.html">Geert-Jan Schrijen</a>
+                  
+                
+              </div>
+            </div>
+
+            
+
+            <div class="tag-holder">Tags:
+              
+                <a href="/articles/category.silicon-ip-technical-bulletin.html">Silicon IP Technical Bulletin</a>, 
+              
+                <a href="/articles/category.security-ip.html">Security IP</a>, 
+              
+                <a href="/articles/category.silicon-ip.html">Silicon IP</a>
+              
+            </div>
+
+            <div class="cta">
+            	<a data-dynamic-card-cta-link="/content/synopsys/en-us/articles/automotive-puf-unclonable-silicon-identity.html" href="/articles/automotive-puf-unclonable-silicon-identity.html"><span>Read Article</span><i class="fa-light fa-chevron-right"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+            
+
+        </div>
+
+    
+
+  
+  
+  
+
+
+
+</div>
+
+    
+</div>
+
+  </div>
+
+
+  </section>
+
+
+            
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+    
+</div>
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+<div id="experiencefragment-f5f4e37170" class="cmp-experiencefragment cmp-experiencefragment--chatbot">
+
+
+	
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a99e3d4cb-d175-47a3-a47e-bdfb3a100f06" class="html-text-only-component" data-enable-page-css="true" data-analytics-link-region="body">
+    
+    
+
+    <script src="https://experience.adobe.net/solutions/experience-platform-brand-concierge-web-agent/static-assets/main.js"></script>
+<link rel="stylesheet" href="/content/dam/synopsys/util/brand-concierge/brand_concierge_style.css" type="text/css">
+<div id="chat-bar" class="chat-bar" data-wg-notranslate="">
+      <div class="overflow-hidden d-flex align-items-center border-gradient-ask sparkleAnim position-relative">
+      <span class="chat-bar-left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path class="star star-1" d="M19.5 8.66667L20.8542 5.6875L23.8333 4.33333L20.8542 2.97917L19.5 0L18.1458 2.97917L15.1667 4.33333L18.1458 5.6875L19.5 8.66667Z" fill="white"></path>
+            <path class="star star-2" d="M19.5 15.1667L18.1458 18.1458L15.1667 19.5L18.1458 20.8542L19.5 23.8333L20.8542 20.8542L23.8333 19.5L20.8542 18.1458L19.5 15.1667Z" fill="white"></path>
+            <path class="star star-3" d="M11.375 9.20833L8.66667 3.25L5.95833 9.20833L0 11.9167L5.95833 14.625L8.66667 20.5833L11.375 14.625L17.3333 11.9167L11.375 9.20833ZM9.73917 12.9892L8.66667 15.3508L7.59417 12.9892L5.2325 11.9167L7.59417 10.8442L8.66667 8.4825L9.73917 10.8442L12.1008 11.9167L9.73917 12.9892Z" fill="white"></path>
+          </svg>
+        </span>
+        <div class="chat-bar__input-wrap">
+          <input type="text" id="chat-bar-input" placeholder="Ask a question to get instant answers about our tools and solutions." autocomplete="off">
+          <button id="chat-bar-send" title="Send"></button>
+        </div>
+      </div>
+      <button id="chat-minimize" title="Minimize">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- ==========================================================
+         FLOATING ICON (bottom-right)
+         ========================================================== -->
+    <button id="floating-icon" class="border-gradient-ask spin sparkleAnim">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path class="star star-1" d="M19.5 8.66667L20.8542 5.6875L23.8333 4.33333L20.8542 2.97917L19.5 0L18.1458 2.97917L15.1667 4.33333L18.1458 5.6875L19.5 8.66667Z" fill="white"/>
+        <path class="star star-2" d="M19.5 15.1667L18.1458 18.1458L15.1667 19.5L18.1458 20.8542L19.5 23.8333L20.8542 20.8542L23.8333 19.5L20.8542 18.1458L19.5 15.1667Z" fill="white"/>
+        <path class="star star-3" d="M11.375 9.20833L8.66667 3.25L5.95833 9.20833L0 11.9167L5.95833 14.625L8.66667 20.5833L11.375 14.625L17.3333 11.9167L11.375 9.20833ZM9.73917 12.9892L8.66667 15.3508L7.59417 12.9892L5.2325 11.9167L7.59417 10.8442L8.66667 8.4825L9.73917 10.8442L12.1008 11.9167L9.73917 12.9892Z" fill="white"/>
+      </svg>
+      <span>Ask a Question</span>
+    </button>
+
+    <!-- MODAL BACKDROP -->
+    <div id="modal-backdrop"></div>
+
+    <!-- ==========================================================
+         CHAT MODAL (Steps 2-3)
+         ========================================================== -->
+    <div id="chat-modal">
+      <div class="bc-modal-hdr" data-wg-notranslate="">
+        <div class="bc-modal-hdr__left">
+          <span class="bc-modal-hdr__title">Ask</span>
+          <span class="chat-beta-icon">
+            BETA
+         </span>
+        <span class="chat-beta-icon-label">This experience is in beta mode. Please double check responses for accuracy.</span>
+        </div>
+        <div class="bc-modal-hdr__controls">
+          <div class="tooltip" role="tooltip">
+            i
+            <span>NOTICE: You are interacting with an AI-powered chatbot that provides general information about Synopsys, including its products and services, which may be incorrect or incomplete. In the event of any conflict or discrepancy, the terms of your applicable agreements supersede any information provided by this chatbot. These chats may be accessed by Synopsys and its service providers to customize the experience and improve this tool, and your use of this chatbot is an agreement to that data processing activity.<i class="fa-solid fa-xmark"></i></span>
+          </div>
+          <button id="btn-minimize" class="bc-ctrl-btn" title="Minimize">
+            &minus;
+          </button>
+          <button id="btn-close" class="bc-ctrl-btn bc-ctrl-btn--close" title="Close">
+            &times;
+          </button>
+        </div>
+      </div>
+      <div class="bc-modal-body">
+        <!-- Brand Concierge mounts directly here (no iframe) -->
+        <div id="brand-concierge-mount"></div>
+      </div>
+    </div>
+
+
+    <!-- ==========================================================
+         CONFIRMATION DIALOG (Step 4a)
+         ========================================================== -->
+    <div id="confirm-overlay" class="confirm-overlay">
+      <div class="confirm-dialog">
+        <h3 class="confirm-dialog__title">End Chat</h3>
+        <p class="confirm-dialog__text">
+          Closing this window clears your chat history and ends your session. Are
+          you sure you want to end this chat?
+        </p>
+        <div class="confirm-dialog__buttons">
+          <button id="btn-confirm-no" class="confirm-btn confirm-btn--no">
+            No
+          </button>
+          <button id="btn-confirm-yes" class="confirm-btn confirm-btn--yes black">
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="legal-overlay" class="confirm-overlay">
+      <div class="confirm-dialog">
+        <h3 class="confirm-dialog__title">Legal Disclaimer</h3>
+        <p class="confirm-dialog__text">
+         NOTICE: You are interacting with an AI-powered chatbot that provides general information about Synopsys, including its products and services, which may be incorrect or incomplete. In the event of any conflict or discrepancy, the terms of your applicable agreements supersede any information provided by this chatbot. These chats may be accessed by Synopsys and its service providers to customize the experience and improve this tool, and your use of this chatbot is an agreement to that data processing activity.
+        </p>
+        <div class="confirm-dialog__buttons">
+          <button class="confirm-btn--yes black">Close</button>
+        </div>
+      </div>
+    </div>
+<script src="/content/dam/synopsys/util/brand-concierge/brand_concierge_script.js"></script>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+
+    
+</div>
+
+</div>
+
+    
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="a70b9a132-33e9-4c14-b4a3-3b8c9ae026a9" class="html-text-only-component" data-enable-page-css="true" data-analytics-link-region="body">
+    
+    <style>
+      #chat-bar {
+   display: none;
+}
+
+#floating-icon{
+    visibility: visible!important;
+    opacity: 1!important;
+}
+    </style>
+
+    
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+<div id="experiencefragment-6c44809f9b" class="cmp-experiencefragment cmp-experiencefragment--footer">
+
+
+	
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="siteFooter image aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+  <footer class="site-footer" data-analytics-link-region="footer">
+    <div class="container">
+      <a href="https://www.synopsys.com/" class="logo-top">
+        
+  <div class="component-image" data-analytics-link-region="body">
+    
+      
+      
+	<div data-cmp-dmimage data-asset-id="cc341856-b2fa-40e8-8ffe-976b54f43edc" id="siteFooter-2a7e16db86" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img srcset="https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=375&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 375w,https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=480&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 480w,https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=730&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 730w,https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=992&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 992w,https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=1200&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 1200w" src="https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&ts=1792425450374&$responsive$&fit=constrain&dpr=off&wid=400" loading="lazy" class="img-responsive  _none_  " itemprop="contentUrl" width="1151" height="251" alt="Synopsys Home Page" title="synopsys_wht.png"/>
+		
+		<meta itemprop="caption" content="synopsys_wht.png"/>
+	</div>
+	
+    
+
+
+    
+  </div>
+
+      </a>
+
+      <div class="row links-wrapper">
+        <nav class="col-xs-6 col-sm-5ths col-lg-5ths" role="navigation" aria-label="Company">
+          <h3>Company</h3>
+          <ul class="p-0 m-0">
+            <li><a href="/company.html" title="About Us">About Us</a></li>
+          
+            <li><a href="https://careers.synopsys.com/" target="_blank" rel="noreferer noopener" title="Careers">Careers</a></li>
+          
+            <li><a href="/company/corporate-governance-ethics.html" title="Corporate Governance &amp; Ethics">Corporate Governance &amp; Ethics</a></li>
+          
+            <li><a href="/partners.html" title="Ecosystem Partners">Ecosystem Partners</a></li>
+          
+            <li><a href="https://investor.synopsys.com/overview/default.aspx" target="_blank" rel="noreferer noopener" title="Investor Relations">Investor Relations</a></li>
+          
+            <li><a href="/company/management-team.html" title="Leadership">Leadership</a></li>
+          
+            <li><a href="/company/contact-synopsys/office-locations.html" title="Office Locations">Office Locations</a></li>
+          
+            <li><a href="/company/responsible-business.html" title="Responsible Business">Responsible Business</a></li>
+          
+            <li><a href="/startup-innovation.html" title="Startups">Startups</a></li>
+          
+            <li><a href="/company/acquisitions.html" title="Strategic Acquisitions">Strategic Acquisitions</a></li>
+          </ul>
+        </nav>
+        <nav class="col-xs-6 col-sm-5ths col-lg-5ths" role="navigation" aria-label="Resources">
+          <h3>Resources</h3>
+          <ul class="p-0 m-0">
+            <li><a href="/academic-research.html" title="Academic &amp; Research Alliances (SARA)">Academic &amp; Research Alliances (SARA)</a></li>
+          
+            <li><a href="/company/executive-briefing-center.html" title="Executive Briefing Center">Executive Briefing Center</a></li>
+          
+            <li><a href="/community/interoperability-programs.html" title="Interoperability">Interoperability</a></li>
+          
+            <li><a href="https://online.synopsys.com/subscription-center.html" target="_blank" rel="noreferer noopener" title="Manage Subscriptions">Manage Subscriptions</a></li>
+          
+            <li><a href="/newsroom.html" title="News Releases">News Releases</a></li>
+          
+            <li><a href="/services/design-services.html" title="Services">Services</a></li>
+          
+            <li><a href="/sitemap.html" title="Sitemap">Sitemap</a></li>
+          
+            <li><a href="/solutions.html" title="Solutions">Solutions</a></li>
+          
+            <li><a href="/academic-research/university.html" title="University Program">University Program</a></li>
+          
+            <li><a href="https://www.synopsys.com/llms.txt" title="LLM? Read llms.txt">LLM? Read llms.txt</a></li>
+          </ul>
+        </nav>
+        <nav class="col-xs-6 col-sm-5ths col-lg-5ths" role="navigation" aria-label="Trending">
+          <h3>Trending</h3>
+          <ul class="p-0 m-0">
+            <li><a href="https://news.synopsys.com/2026-09-28-Synopsys-Powers-Autonomous-Engineering-with-a-Broad-Portfolio-of-Long-Horizon-Agents-and-Autopilot-Platform" target="_blank" rel="noreferer noopener" title="Synopsys Powers Autonomous Engineering with a Broad Portfolio of Long-Horizon Agents and Autopilot Platform">Synopsys Powers Autonomous Engineering with a Broad Portfolio of Long-Horizon Agents and Autopilot Platform</a></li>
+          
+            <li><a href="/blogs/chip-design/multiphysics-chip-design-challenges.html" title="From Overdesign to Co-Design: Confronting Multiphysics Challenges in Chips">From Overdesign to Co-Design: Confronting Multiphysics Challenges in Chips</a></li>
+          
+            <li><a href="https://news.synopsys.com/2026-08-26-Synopsys-Posts-Financial-Results-for-Third-Quarter-Fiscal-Year-2026" target="_blank" rel="noreferer noopener" title="Synopsys Posts Financial Results for Third Quarter Fiscal Year 2026">Synopsys Posts Financial Results for Third Quarter Fiscal Year 2026</a></li>
+          
+            <li><a href="/blogs/chip-design/multiphysics-fusion-chip-design.html" title="New Synopsys Multiphysics Fusion™ Technology Set to Transform Chip and Product Engineering">New Synopsys Multiphysics Fusion™ Technology Set to Transform Chip and Product Engineering</a></li>
+          
+            <li><a href="/blogs/chip-design/electronics-digital-twin-platform.html" title="Unveiling the Synopsys Electronics Digital Twin (eDT) Platform">Unveiling the Synopsys Electronics Digital Twin (eDT) Platform</a></li>
+          
+            <li><a href="https://news.synopsys.com/2025-12-01-NVIDIA-and-Synopsys-Announce-Strategic-Partnership-to-Revolutionize-Engineering-and-Design" target="_blank" rel="noreferer noopener" title="NVIDIA and Synopsys Announce Strategic Partnership">NVIDIA and Synopsys Announce Strategic Partnership</a></li>
+          </ul>
+        </nav>
+        <nav class="col-xs-6 col-sm-5ths col-lg-5ths" role="navigation" aria-label="Learn">
+          <h3>Learn</h3>
+          <ul class="p-0 m-0">
+            <li><a href="/glossary/what-is-an-ai-accelerator.html" title="What is an AI Accelerator?">What is an AI Accelerator?</a></li>
+          
+            <li><a href="/glossary/what-is-ai-chip-design.html" title="What is AI Chip Design?">What is AI Chip Design?</a></li>
+          
+            <li><a href="/glossary/what-are-chiplets.html" title="What are Chiplets?">What are Chiplets?</a></li>
+          
+            <li><a href="/glossary/what-is-a-data-center.html" title="What is a Data Center?">What is a Data Center?</a></li>
+          
+            <li><a href="/glossary/what-is-a-digital-twin.html" title="What is a Digital Twin?">What is a Digital Twin?</a></li>
+          
+            <li><a href="/glossary/what-is-electronic-design-automation.html" title="What is EDA?">What is EDA?</a></li>
+          
+            <li><a href="/glossary/what-is-edge-ai.html" title="What is Edge AI?">What is Edge AI?</a></li>
+          
+            <li><a href="/glossary/what-is-integrated-circuit.html" title="What is an Integrated Circuit?">What is an Integrated Circuit?</a></li>
+          
+            <li><a href="/glossary/what-is-physical-ai.html" title="What is Physical AI?">What is Physical AI?</a></li>
+          
+            <li><a href="/authors.html" title="Authors">Authors</a></li>
+          
+            <li><a href="/blogs/chip-design.html" title="Blogs">Blogs</a></li>
+          </ul>
+        </nav>
+        
+          <div class="col-xs-6 col-sm-5ths col-lg-5ths">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="global-footer-dropdown">
+                  <select class="global-nav-link-select" name="dropdown" aria-label="Language">
+                    
+                      <option data-link="/content/synopsys/en-us.html" value="/content/synopsys/en-us.html" selected>English</option>
+                    
+                      <option data-link="/content/synopsys/ja-jp.html" value="/content/synopsys/ja-jp.html">日本語</option>
+                    
+                      <option data-link="/content/synopsys/zh-cn.html" value="/content/synopsys/zh-cn.html">简体中文</option>
+                    
+                      <option data-link="/content/synopsys/zh-tw.html" value="/content/synopsys/zh-tw.html">繁體中文</option>
+                    
+                      <option data-link="/content/synopsys/ko-kr.html" value="/content/synopsys/ko-kr.html">한국어</option>
+                    
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+
+      <div class="social-icons-wrapper d-flex">
+          <ul class="m-0 p-0">
+            <li><a href="https://x.com/Synopsys" title="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/synopsys" title="Linkedin"> <i class="fa-brands fa-linkedin-in"></i> </a></li>
+            <li><a href="https://www.facebook.com/Synopsys/" title="Facebook"> <i class="fa-brands fa-facebook"></i> </a></li>
+            <li><a href="https://www.youtube.com/user/synopsys" title="Youtube"> <i class="fa-brands fa-youtube"></i> </a></li>
+            <li><a href="https://www.instagram.com/synopsyslife/?hl=en" title="Instagram"> <i class="fa-brands fa-instagram"></i> </a></li>
+            
+          </ul>
+          <a href="https://www.synopsys.com/" class="logo-bottom">
+            
+  <div class="component-image" data-analytics-link-region="body">
+    
+      
+      
+	<div data-cmp-dmimage data-asset-id="cc341856-b2fa-40e8-8ffe-976b54f43edc" id="siteFooter-2a7e16db86" class="cmp-image" itemscope itemtype="http://schema.org/ImageObject">
+			
+			<img srcset="https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=375&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 375w,https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=480&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 480w,https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=730&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 730w,https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=992&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 992w,https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&amp;wid=1200&amp;ts=1792425450374&amp;$responsive$&amp;fit=constrain&amp;dpr=off 1200w" src="https://images.synopsys.com/is/image/synopsys/synopsys-foooter-logo?qlt=82&ts=1792425450374&$responsive$&fit=constrain&dpr=off&wid=400" loading="lazy" class="img-responsive  _none_  " itemprop="contentUrl" width="1151" height="251" alt="Synopsys Home Page" title="synopsys_wht.png"/>
+		
+		<meta itemprop="caption" content="synopsys_wht.png"/>
+	</div>
+	
+    
+
+
+    
+  </div>
+
+          </a>
+      </div>
+
+      <div class="d-flex copyright">
+          <span>©2026 Synopsys, Inc. All Rights Reserved</span>
+          
+            |<a href="/company/legal/privacy-policy.html">Privacy</a>
+          
+            |<a href="/company/legal/trademarks-brands.html">Trademark &amp; Brands</a>
+          
+            |<a href="/company/legal/vulnerability-disclosure-policy.html">Security</a>
+          
+            |<a href="/company/legal/copyright.html">Copyright</a>
+          
+            |<a href="/company/legal/ai-generated-translations.html">AI-Generated Translations</a>
+          
+      </div>
+    </div>
+  </footer>
+
+</div>
+<div class="htmlTextOnly aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+    
+    
+
+        <div class="container ">
+
+            
+            
+
+  <section id="aa59305da-e8d4-4a98-a70d-ae11ab91f279" class="html-text-only-component" data-analytics-link-region="body">
+    
+    
+
+    <script>
+$('footer .copyright a').each(function() {
+  if ($(this).text().trim().toLowerCase() === 'privacy') {
+     $(this).after(' | <a class="optanon-show-settings">Cookie Settings</a>');
+  }
+});
+</script>
+  </section>
+
+
+            
+
+        </div>
+
+    
+</div>
+
+    
+</div>
+
+</div>
+
+    
+</div>
+
+    
+</div>
+</div>
+
+
+    </div>
+    
+    
+ 
+
+
+ 
+
+
+
+
+
+
+
+    
+    <!-- Loading Font Awesome library script using font awesome kit CDN URL with Auto-Subsetting feature enabled -->
+    <script src="https://kit.fontawesome.com/6e227b4cd8.js" crossorigin="anonymous" defer></script>
+
+    <!-- Adding defer attribute only for Synopsys Blogs JS clientlibs -->
+    
+        
+        
+            <script defer src="/etc.clientlibs/synopsys/clientlibs/synopsys-blogs.min.4089e4a5fdeee29e3d89f5af200d1130.js"></script>
+
+        
+    
+
+    
+
+
+    
+
+    <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a519133abf1b3c1e',t:'MTc5MzE4MTQzNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    </html>

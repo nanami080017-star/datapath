@@ -1,0 +1,1447 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Technology mapping" href="index_passes_techmap.html" /><link rel="prev" title="Memory handling" href="index_passes_memory.html" />
+
+    <link rel="shortcut icon" href="../_static/yshq_favicon.png"/><!-- Generated with Sphinx 8.2.3 and Furo 2026.01.20.dev1 -->
+        <title>Optimization passes - YosysHQ Yosys 0.70 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-ys.css?v=5cc2bdad" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7d8a08ec" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style><script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="yosys" /><meta name="readthedocs-version-slug" content="v0.70" /><meta name="readthedocs-resolver-filename" content="/cmd/index_passes_opt.html" /><meta name="readthedocs-http-status" content="200" /></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">YosysHQ Yosys 0.70 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand"
+   title="External link to https://yosyshq.readthedocs.io"
+   href="https://yosyshq.readthedocs.io"><div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/yshq_logo.png" alt="Main Brand Logo"/>
+  </div>
+  
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Yosys (index)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">What is Yosys</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting_started/index.html">Getting started with Yosys</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting started with Yosys</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/example_synth.html">Synthesis starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/scripting_intro.html">Scripting in Yosys</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../using_yosys/index.html">Using Yosys (advanced)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Using Yosys (advanced)</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../using_yosys/synthesis/index.html">Synthesis in detail</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Synthesis in detail</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/synth.html">Synth commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/proc.html">Converting process blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/fsm.html">FSM handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/memory.html">Memory handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/opt.html">Optimization passes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/techmap_synth.html">Technology mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/extract.html">The extract pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/abc.html">The ABC toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/synthesis/cell_libs.html">Mapping to cell libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../using_yosys/more_scripting/index.html">More scripting</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of More scripting</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/more_scripting/load_design.html">Loading a design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/more_scripting/selections.html">Selections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/more_scripting/interactive_investigation.html">Interactive design investigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/more_scripting/model_checking.html">Symbolic model checking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../using_yosys/more_scripting/data_flow_tracking.html">Dataflow tracking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../using_yosys/bugpoint.html">Minimizing failing (or bugged) designs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_yosys/verilog.html">Notes on Verilog support in Yosys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_yosys/pyosys.html">Scripting with Pyosys</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../yosys_internals/index.html">Yosys internals</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Yosys internals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../yosys_internals/flow/index.html">Internal flow</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Internal flow</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/flow/overview.html">Flow overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/flow/control_and_data.html">Control and data flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/flow/verilog_frontend.html">The Verilog and AST frontends</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../yosys_internals/formats/index.html">Internal formats</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Internal formats</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/formats/rtlil_rep.html">The RTL Intermediate Language (RTLIL)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../yosys_internals/extending_yosys/index.html">Working with the Yosys codebase</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Working with the Yosys codebase</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/extending_yosys/extensions.html">Writing extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/extending_yosys/build_verific.html">Compiling with Verific library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/extending_yosys/functional_ir.html">Writing a new backend using FunctionalIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/extending_yosys/advanced_bugpoint.html">Identifying the root cause of bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/extending_yosys/contributing.html">Contributing to Yosys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../yosys_internals/extending_yosys/test_suites.html">Testing Yosys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../yosys_internals/techmap.html">Techmap by example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yosys_internals/hashing.html">Hashing and associative data structures in Yosys</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/primer.html">A primer on digital circuit synthesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/rtlil_text.html">RTLIL text representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/auxlibs.html">Auxiliary libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/auxprogs.html">Auxiliary programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bib.html">Literature references</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cell_index.html">Internal cell library</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Internal cell library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cell/index_word.html">Word-level cells</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Word-level cells</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_unary.html">Unary operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_binary.html">Binary operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_mux.html">Multiplexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_reg.html">Registers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_mem.html">Memories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_fsm.html">Finite state machines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_arith.html">Coarse arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_logic.html">Arbitrary logic functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_spec.html">Specify rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_formal.html">Formal verification cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_debug.html">Debugging cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/word_wire.html">Wire cells</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cell/index_gate.html">Gate-level cells</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Gate-level cells</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cell/gate_comb_simple.html">Combinatorial cells (simple)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/gate_comb_combined.html">Combinatorial cells (combined)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/gate_reg_ff.html">Flip-flop cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/gate_reg_latch.html">Latch cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cell/gate_other.html">Other gate-level cells</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cell/properties.html">Cell properties</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../cmd_ref.html">Command line reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Command line reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../appendix/env_vars.html">Yosys environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_frontends.html">Reading input files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_backends.html">Writing output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_kernel.html">Yosys kernel commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_formal.html">Formal verification</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index_passes.html">Passes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Passes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index_passes_hierarchy.html">Working with hierarchy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_passes_proc.html">Converting process blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_passes_fsm.html">FSM handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_passes_memory.html">Memory handling</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Optimization passes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_passes_techmap.html">Technology mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_passes_cmds.html">Design modification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_passes_equiv.html">Equivalence checking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_passes_sat.html">Simulating circuits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_passes_status.html">Design status</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="index_techlibs.html">Technology libraries</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Technology libraries</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_common.html">Generic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_achronix.html">Achronix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_anlogic.html">Anlogic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_easic.html">eASIC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_fabulous.html">FABulous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_gatemate.html">Gatemate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_gowin.html">Gowin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_ice40.html">iCE40</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_intel.html">Intel (MAX10, Cyclone IV)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_intel_alm.html">Intel ALM (Cyclone V, Arria V, Cyclone 10 GX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_lattice.html">Lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_microchip.html">Microchip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_microchip_sf2.html">Microchip - SmartFusion2/IGLOO2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_nanoxplore.html">NanoXplore</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_quicklogic.html">QuickLogic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index_techlibs_xilinx.html">Xilinx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_internal.html">Internal commands for developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_internal.html#writing-command-help">Writing command help</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div
+  id="furo-sidebar-ad-placement"
+  class="flat"
+  data-ea-publisher="readthedocs"
+  data-ea-type="readthedocs-sidebar"
+  data-ea-manual="true"
+></div>
+</div>
+
+
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/YosysHQ/yosys/blob/v0.70/docs/source/cmd/index_passes_opt.rst?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="optimization-passes">
+<h1>Optimization passes<a class="headerlink" href="#optimization-passes" title="Link to this heading">¶</a></h1>
+<section id="clean-remove-unused-cells-and-wires">
+<h2>clean - remove unused cells and wires<a class="headerlink" href="#clean-remove-unused-cells-and-wires" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-clean">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">clean</span></span><a class="headerlink" href="#cmd-clean" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="clean.clean [options] [selection]">
+<span class="sig-name descname"><span class="pre">clean</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#clean.clean [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This is identical to 'opt_clean', but less verbose.
+
+When commands are separated using the ';;' token, this command will be executed
+between the commands.
+
+When commands are separated using the ';;;' token, this command will be executed
+in -purge mode between the commands.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/clean/opt_clean.cc:108</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="muxpack-mux-pmux-cascades-to-pmux">
+<h2>muxpack - $mux/$pmux cascades to $pmux<a class="headerlink" href="#muxpack-mux-pmux-cascades-to-pmux" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-muxpack">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">muxpack</span></span><a class="headerlink" href="#cmd-muxpack" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="muxpack.muxpack [selection]">
+<span class="sig-name descname"><span class="pre">muxpack</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#muxpack.muxpack [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass converts cascaded chains of $pmux cells (e.g. those create from case
+constructs) and $mux cells (e.g. those created by if-else constructs) into
+$pmux cells.
+
+This optimisation is conservative --- it will only pack $mux or $pmux cells
+whose select lines are driven by '$eq' cells with other such cells if it can be
+certain that their select inputs are mutually exclusive.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/muxpack.cc:347</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="onehot-optimize-eq-cells-for-onehot-signals">
+<h2>onehot - optimize $eq cells for onehot signals<a class="headerlink" href="#onehot-optimize-eq-cells-for-onehot-signals" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-onehot">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">onehot</span></span><a class="headerlink" href="#cmd-onehot" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="onehot.onehot [options] [selection]">
+<span class="sig-name descname"><span class="pre">onehot</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#onehot.onehot [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass optimizes $eq cells that compare one-hot signals against constants
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-v</span><span class="o">,</span><span class="w"> </span><span class="na">-vv</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>verbose output
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/pmux2shiftx.cc:733</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-perform-simple-optimizations">
+<h2>opt - perform simple optimizations<a class="headerlink" href="#opt-perform-simple-optimizations" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt</span></span><a class="headerlink" href="#cmd-opt" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt.opt [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt.opt [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass calls all the other opt_* passes in a useful order. This performs
+a series of trivial optimizations and cleanups. This pass executes the other
+passes in the following order:
+
+    opt_expr [-mux_undef] [-mux_bool] [-undriven] [-noclkinv] [-fine] [-full] [-keepdc]
+    opt_merge [-share_all] -nomux
+
+    do
+        opt_muxtree
+        opt_reduce [-fine] [-full]
+        opt_merge [-share_all]
+        opt_share  (-full only)
+        opt_dff [-nodffe] [-nosdff] [-keepdc] [-sat]  (except when called with -noff)
+        opt_hier (-hier only)
+        opt_clean [-purge]
+        opt_expr [-mux_undef] [-mux_bool] [-undriven] [-noclkinv] [-fine] [-full] [-keepdc]
+    while &lt;changed design&gt;
+
+When called with -fast the following script is used instead:
+
+    do
+        opt_expr [-mux_undef] [-mux_bool] [-undriven] [-noclkinv] [-fine] [-full] [-keepdc]
+        opt_merge [-share_all]
+        opt_dff [-nodffe] [-nosdff] [-keepdc] [-sat]  (except when called with -noff)
+        opt_hier (-hier only)
+        opt_clean [-purge]
+    while &lt;changed design in opt_dff&gt;
+
+Note: Options in square brackets (such as [-keepdc]) are passed through to
+the opt_* commands when given to 'opt'.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt.cc:29</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-balance-tree-and-or-xor-add-mul-cascades-to-trees">
+<h2>opt_balance_tree - $and/$or/$xor/$add/$mul cascades to trees<a class="headerlink" href="#opt-balance-tree-and-or-xor-add-mul-cascades-to-trees" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_balance_tree">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_balance_tree</span></span><a class="headerlink" href="#cmd-opt_balance_tree" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_balance_tree.opt_balance_tree [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_balance_tree</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_balance_tree.opt_balance_tree [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass converts cascaded chains of $and/$or/$xor/$add/$mul cells into
+trees of cells to improve timing.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-arith</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>only convert arithmetic cells.
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-logic</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>only convert logic cells.
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_balance_tree.cc:360</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-clean-remove-unused-cells-and-wires">
+<h2>opt_clean - remove unused cells and wires<a class="headerlink" href="#opt-clean-remove-unused-cells-and-wires" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_clean">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_clean</span></span><a class="headerlink" href="#cmd-opt_clean" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_clean.opt_clean [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_clean</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_clean.opt_clean [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass identifies wires and cells that are unused and removes them. Other
+passes often remove cells but leave the wires in the design or reconnect the
+wires but leave the old cells in the design. This pass can be used to clean up
+after the passes that do the actual work.
+
+This pass only operates on completely selected modules without processes.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-purge</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>also remove internal nets if they have a public name
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/clean/opt_clean.cc:46</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-demorgan-optimize-reductions-with-demorgan-equivalents">
+<h2>opt_demorgan - Optimize reductions with DeMorgan equivalents<a class="headerlink" href="#opt-demorgan-optimize-reductions-with-demorgan-equivalents" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_demorgan">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_demorgan</span></span><a class="headerlink" href="#cmd-opt_demorgan" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_demorgan.opt_demorgan [selection]">
+<span class="sig-name descname"><span class="pre">opt_demorgan</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_demorgan.opt_demorgan [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass pushes inverters through $reduce_* cells if this will reduce the
+overall gate count of the circuit
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_demorgan.cc:175</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-expr-perform-const-folding-and-simple-expression-rewriting">
+<h2>opt_expr - perform const folding and simple expression rewriting<a class="headerlink" href="#opt-expr-perform-const-folding-and-simple-expression-rewriting" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_expr">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_expr</span></span><a class="headerlink" href="#cmd-opt_expr" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_expr.opt_expr [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_expr</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_expr.opt_expr [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass performs const folding on internal cell types with constant inputs.
+It also performs some simple expression rewriting.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-mux_undef</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>remove 'undef' inputs from $mux, $pmux and $_MUX_ cells
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-mux_bool</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>replace $mux cells with inverters or buffers when possible
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-undriven</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>replace undriven nets with undef (x) constants
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-noclkinv</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>do not optimize clock inverters by changing FF types
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-fine</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>perform fine-grain optimizations
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-full</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>alias for -mux_undef -mux_bool -undriven -fine
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-keepdc</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>some optimizations change the behavior of the circuit with respect to
+don't-care bits. for example in 'a+0' a single x-bit in 'a' will cause
+all result bits to be set to x. this behavior changes when 'a+0' is
+replaced by 'a'. the -keepdc option disables all such optimizations.
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_expr.cc:2261</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-ffinv-push-inverters-through-ffs">
+<h2>opt_ffinv - push inverters through FFs<a class="headerlink" href="#opt-ffinv-push-inverters-through-ffs" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_ffinv">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_ffinv</span></span><a class="headerlink" href="#cmd-opt_ffinv" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_ffinv.opt_ffinv [selection]">
+<span class="sig-name descname"><span class="pre">opt_ffinv</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_ffinv.opt_ffinv [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass pushes inverters to the other side of a FF when they can be merged
+into LUTs on the other side.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_ffinv.cc:236</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-hier-perform-cross-boundary-optimization">
+<h2>opt_hier - perform cross-boundary optimization<a class="headerlink" href="#opt-hier-perform-cross-boundary-optimization" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_hier">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_hier</span></span><a class="headerlink" href="#cmd-opt_hier" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_hier.opt_hier [selection]">
+<span class="sig-name descname"><span class="pre">opt_hier</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_hier.opt_hier [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass considers the design hierarchy and propagates unused signals, constant
+signals, and tied-together signals across module boundaries to facilitate
+optimization. Only the selected modules are affected.
+
+Note this pass changes port semantics on modules which are not the top.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_hier.cc:407</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-lut-optimize-lut-cells">
+<h2>opt_lut - optimize LUT cells<a class="headerlink" href="#opt-lut-optimize-lut-cells" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_lut">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_lut</span></span><a class="headerlink" href="#cmd-opt_lut" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_lut.opt_lut [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_lut</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_lut.opt_lut [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass combines cascaded $lut cells with unused inputs.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-tech</span><span class="w"> </span><span class="n">ice40</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>treat the design as a LUT-mapped circuit for the iCE40 architecture
+and preserve connections to SB_CARRY as appropriate
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-limit</span><span class="w"> </span><span class="n">N</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>only perform the first N combines, then stop. useful for debugging.
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_lut.cc:526</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-lut-ins-discard-unused-lut-inputs">
+<h2>opt_lut_ins - discard unused LUT inputs<a class="headerlink" href="#opt-lut-ins-discard-unused-lut-inputs" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_lut_ins">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_lut_ins</span></span><a class="headerlink" href="#cmd-opt_lut_ins" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_lut_ins.opt_lut_ins [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_lut_ins</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_lut_ins.opt_lut_ins [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass removes unused inputs from LUT cells (that is, inputs that can not
+influence the output signal given this LUT's value).  While such LUTs cannot
+be directly emitted by ABC, they can be a result of various post-ABC
+transformations, such as mapping wide LUTs (not all sub-LUTs will use the
+full set of inputs) or optimizations such as xilinx_dffopt.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-tech</span><span class="w"> </span><span class="n">&lt;technology&gt;</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Instead of generic $lut cells, operate on LUT cells specific
+to the given technology.  Valid values are: xilinx, lattice,
+gowin, analogdevices.
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_lut_ins.cc:27</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-mem-optimize-memories">
+<h2>opt_mem - optimize memories<a class="headerlink" href="#opt-mem-optimize-memories" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_mem">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_mem</span></span><a class="headerlink" href="#cmd-opt_mem" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_mem.opt_mem [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_mem</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_mem.opt_mem [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass performs various optimizations on memories in the design.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_mem.cc:29</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-mem-feedback-convert-memory-read-to-write-port-feedback-paths-to-write-enables">
+<h2>opt_mem_feedback - convert memory read-to-write port feedback paths to write enables<a class="headerlink" href="#opt-mem-feedback-convert-memory-read-to-write-port-feedback-paths-to-write-enables" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_mem_feedback">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_mem_feedback</span></span><a class="headerlink" href="#cmd-opt_mem_feedback" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_mem_feedback.opt_mem_feedback [selection]">
+<span class="sig-name descname"><span class="pre">opt_mem_feedback</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_mem_feedback.opt_mem_feedback [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass detects cases where an asynchronous read port is only connected via
+a mux tree to a write port with the same address.  When such a connection is
+found, it is replaced with a new condition on an enable signal, allowing
+for removal of the read port.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_mem_feedback.cc:326</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-mem-priority-remove-priority-relations-between-write-ports-that-can-never-collide">
+<h2>opt_mem_priority - remove priority relations between write ports that can never collide<a class="headerlink" href="#opt-mem-priority-remove-priority-relations-between-write-ports-that-can-never-collide" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_mem_priority">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_mem_priority</span></span><a class="headerlink" href="#cmd-opt_mem_priority" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_mem_priority.opt_mem_priority [selection]">
+<span class="sig-name descname"><span class="pre">opt_mem_priority</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_mem_priority.opt_mem_priority [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass detects cases where one memory write port has priority over another
+even though they can never collide with each other -- ie. there can never be
+a situation where a given memory bit is written by both ports at the same
+time, for example because of always-different addresses, or mutually exclusive
+enable signals. In such cases, the priority relation is removed.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_mem_priority.cc:29</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-mem-widen-optimize-memories-where-all-ports-are-wide">
+<h2>opt_mem_widen - optimize memories where all ports are wide<a class="headerlink" href="#opt-mem-widen-optimize-memories-where-all-ports-are-wide" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_mem_widen">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_mem_widen</span></span><a class="headerlink" href="#cmd-opt_mem_widen" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_mem_widen.opt_mem_widen [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_mem_widen</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_mem_widen.opt_mem_widen [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass looks for memories where all ports are wide and adjusts the base
+memory width up until that stops being the case.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_mem_widen.cc:27</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-merge-consolidate-identical-cells">
+<h2>opt_merge - consolidate identical cells<a class="headerlink" href="#opt-merge-consolidate-identical-cells" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_merge">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_merge</span></span><a class="headerlink" href="#cmd-opt_merge" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_merge.opt_merge [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_merge</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_merge.opt_merge [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass identifies cells with identical type and input signals. Such cells
+are then merged to one cell.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-nomux</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Do not merge MUX cells.
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-share_all</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Operate on all cell types, not just built-in types.
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-keepdc</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Do not merge flipflops with don't-care bits in their initial value.
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_merge.cc:500</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-muxtree-eliminate-dead-trees-in-multiplexer-trees">
+<h2>opt_muxtree - eliminate dead trees in multiplexer trees<a class="headerlink" href="#opt-muxtree-eliminate-dead-trees-in-multiplexer-trees" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_muxtree">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_muxtree</span></span><a class="headerlink" href="#cmd-opt_muxtree" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_muxtree.opt_muxtree [selection]">
+<span class="sig-name descname"><span class="pre">opt_muxtree</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_muxtree.opt_muxtree [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass analyzes the control signals for the multiplexer trees in the design
+and identifies inputs that can never be active. It then removes this dead
+branches from the multiplexer trees.
+
+This pass only operates on completely selected modules without processes.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_muxtree.cc:611</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-reduce-simplify-large-muxes-and-and-or-gates">
+<h2>opt_reduce - simplify large MUXes and AND/OR gates<a class="headerlink" href="#opt-reduce-simplify-large-muxes-and-and-or-gates" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_reduce">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_reduce</span></span><a class="headerlink" href="#cmd-opt_reduce" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_reduce.opt_reduce [options] [selection]">
+<span class="sig-name descname"><span class="pre">opt_reduce</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_reduce.opt_reduce [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass performs two interlinked optimizations:
+
+1. it consolidates trees of large AND gates or OR gates and eliminates
+duplicated inputs.
+
+2. it identifies duplicated inputs to MUXes and replaces them with a single
+input with the original control signals OR'ed together.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-fine</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>perform fine-grain optimizations
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-full</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>alias for -fine
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_reduce.cc:611</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="opt-share-merge-mutually-exclusive-cells-of-the-same-type-that-share-an-input-signal">
+<h2>opt_share - merge mutually exclusive cells of the same type that share an input signal<a class="headerlink" href="#opt-share-merge-mutually-exclusive-cells-of-the-same-type-that-share-an-input-signal" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-opt_share">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">opt_share</span></span><a class="headerlink" href="#cmd-opt_share" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="opt_share.opt_share [selection]">
+<span class="sig-name descname"><span class="pre">opt_share</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#opt_share.opt_share [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass identifies mutually exclusive cells of the same type that:
+    (a) share an input signal,
+    (b) drive the same $mux, $_MUX_, or $pmux multiplexing cell,
+
+allowing the cell to be merged and the multiplexer to be moved from
+multiplexing its output to multiplexing the non-shared input signals.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/opt_share.cc:339</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="peepopt-collection-of-peephole-optimizers">
+<h2>peepopt - collection of peephole optimizers<a class="headerlink" href="#peepopt-collection-of-peephole-optimizers" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-peepopt">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">peepopt</span></span><a class="headerlink" href="#cmd-peepopt" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="peepopt.peepopt [options] [selection]">
+<span class="sig-name descname"><span class="pre">peepopt</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#peepopt.peepopt [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass applies a collection of peephole optimizers to the current design.
+
+This pass employs the following rules by default:
+
+   * muldiv - Replace (A*B)/B with A
+
+   * muldiv_c - Replace (A*B)/C with A*(B/C) when C is a const divisible by B.
+
+   * shiftmul - Replace A&gt;&gt;(B*C) with A'&gt;&gt;(B&lt;&lt;K) where C and K are constants
+                and A' is derived from A by appropriately inserting padding
+                into the signal. (right variant)
+
+                Analogously, replace A&lt;&lt;(B*C) with appropriate selection of
+                output bits from A&lt;&lt;(B&lt;&lt;K). (left variant)
+
+   * shiftadd - Replace A&gt;&gt;(B+D) with (A'&gt;&gt;D)&gt;&gt;(B) where D is constant and
+                A' is derived from A by padding or cutting inaccessible bits.
+                Scratchpad: 'peepopt.shiftadd.max_data_multiple' (default: 2)
+                limits the amount of padding to a multiple of the data, 
+                to avoid high resource usage from large temporary MUX trees.
+
+   * shiftpow2 - Replace A&gt;&gt;(B&lt;&lt;K) with a $bmux word multiplexer when
+                the output width is at most the stride 1&lt;&lt;K. This handles
+                power-of-two aligned word selects.
+                Scratchpad: 'peepopt.shiftpow2.max_data_multiple' (default: 2)
+                limits padding for out-of-range select values.
+
+If -formalclk is specified it instead employs the following rules:
+
+   * clockgateff - Replace latch based clock gating patterns with a flip-flop
+                   based pattern to prevent combinational paths from the
+                   output to the enable input after running clk2fflogic.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/peepopt.cc:43</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="pmux2shiftx-transform-pmux-cells-to-shiftx-cells">
+<h2>pmux2shiftx - transform $pmux cells to $shiftx cells<a class="headerlink" href="#pmux2shiftx-transform-pmux-cells-to-shiftx-cells" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-pmux2shiftx">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">pmux2shiftx</span></span><a class="headerlink" href="#cmd-pmux2shiftx" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="pmux2shiftx.pmux2shiftx [options] [selection]">
+<span class="sig-name descname"><span class="pre">pmux2shiftx</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#pmux2shiftx.pmux2shiftx [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass transforms $pmux cells to $shiftx cells.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-v</span><span class="o">,</span><span class="w"> </span><span class="na">-vv</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>verbose output
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-min_density</span><span class="w"> </span><span class="n">&lt;percentage&gt;</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>specifies the minimum density for the shifter
+default: 50
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-min_choices</span><span class="w"> </span><span class="n">&lt;int&gt;</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>specified the minimum number of choices for a control signal
+default: 3
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-onehot</span><span class="w"> </span><span class="n">ignore</span><span class="o">|</span><span class="n">pmux</span><span class="o">|</span><span class="n">shiftx</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>select strategy for one-hot encoded control signals
+default: pmux
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-norange</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>disable $sub inference for "range decoders"
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/pmux2shiftx.cc:192</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="recover-names-execute-a-lossy-mapping-command-and-recover-original-netnames">
+<h2>recover_names - Execute a lossy mapping command and recover original netnames<a class="headerlink" href="#recover-names-execute-a-lossy-mapping-command-and-recover-original-netnames" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-recover_names">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">recover_names</span></span><a class="headerlink" href="#cmd-recover_names" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="recover_names.recover_names [command]">
+<span class="sig-name descname"><span class="pre">recover_names</span> <span class="pre">[command]</span></span><a class="headerlink" href="#recover_names.recover_names [command]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass executes a lossy mapping command and uses a combination of simulation
+ to find candidate equivalences and SAT to recover exact original net names.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/sat/recover_names.cc:693</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="rmports-remove-module-ports-with-no-connections">
+<h2>rmports - remove module ports with no connections<a class="headerlink" href="#rmports-remove-module-ports-with-no-connections" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-rmports">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">rmports</span></span><a class="headerlink" href="#cmd-rmports" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="rmports.rmports [options] [selection]">
+<span class="sig-name descname"><span class="pre">rmports</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#rmports.rmports [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass identifies ports in the selected modules which are not used or
+driven and removes them.
+
+An output which is driven inside the module is also removed, if no
+instance of the module uses it. The top module, a module which nothing
+instantiates, and a port with the keep attribute stay. This needs a module
+with the top attribute (see hierarchy -top). Without one, a parent design
+which is not loaded can still use these ports.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-purge</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>remove driven outputs also when no module has the top attribute
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/rmports.cc:28</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="share-perform-sat-based-resource-sharing">
+<h2>share - perform sat-based resource sharing<a class="headerlink" href="#share-perform-sat-based-resource-sharing" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-share">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">share</span></span><a class="headerlink" href="#cmd-share" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="share.share [options] [selection]">
+<span class="sig-name descname"><span class="pre">share</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#share.share [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This pass merges shareable resources into a single resource. A SAT solver
+is used to determine if two resources are share-able.
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-aggressive</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Per default some heuristics are used to reduce the number of cells
+considered for resource sharing to only large resources. This options
+turns this heuristics off, resulting in much more cells being considered
+for resource sharing.
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-fast</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Only consider the simple part of the control logic in SAT solving, resulting
+in much easier SAT problems at the cost of maybe missing some opportunities
+for resource sharing.
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-limit</span><span class="w"> </span><span class="n">N</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Only perform the first N merges, then stop. This is useful for debugging.
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-pattern-limit</span><span class="w"> </span><span class="n">N</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Only analyze up to N activation patterns per cell, otherwise assume active.
+N is 1000 by default. Higher values may merge more resources at the cost of
+more runtime and memory consumption.
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/share.cc:1553</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="wreduce-reduce-the-word-size-of-operations-if-possible">
+<h2>wreduce - reduce the word size of operations if possible<a class="headerlink" href="#wreduce-reduce-the-word-size-of-operations-if-possible" title="Link to this heading">¶</a></h2>
+<dl class="cmd def">
+<dt class="sig sig-object cmd" id="cmd-wreduce">
+<span class="sig-prename descclassname"><span class="pre">yosys&gt;</span> <span class="pre">help</span> </span><span class="sig-name descname"><span class="pre">wreduce</span></span><a class="headerlink" href="#cmd-wreduce" title="Link to this definition">¶</a></dt>
+<dd><dl class="cmd usage">
+<dt class="sig sig-object cmd" id="wreduce.wreduce [options] [selection]">
+<span class="sig-name descname"><span class="pre">wreduce</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></span><a class="headerlink" href="#wreduce.wreduce [options] [selection]" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This command reduces the word size of operations. For example it will replace
+the 32 bit adders in the following code with adders of more appropriate widths:
+
+    module test(input [3:0] a, b, c, output [7:0] y);
+        assign y = a + b + c + 1;
+    endmodule
+
+Options:
+</pre></div>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-memx</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Do not change the width of memory address ports. Use this options in
+flows that use the 'memory_memx' pass.
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-mux_undef</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>remove 'undef' inputs from $mux, $pmux and $_MUX_ cells
+</pre></div>
+</div>
+</dd>
+<dt><kbd><span class="option"><code class="code highlight yoscrypt docutils literal highlight-yoscrypt"><span class="na">-keepdc</span></code></span></kbd></dt>
+<dd><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Do not optimize explicit don't-care values.
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Help text automatically generated from <code class="file docutils literal notranslate"><span class="pre">passes/opt/wreduce.cc:521</span></code></p>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="index_passes_techmap.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Technology mapping</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index_passes_memory.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Memory handling</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026 YosysHQ GmbH
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link" href="https://readthedocs.org/projects/yosys" aria-label="On Read the Docs">
+                <svg x="0px" y="0px" viewBox="-125 217 360 360" xml:space="preserve">
+                  <path fill="currentColor" d="M39.2,391.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3 c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2 c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,391.3,40.4,391.1,39.2,391.3z M39.2,353.6c-4.2,0.6-7.1,4.4-6.5,8.5 c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4 c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,353.6,40.4,353.4,39.2,353.6z M39.2,315.9 c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8 c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6c-30.1-2.4-46.5-7.9-46.5-7.9 C41.7,315.9,40.4,315.8,39.2,315.9z M39.2,278.3c-4.2,0.6-7.1,4.4-6.5,8.5c0.4,3,2.6,5.5,5.5,6.3c0,0,18.5,6.1,50,8.7 c25.3,2.1,54-1.8,54-1.8c4.2-0.1,7.5-3.6,7.4-7.8c-0.1-4.2-3.6-7.5-7.8-7.4c-0.5,0-1,0.1-1.5,0.2c0,0-28.1,3.5-50.9,1.6 c-30.1-2.4-46.5-7.9-46.5-7.9C41.7,278.2,40.4,278.1,39.2,278.3z M-13.6,238.5c-39.6,0.3-54.3,12.5-54.3,12.5v295.7 c0,0,14.4-12.4,60.8-10.5s55.9,18.2,112.9,19.3s71.3-8.8,71.3-8.8l0.8-301.4c0,0-25.6,7.3-75.6,7.7c-49.9,0.4-61.9-12.7-107.7-14.2 C-8.2,238.6-10.9,238.5-13.6,238.5z M19.5,257.8c0,0,24,7.9,68.3,10.1c37.5,1.9,75-3.7,75-3.7v267.9c0,0-19,10-66.5,6.6 C59.5,536.1,19,522.1,19,522.1L19.5,257.8z M-3.6,264.8c4.2,0,7.7,3.4,7.7,7.7c0,4.2-3.4,7.7-7.7,7.7c0,0-12.4,0.1-20,0.8 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,0,0,0,0c0,0,11.3-6,27-7.5 C-16,264.9-3.6,264.8-3.6,264.8z M-11,302.6c4.2-0.1,7.4,0,7.4,0c4.2,0.5,7.2,4.3,6.7,8.5c-0.4,3.5-3.2,6.3-6.7,6.7 c0,0-12.4,0.1-20,0.8c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5 C-20.5,302.9-15.2,302.7-11,302.6z M-3.6,340.2c4.2,0,7.7,3.4,7.7,7.7s-3.4,7.7-7.7,7.7c0,0-12.4-0.1-20,0.7 c-12.7,1.3-21.4,5.9-21.4,5.9c-3.7,2-8.4,0.5-10.3-3.2c-2-3.7-0.5-8.4,3.2-10.3c0,0,11.3-6,27-7.5C-16,340.1-3.6,340.2-3.6,340.2z" />
+                </svg>
+              </a><a class="muted-link" href="https://github.com/YosysHQ/yosys" aria-label="On GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+          YosysHQ
+          </span>
+        </div>
+        <div class="toc-tree-container yosyshq-links" style="padding-bottom: 0">
+          <div class="toc-tree">
+            <ul>
+              <li></li>
+              <li><a class="reference external" href="https://yosyshq.readthedocs.io">Docs</a></li>
+              <li><a class="reference external" href="https://blog.yosyshq.com">Blog</a></li>
+              <li><a class="reference external" href="https://www.yosyshq.com">Website</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Optimization passes</a><ul>
+<li><a class="reference internal" href="#clean-remove-unused-cells-and-wires">clean - remove unused cells and wires</a><ul>
+<li><a class="reference internal" href="#clean.clean [options] [selection]"><code class="docutils literal notranslate"><span class="pre">clean</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#muxpack-mux-pmux-cascades-to-pmux">muxpack - $mux/$pmux cascades to $pmux</a><ul>
+<li><a class="reference internal" href="#muxpack.muxpack [selection]"><code class="docutils literal notranslate"><span class="pre">muxpack</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#onehot-optimize-eq-cells-for-onehot-signals">onehot - optimize $eq cells for onehot signals</a><ul>
+<li><a class="reference internal" href="#onehot.onehot [options] [selection]"><code class="docutils literal notranslate"><span class="pre">onehot</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-perform-simple-optimizations">opt - perform simple optimizations</a><ul>
+<li><a class="reference internal" href="#opt.opt [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-balance-tree-and-or-xor-add-mul-cascades-to-trees">opt_balance_tree - $and/$or/$xor/$add/$mul cascades to trees</a><ul>
+<li><a class="reference internal" href="#opt_balance_tree.opt_balance_tree [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_balance_tree</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-clean-remove-unused-cells-and-wires">opt_clean - remove unused cells and wires</a><ul>
+<li><a class="reference internal" href="#opt_clean.opt_clean [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_clean</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-demorgan-optimize-reductions-with-demorgan-equivalents">opt_demorgan - Optimize reductions with DeMorgan equivalents</a><ul>
+<li><a class="reference internal" href="#opt_demorgan.opt_demorgan [selection]"><code class="docutils literal notranslate"><span class="pre">opt_demorgan</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-expr-perform-const-folding-and-simple-expression-rewriting">opt_expr - perform const folding and simple expression rewriting</a><ul>
+<li><a class="reference internal" href="#opt_expr.opt_expr [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_expr</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-ffinv-push-inverters-through-ffs">opt_ffinv - push inverters through FFs</a><ul>
+<li><a class="reference internal" href="#opt_ffinv.opt_ffinv [selection]"><code class="docutils literal notranslate"><span class="pre">opt_ffinv</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-hier-perform-cross-boundary-optimization">opt_hier - perform cross-boundary optimization</a><ul>
+<li><a class="reference internal" href="#opt_hier.opt_hier [selection]"><code class="docutils literal notranslate"><span class="pre">opt_hier</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-lut-optimize-lut-cells">opt_lut - optimize LUT cells</a><ul>
+<li><a class="reference internal" href="#opt_lut.opt_lut [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_lut</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-lut-ins-discard-unused-lut-inputs">opt_lut_ins - discard unused LUT inputs</a><ul>
+<li><a class="reference internal" href="#opt_lut_ins.opt_lut_ins [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_lut_ins</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-mem-optimize-memories">opt_mem - optimize memories</a><ul>
+<li><a class="reference internal" href="#opt_mem.opt_mem [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_mem</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-mem-feedback-convert-memory-read-to-write-port-feedback-paths-to-write-enables">opt_mem_feedback - convert memory read-to-write port feedback paths to write enables</a><ul>
+<li><a class="reference internal" href="#opt_mem_feedback.opt_mem_feedback [selection]"><code class="docutils literal notranslate"><span class="pre">opt_mem_feedback</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-mem-priority-remove-priority-relations-between-write-ports-that-can-never-collide">opt_mem_priority - remove priority relations between write ports that can never collide</a><ul>
+<li><a class="reference internal" href="#opt_mem_priority.opt_mem_priority [selection]"><code class="docutils literal notranslate"><span class="pre">opt_mem_priority</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-mem-widen-optimize-memories-where-all-ports-are-wide">opt_mem_widen - optimize memories where all ports are wide</a><ul>
+<li><a class="reference internal" href="#opt_mem_widen.opt_mem_widen [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_mem_widen</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-merge-consolidate-identical-cells">opt_merge - consolidate identical cells</a><ul>
+<li><a class="reference internal" href="#opt_merge.opt_merge [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_merge</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-muxtree-eliminate-dead-trees-in-multiplexer-trees">opt_muxtree - eliminate dead trees in multiplexer trees</a><ul>
+<li><a class="reference internal" href="#opt_muxtree.opt_muxtree [selection]"><code class="docutils literal notranslate"><span class="pre">opt_muxtree</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-reduce-simplify-large-muxes-and-and-or-gates">opt_reduce - simplify large MUXes and AND/OR gates</a><ul>
+<li><a class="reference internal" href="#opt_reduce.opt_reduce [options] [selection]"><code class="docutils literal notranslate"><span class="pre">opt_reduce</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opt-share-merge-mutually-exclusive-cells-of-the-same-type-that-share-an-input-signal">opt_share - merge mutually exclusive cells of the same type that share an input signal</a><ul>
+<li><a class="reference internal" href="#opt_share.opt_share [selection]"><code class="docutils literal notranslate"><span class="pre">opt_share</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#peepopt-collection-of-peephole-optimizers">peepopt - collection of peephole optimizers</a><ul>
+<li><a class="reference internal" href="#peepopt.peepopt [options] [selection]"><code class="docutils literal notranslate"><span class="pre">peepopt</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pmux2shiftx-transform-pmux-cells-to-shiftx-cells">pmux2shiftx - transform $pmux cells to $shiftx cells</a><ul>
+<li><a class="reference internal" href="#pmux2shiftx.pmux2shiftx [options] [selection]"><code class="docutils literal notranslate"><span class="pre">pmux2shiftx</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recover-names-execute-a-lossy-mapping-command-and-recover-original-netnames">recover_names - Execute a lossy mapping command and recover original netnames</a><ul>
+<li><a class="reference internal" href="#recover_names.recover_names [command]"><code class="docutils literal notranslate"><span class="pre">recover_names</span> <span class="pre">[command]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rmports-remove-module-ports-with-no-connections">rmports - remove module ports with no connections</a><ul>
+<li><a class="reference internal" href="#rmports.rmports [options] [selection]"><code class="docutils literal notranslate"><span class="pre">rmports</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#share-perform-sat-based-resource-sharing">share - perform sat-based resource sharing</a><ul>
+<li><a class="reference internal" href="#share.share [options] [selection]"><code class="docutils literal notranslate"><span class="pre">share</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wreduce-reduce-the-word-size-of-operations-if-possible">wreduce - reduce the word size of operations if possible</a><ul>
+<li><a class="reference internal" href="#wreduce.wreduce [options] [selection]"><code class="docutils literal notranslate"><span class="pre">wreduce</span> <span class="pre">[options]</span> <span class="pre">[selection]</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+        
+      </div>
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=2dc57497"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo-ys.js?v=e61be271"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

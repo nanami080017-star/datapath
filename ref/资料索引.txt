@@ -1,0 +1,14 @@
+datapath_logic 参考资料索引
+服务器位置：/hpc2hdd/home/haoyuetian/datapath_logic
+
+原题：ref/problem/IMG_0181.jpeg、ref/problem/IMG_0182.jpeg。
+来源与下载记录：ref/SOURCES.json、ref/metadata/。
+文献：ref/papers/、ref/patents/。
+工具文档：ref/docs/。
+参考框架：ref/frameworks/。
+公开流程源码：ref/flows/。
+候选研究方法：baselines/logic/、baselines/extraction/。
+公开测试集：benchmarks/rtl/MutexShare-Case-Set/。
+
+当前无 SDC 面积实验只使用 tools/yosys/ 和 tools/abc/。
+用法见 README.md，流程与指标来源见 baselines/yosys_abc/README.md。

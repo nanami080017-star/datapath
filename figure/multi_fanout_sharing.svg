@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="760" viewBox="0 0 1500 760">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#34465e"/></marker>
+    <style>
+      text {font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif; fill:#172b44}
+      .title {font-size:28px; font-weight:700} .subtitle {font-size:21px; font-weight:650}
+      .label {font-size:20px} .small {font-size:17px} .panel {fill:#fff;stroke:#d5dfeb;stroke-width:2}
+      .op {fill:#dceeff;stroke:#3d74b3;stroke-width:2} .mux {fill:#e7e1fb;stroke:#7756b5;stroke-width:2}
+      .wire {fill:none;stroke:#34465e;stroke-width:2.5} .end {marker-end:url(#arrow)}
+      .dot {fill:#34465e} .red {fill:#9d3535} .green {fill:#12604c}
+    </style>
+  </defs>
+  <rect width="1500" height="760" fill="#f4f7fb"/>
+  <text x="750" y="43" text-anchor="middle" class="title">多扇出：只重构一个输出可能增加硬件</text>
+  <rect class="panel" x="25" y="65" width="700" height="625" rx="18"/>
+  <rect class="panel" x="775" y="65" width="700" height="625" rx="18"/>
+  <text x="55" y="105" class="subtitle">变换前：两个加法器、一个 MUX</text>
+  <text x="805" y="105" class="subtitle">变换后：保留原运算器，并增加共享路径</text>
+  <!-- Original: p=a+b, q=c+d, y1=p, y2=s?p:q, y3=q -->
+  <text x="65" y="175" class="label">a</text><text x="65" y="225" class="label">b</text>
+  <path class="wire" d="M90 169H175M90 219H175"/>
+  <rect class="op" x="175" y="157" width="100" height="75" rx="10"/><text x="225" y="202" text-anchor="middle" class="label">ADD</text>
+  <path class="wire" d="M275 195H340V145H605"/><path class="wire end" d="M605 145H660"/>
+  <circle class="dot" cx="340" cy="195" r="4"/><path class="wire" d="M340 195H390V300H455"/>
+  <text x="296" y="181" class="small">p</text><text x="665" y="151" class="label">y1 = p</text>
+  <text x="65" y="440" class="label">c</text><text x="65" y="490" class="label">d</text>
+  <path class="wire" d="M90 434H175M90 484H175"/>
+  <rect class="op" x="175" y="422" width="100" height="75" rx="10"/><text x="225" y="467" text-anchor="middle" class="label">ADD</text>
+  <path class="wire" d="M275 459H340V520H605"/><path class="wire end" d="M605 520H660"/>
+  <circle class="dot" cx="340" cy="459" r="4"/><path class="wire" d="M340 459H390V350H455"/>
+  <text x="296" y="448" class="small">q</text><text x="665" y="526" class="label">y3 = q</text>
+  <rect class="mux" x="455" y="275" width="95" height="100" rx="10"/><text x="502" y="329" text-anchor="middle" class="label">MUX</text>
+  <text x="463" y="301" class="small">1</text><text x="463" y="356" class="small">0</text>
+  <path class="wire end" d="M550 325H660"/><text x="665" y="331" class="label">y2</text>
+  <path class="wire end" d="M502 420V375"/><text x="488" y="449" class="label">s</text>
+  <text x="55" y="614" class="small">p = a+b；q = c+d；y2 = s ? p : q</text>
+  <text x="55" y="646" class="small">p、q 均有两个用途：直接输出与 MUX 输入</text>
+  <!-- Transformed: old p and q retained, two input MUXes and a third adder -->
+  <text x="810" y="162" class="label">a，b</text><path class="wire end" d="M875 155H930"/>
+  <rect class="op" x="930" y="122" width="105" height="66" rx="10"/><text x="982" y="163" text-anchor="middle" class="label">ADD</text>
+  <path class="wire end" d="M1035 155H1355"/><text x="1364" y="162" class="label">y1 = p</text>
+  <text x="810" y="300" class="label">a，c</text><path class="wire end" d="M875 293H930"/>
+  <rect class="mux" x="930" y="260" width="105" height="66" rx="10"/><text x="982" y="301" text-anchor="middle" class="label">MUX</text>
+  <text x="810" y="413" class="label">b，d</text><path class="wire end" d="M875 406H930"/>
+  <rect class="mux" x="930" y="373" width="105" height="66" rx="10"/><text x="982" y="414" text-anchor="middle" class="label">MUX</text>
+  <path class="wire end" d="M1035 293H1100V325H1150"/><path class="wire end" d="M1035 406H1100V375H1150"/>
+  <rect class="op" x="1150" y="310" width="105" height="80" rx="10"/><text x="1202" y="357" text-anchor="middle" class="label">ADD</text>
+  <path class="wire end" d="M1255 350H1355"/><text x="1364" y="357" class="label">y2</text>
+  <text x="946" y="354" class="small">两个 MUX 均由 s 控制</text>
+  <text x="810" y="528" class="label">c，d</text><path class="wire end" d="M875 521H930"/>
+  <rect class="op" x="930" y="488" width="105" height="66" rx="10"/><text x="982" y="529" text-anchor="middle" class="label">ADD</text>
+  <path class="wire end" d="M1035 521H1355"/><text x="1364" y="528" class="label">y3 = q</text>
+  <text x="805" y="614" class="small">y2 = (s ? a : c) + (s ? b : d)</text>
+  <text x="805" y="646" class="small red">y1、y3 仍需要 p、q，原来的两个加法器须保留</text>
+  <text x="750" y="728" text-anchor="middle" class="small">示例假设各运算位宽与符号语义一致，且 s 为二态控制信号；面积变化需映射后测量。</text>
+</svg>

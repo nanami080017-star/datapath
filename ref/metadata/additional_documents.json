@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Sparse_Extraction_OOPSLA2024_artifact.zip",
+    "title": "Authors implementation and experimental data for Fast and Optimal Extraction for Sparse Equality Graphs; DOI 10.5281/zenodo.13624896",
+    "url": "https://zenodo.org/api/records/13624896/files/oopsla24-artifact.zip/content",
+    "status": "failed",
+    "error": "IncompleteRead(5176404 bytes read, 5811305 more expected)"
+  },
+  {
+    "name": "Shang2024_Gate_Reconfiguration.pdf",
+    "title": "Directed Acyclic Graph-Based Datapath Synthesis Using Graph Isomorphism and Gate Reconfiguration; publisher-hosted full text",
+    "url": "https://mdpi-res.com/d_attachment/chips/chips-03-00008/article_deploy/chips-03-00008.pdf",
+    "final_url": "https://mdpi-res.com/d_attachment/chips/chips-03-00008/article_deploy/chips-03-00008.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/Shang2024_Gate_Reconfiguration.pdf",
+    "bytes": 2960973,
+    "sha256": "3135ef2abbd0bae504411fe9e4b3d00ad45e236b1efe787591551a83a592b33d",
+    "retrieved_utc": "2026-10-28T09:57:14.989583+00:00"
+  },
+  {
+    "name": "Sparse_Equality_Graphs_OOPSLA2024.pdf",
+    "title": "Fast and Optimal Extraction for Sparse Equality Graphs; ACM full text",
+    "url": "https://dl.acm.org/doi/pdf/10.1145/3689801?download=true",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "yosys_optimization_passes.html",
+    "title": "Yosys v0.70 optimization command reference, including opt_share and share",
+    "url": "https://yosyshq.readthedocs.io/projects/yosys/en/v0.70/cmd/index_passes_opt.html",
+    "final_url": "https://yosyshq.readthedocs.io/projects/yosys/en/v0.70/cmd/index_passes_opt.html",
+    "content_type": "text/html; charset=utf-8",
+    "status": "downloaded",
+    "path": "ref/docs/yosys_optimization_passes.html",
+    "bytes": 100626,
+    "sha256": "8a89e48ea1ffbe2b5165cf4a8419ff5b3ac180b2e4160caa80a5c21c2c310514",
+    "retrieved_utc": "2026-10-28T09:57:12.611215+00:00"
+  },
+  {
+    "name": "xls_ir_semantics.md",
+    "title": "XLS IR semantics at the cited commit",
+    "url": "https://raw.githubusercontent.com/google/xls/34c5969d4795ffc5beba8d73a83c126a5c9a9962/docs_src/ir_semantics.md",
+    "final_url": "https://raw.githubusercontent.com/google/xls/34c5969d4795ffc5beba8d73a83c126a5c9a9962/docs_src/ir_semantics.md",
+    "content_type": "text/plain; charset=utf-8",
+    "status": "downloaded",
+    "path": "ref/docs/xls_ir_semantics.md",
+    "bytes": 54895,
+    "sha256": "8365635ada193bcd3a1bdf23ad19c856216e270dd99dc9abc004c57a5096874c",
+    "retrieved_utc": "2026-10-28T09:57:12.990424+00:00"
+  },
+  {
+    "name": "synopsys_datapath_analysis.html",
+    "title": "Techniques for Improving QoR Using analyze_datapath_extraction",
+    "url": "https://www.synopsys.com/articles/techniques-for-improving-qor.html",
+    "final_url": "https://www.synopsys.com/articles/techniques-for-improving-qor.html",
+    "content_type": "text/html;charset=utf-8",
+    "status": "downloaded",
+    "path": "ref/docs/synopsys_datapath_analysis.html",
+    "bytes": 189127,
+    "sha256": "de37c19144246e6f6563776523b8bc4be826b6bdc59814ee92d63661b61321ae",
+    "retrieved_utc": "2026-10-28T09:57:14.275370+00:00"
+  }
+]

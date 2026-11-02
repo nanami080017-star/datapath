@@ -1,0 +1,255 @@
+[
+  {
+    "name": "McFarland1990_High_Level_Synthesis.pdf",
+    "title": "The High-Level Synthesis of Digital Systems (1990)",
+    "url": "https://faculty.kfupm.edu.sa/coe/sadiq/richfiles/rich/pdf/synthesis.pdf",
+    "status": "failed",
+    "error": "<urlopen error timed out>"
+  },
+  {
+    "name": "Yosys_Austrochip2013.pdf",
+    "title": "Yosys - A Free Verilog Synthesis Suite (2013)",
+    "url": "https://yosyshq.net/yosys/files/yosys-austrochip2013.pdf",
+    "final_url": "https://yosyshq.net/yosys/files/yosys-austrochip2013.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/Yosys_Austrochip2013.pdf",
+    "bytes": 150619,
+    "sha256": "9798c6623cf9c9da22896e9ee6a6b660d4232e0d4e1c63b01d9007e9c5935f9f",
+    "retrieved_utc": "2026-10-28T09:54:21.713102+00:00"
+  },
+  {
+    "name": "Zimmermann2009_Datapath_Synthesis.pdf",
+    "title": "Datapath Synthesis for Standard-Cell Design (2009)",
+    "url": "https://iis-people.ee.ethz.ch/~zimmi/publications/datapath_synthesis.pdf",
+    "final_url": "https://iis-people.ee.ethz.ch/~zimmi/publications/datapath_synthesis.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/Zimmermann2009_Datapath_Synthesis.pdf",
+    "bytes": 364420,
+    "sha256": "62da0fbe394f6b1d14debbbc4eff9daa13c38a74e06f0cb803e6f416bf279e4b",
+    "retrieved_utc": "2026-10-28T09:54:32.088903+00:00"
+  },
+  {
+    "name": "Share_with_Care_DATE2013.pdf",
+    "title": "Share with Care: A Quantitative Evaluation of Sharing Approaches in High-level Synthesis (2013)",
+    "url": "https://past.date-conference.com/proceedings-archive/2013/PDFFILES/11.2_1.PDF",
+    "final_url": "https://past.date-conference.com/proceedings-archive/2013/PDFFILES/11.2_1.PDF",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/Share_with_Care_DATE2013.pdf",
+    "bytes": 314084,
+    "sha256": "97b6fecee538757087edbb8ec229478a10917e9a48f9987d329e79c103c35425",
+    "retrieved_utc": "2026-10-28T09:54:31.225171+00:00"
+  },
+  {
+    "name": "Yu2017_Graph_Isomorphism.pdf",
+    "title": "Advanced Datapath Synthesis using Graph Isomorphism (2017)",
+    "url": "https://arxiv.org/pdf/1708.09597",
+    "final_url": "https://arxiv.org/pdf/1708.09597",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/Yu2017_Graph_Isomorphism.pdf",
+    "bytes": 638283,
+    "sha256": "c48c5d1ecbb452e273b3f705f76bf3c67aac2b38b699d76eff028d50a76639da",
+    "retrieved_utc": "2026-10-28T09:55:08.383374+00:00"
+  },
+  {
+    "name": "ROVER2024.pdf",
+    "title": "ROVER: RTL Optimization via Verified E-Graph Rewriting (2024)",
+    "url": "https://arxiv.org/pdf/2406.12421",
+    "final_url": "https://arxiv.org/pdf/2406.12421",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/ROVER2024.pdf",
+    "bytes": 1157670,
+    "sha256": "c3dfc618c5272160abcf1ac9313392165eba14bcc9d05d08cfd02e48256f959d",
+    "retrieved_utc": "2026-10-28T09:55:10.169207+00:00"
+  },
+  {
+    "name": "Constraint_Aware_TCAD2025.pdf",
+    "title": "Constraint-Aware E-Graph Rewriting for Hardware Performance Optimization (2025)",
+    "url": "https://spiral.imperial.ac.uk/bitstreams/de68c6e8-a66d-42d6-ae3e-16eab9fc9782/download",
+    "final_url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/de68c6e8-a66d-42d6-ae3e-16eab9fc9782/content",
+    "content_type": "application/pdf;charset=UTF-8",
+    "status": "downloaded",
+    "path": "ref/papers/Constraint_Aware_TCAD2025.pdf",
+    "bytes": 1083379,
+    "sha256": "d1f24baef285c2b7951bd843e810813f82213ec12a0349441a6ffb7adda60a2a",
+    "retrieved_utc": "2026-10-28T09:54:35.343633+00:00"
+  },
+  {
+    "name": "Shang2024_Gate_Reconfiguration.pdf",
+    "title": "Directed Acyclic Graph-Based Datapath Synthesis Using Graph Isomorphism and Gate Reconfiguration (2024)",
+    "url": "https://www.mdpi.com/2674-0729/3/2/8/pdf",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "Sparse_Equality_Graphs_OOPSLA2024.pdf",
+    "title": "Fast and Optimal Extraction for Sparse Equality Graphs (2024)",
+    "url": "https://dl.acm.org/doi/pdf/10.1145/3689801",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "E_Syn_DAC2024.pdf",
+    "title": "E-Syn: E-Graph Rewriting with Technology-Aware Cost Functions for Logic Synthesis (2024)",
+    "url": "https://arxiv.org/pdf/2403.14242",
+    "final_url": "https://arxiv.org/pdf/2403.14242",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/E_Syn_DAC2024.pdf",
+    "bytes": 1110606,
+    "sha256": "b996f19c7d3362d7f60e430b249b5010031547905f5f62e35108655dcb55b561",
+    "retrieved_utc": "2026-10-28T09:56:54.593403+00:00"
+  },
+  {
+    "name": "e_boost_ICCAD2025.pdf",
+    "title": "e-boost: Boosted E-Graph Extraction with Adaptive Heuristics and Exact Solving (2025)",
+    "url": "https://www.csl.cornell.edu/~zhiruz/pdfs/eboost-iccad2025.pdf",
+    "final_url": "https://www.csl.cornell.edu/~zhiruz/pdfs/eboost-iccad2025.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/e_boost_ICCAD2025.pdf",
+    "bytes": 606517,
+    "sha256": "b9952c603adf4c87e06494811551c7ae40764e851a23b9ede3d8d820b6c8d285",
+    "retrieved_utc": "2026-10-28T09:55:19.760749+00:00"
+  },
+  {
+    "name": "ASPEN_MLCAD2025.pdf",
+    "title": "ASPEN: LLM-Guided E-Graph Rewriting for RTL Datapath Optimization (2025)",
+    "url": "https://www.csl.cornell.edu/~zhiruz/pdfs/aspen-mlcad2025.pdf",
+    "final_url": "https://www.csl.cornell.edu/~zhiruz/pdfs/aspen-mlcad2025.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/ASPEN_MLCAD2025.pdf",
+    "bytes": 924957,
+    "sha256": "bc70ae8c2079dd58263e3fd519ab81d48ea48045084812a389064579cac30921",
+    "retrieved_utc": "2026-10-28T09:55:44.277583+00:00"
+  },
+  {
+    "name": "Samuel_Coward_Thesis2025.pdf",
+    "title": "Samuel Coward PhD Thesis (2025)",
+    "url": "https://samuelcoward.co.uk/assets/pdf/Thesis_Imperial.pdf",
+    "final_url": "https://samuelcoward.co.uk/assets/pdf/Thesis_Imperial.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/papers/Samuel_Coward_Thesis2025.pdf",
+    "bytes": 2084861,
+    "sha256": "3da67be0f7ce846370f76f33289d72bb73c2b3d6e7ef7db35482f7725a483e1e",
+    "retrieved_utc": "2026-10-28T09:55:20.461088+00:00"
+  },
+  {
+    "name": "Constraint_Aware_DAC2023.pdf",
+    "title": "Automating Constraint-Aware Datapath Optimization using E-Graphs (2023); antecedent to the TCAD extension",
+    "url": "https://cas.ee.ic.ac.uk/people/gac1/pubs/CowardDAC2023.pdf",
+    "status": "failed",
+    "error": "<urlopen error [Errno 101] Network is unreachable>"
+  },
+  {
+    "name": "US8966415B2.pdf",
+    "title": "Architectural physical synthesis",
+    "url": "https://patentimages.storage.googleapis.com/ac/8f/17/966900b7a9c320/US8966415.pdf",
+    "final_url": "https://patentimages.storage.googleapis.com/ac/8f/17/966900b7a9c320/US8966415.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/patents/US8966415B2.pdf",
+    "bytes": 3064549,
+    "sha256": "c83803594a9c760aabdf4133f40237a592179a56a48505fbb913e128f1eb0bb9",
+    "retrieved_utc": "2026-10-28T09:55:41.044772+00:00"
+  },
+  {
+    "name": "US9104827B2.pdf",
+    "title": "Method and system for automatic generation of processor datapaths",
+    "url": "https://patentimages.storage.googleapis.com/e8/d1/44/fb9f3cd798cf84/US9104827.pdf",
+    "final_url": "https://patentimages.storage.googleapis.com/e8/d1/44/fb9f3cd798cf84/US9104827.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/patents/US9104827B2.pdf",
+    "bytes": 1720714,
+    "sha256": "cf414bab1975840c12ce043822e3741883affe4b6aa93b56764c3fcbbdfcc80c",
+    "retrieved_utc": "2026-10-28T09:55:42.321556+00:00"
+  },
+  {
+    "name": "US9858373B2.pdf",
+    "title": "In-cycle resource sharing for high-level synthesis of microprocessors",
+    "url": "https://patentimages.storage.googleapis.com/8f/00/91/2adf0b08a42ee3/US9858373.pdf",
+    "final_url": "https://patentimages.storage.googleapis.com/8f/00/91/2adf0b08a42ee3/US9858373.pdf",
+    "content_type": "application/pdf",
+    "status": "downloaded",
+    "path": "ref/patents/US9858373B2.pdf",
+    "bytes": 1943870,
+    "sha256": "8b4bb38e389cc2d71066532ec1599f283e0e6d27d7d84710369a8b4722731d46",
+    "retrieved_utc": "2026-10-28T09:55:44.392648+00:00"
+  },
+  {
+    "name": "yosys_opt_share.html",
+    "title": "Yosys opt_share documentation",
+    "url": "https://yosyshq.readthedocs.io/projects/yosys/en/v0.70/cmd/opt_share.html",
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "yosys_share.html",
+    "title": "Yosys share documentation",
+    "url": "https://yosyshq.readthedocs.io/projects/yosys/en/v0.70/cmd/share.html",
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "yosys_mux.html",
+    "title": "Yosys multiplexer semantics",
+    "url": "https://yosyshq.readthedocs.io/projects/yosys/en/v0.70/cell/word_mux.html",
+    "final_url": "https://yosyshq.readthedocs.io/projects/yosys/en/v0.70/cell/word_mux.html",
+    "content_type": "text/html; charset=utf-8",
+    "status": "downloaded",
+    "path": "ref/docs/yosys_mux.html",
+    "bytes": 84335,
+    "sha256": "b40c5c42af72ad0d2c8e50d6dfb91fb921cc8c5eebf8078f2d81317a2495e6c9",
+    "retrieved_utc": "2026-10-28T09:55:46.104675+00:00"
+  },
+  {
+    "name": "xls_ir_semantics.md",
+    "title": "XLS IR semantics at the cited commit",
+    "url": "https://raw.githubusercontent.com/google/xls/34c5969d4795ffc5beba8d73a83c126a5c9a9962/docs/ir_semantics.md",
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "US8966415B2.html",
+    "title": "Google Patents text and metadata",
+    "url": "https://patents.google.com/patent/US8966415B2/en",
+    "final_url": "https://patents.google.com/patent/US8966415B2/en",
+    "content_type": "text/html",
+    "status": "downloaded",
+    "path": "ref/patents/US8966415B2.html",
+    "bytes": 453675,
+    "sha256": "06eda117987dedbbd725ddead376a54430eeac4b858d879247f8b49634560cf8",
+    "retrieved_utc": "2026-10-28T09:55:46.998909+00:00"
+  },
+  {
+    "name": "US9104827B2.html",
+    "title": "Google Patents text and metadata",
+    "url": "https://patents.google.com/patent/US9104827B2/en",
+    "final_url": "https://patents.google.com/patent/US9104827B2/en",
+    "content_type": "text/html",
+    "status": "downloaded",
+    "path": "ref/patents/US9104827B2.html",
+    "bytes": 288460,
+    "sha256": "c8a378fad43a8da8f50d79caaaf1f647083849dee8af1855c1e931bf5766a77a",
+    "retrieved_utc": "2026-10-28T09:55:47.211614+00:00"
+  },
+  {
+    "name": "US9858373B2.html",
+    "title": "Google Patents text and metadata",
+    "url": "https://patents.google.com/patent/US9858373B2/en",
+    "final_url": "https://patents.google.com/patent/US9858373B2/en",
+    "content_type": "text/html",
+    "status": "downloaded",
+    "path": "ref/patents/US9858373B2.html",
+    "bytes": 334285,
+    "sha256": "b07d327dfd15b8af03eddbbd47c21bf210ca2e39be120bf81db05133d211a863",
+    "retrieved_utc": "2026-10-28T09:55:47.344726+00:00"
+  }
+]
