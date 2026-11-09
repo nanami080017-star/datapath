@@ -1,0 +1,98 @@
+{
+  "checked_utc": "2026-11-03T09:46:53.750068+00:00",
+  "scope": "Unconstrained logic and mutually exclusive resource sharing; literature and public source discovery.",
+  "papers": [
+    {
+      "paper": "A Resource Sharing Approach for Logic Synthesis Based on Monte Carlo Tree Search (ISEDA 2023)",
+      "pdf": "ref/papers/Yang2023_MCTS_Resource_Sharing.pdf",
+      "code_status": "author_related_prototype_downloaded",
+      "code_url": "https://github.com/Yang-Qirui/Resource-Sharing",
+      "code_path": "baselines/logic/Resource-Sharing",
+      "commit": "866064ee3ca9f812061f62e456a1e460941ca80a",
+      "evidence_files": [
+        "README.md",
+        "src/mcts/mcts_merge.py",
+        "src/baseline/greedy_merge.py",
+        "src/enumerate/enum_merge.py",
+        "gen_verilog.py"
+      ],
+      "note": "README identifies a resource-sharing demo. MCTS implementation is present. Complete correspondence to the paper has not been established."
+    },
+    {
+      "paper": "DAG-Aware Logic Synthesis of Datapaths (DAC 2016)",
+      "pdf": "ref/papers/Yu2016_DAG_Aware_Datapath.pdf",
+      "code_status": "author_implementation_not_found",
+      "searched_sources": [
+        "https://ycunxi.github.io/cunxiyu/research.html",
+        "https://research.ibm.com/publications/dag-aware-logic-synthesis-of-datapaths"
+      ],
+      "note": "Downloaded publisher PDF from NTHU course mirror. Author corrected-version URL returned HTTP 403; see SOURCES.json."
+    },
+    {
+      "paper": "Advanced Datapath Synthesis using Graph Isomorphism (ICCAD 2017)",
+      "pdf": "ref/papers/Yu2017_Graph_Isomorphism.pdf",
+      "code_status": "author_implementation_not_found",
+      "searched_sources": [
+        "https://ycunxi.github.io/cunxiyu/research.html",
+        "https://arxiv.org/abs/1708.09597"
+      ]
+    },
+    {
+      "paper": "On the Complexity of the Port Assignment Problem for Binary Commutative Operators in High-Level Synthesis (VLSI-DAT 2009)",
+      "pdf": "ref/papers/Brisk2009_Port_Assignment.pdf",
+      "code_status": "author_implementation_not_found",
+      "searched_sources": [
+        "https://www.epfl.ch/labs/lap/wp-content/uploads/2018/05/BriskApr09_OnTheComplexityOfThePortAssignmentProblemForBinaryCommutativeOperators_VLSIDAT09_corrected.pdf"
+      ]
+    },
+    {
+      "paper": "ROVER: RTL Optimization via Verified E-Graph Rewriting (2024)",
+      "pdf": "ref/papers/ROVER2024.pdf",
+      "code_status": "public_benchmarks_found_full_optimizer_not_found",
+      "code_url": "https://github.com/cowardsa/DatapathBench",
+      "code_path": "benchmarks/rtl/DatapathBench",
+      "searched_sources": [
+        "https://github.com/cowardsa",
+        "https://github.com/cowardsa/DatapathBench",
+        "https://github.com/cowardsa/extraction-gym"
+      ],
+      "note": "DatapathBench contains benchmark RTL. Nextmap PLDI 2026 section 6.3 states that ROVER is closed-source and describes its partial reimplementation."
+    },
+    {
+      "paper": "e-boost: Boosted E-Graph Extraction with Adaptive Heuristics and Exact Solving (ICCAD 2025)",
+      "pdf": "ref/papers/e_boost_ICCAD2025.pdf",
+      "code_status": "author_repository_already_present",
+      "code_url": "https://github.com/Yu-Maryland/e-boost",
+      "code_path": "baselines/extraction/e-boost",
+      "role": "E-graph extraction algorithms; reference for choosing a shared DAG."
+    },
+    {
+      "paper": "Fast and Optimal Extraction for Sparse Equality Graphs (OOPSLA 2024)",
+      "pdf": "ref/papers/Sparse_Equality_Graphs_OOPSLA2024.pdf",
+      "code_status": "author_artifact_already_present",
+      "code_url": "https://doi.org/10.5281/zenodo.13624896",
+      "code_path": "baselines/extraction/SparseExtraction",
+      "evidence_files": [
+        "README.md",
+        "td-extract"
+      ],
+      "role": "Extraction implementation and experimental artifact."
+    },
+    {
+      "paper": "Improving Equality Saturation for EDA via Semantic E-Graphs (PLDI 2026)",
+      "pdf": "ref/papers/Nextmap_PLDI2026.pdf",
+      "code_status": "author_repository_downloaded",
+      "code_url": "https://github.com/UCSBarchlab/nextmap",
+      "code_path": "baselines/logic/nextmap",
+      "commit": "e57faff1177bda01ea27186e8b9f2c2feba9603b",
+      "evidence_files": [
+        "nextmap/rewrites/arith.py",
+        "nextmap/rewrites/basic.py",
+        "nextmap/extracts/ilp.py",
+        "integrations/yosys/README.md"
+      ],
+      "note": "Paper section 6.3 implements ROVER core arithmetic/logic rewrites, omits specialized constant-expansion rules and MCM evaluation."
+    }
+  ],
+  "execution_status": "Reference downloads only; downloaded implementations were not built or run."
+}

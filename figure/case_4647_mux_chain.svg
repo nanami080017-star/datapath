@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000"><title>case_4647 的二十二级选择链局部展开</title><desc>前两级分别在out2与w29、前级结果与w27之间选择；中间省略第3至20级；最后两级分别在前级结果与w23、前级结果与in22之间选择。</desc><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#334155"/></marker></defs><style>text{font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:22px;fill:#18334c}.h{font-size:29px;font-weight:600}.small{font-size:19px}.wire{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#a)}.box{fill:#eff6fc;stroke:#4c7598;stroke-width:2}</style><rect width="1000" height="1000" fill="white"/>
+<text x="45" y="53" class="h" text-anchor="start">case_4647：22 级选择链，局部展开</text>
+<text x="45" y="92" class="small" text-anchor="start">每个 MUX：S=0 选上方的 0 号输入；S=1 选下方的 1 号输入。</text>
+<rect x="200" y="170" width="150" height="110" rx="5" class="box"/>
+<text x="275" y="210" class="" text-anchor="middle">MUX 1</text>
+<text x="275" y="246" class="small" text-anchor="middle">64 位二选一</text>
+<text x="212" y="195" class="small" text-anchor="start">0</text>
+<text x="212" y="260" class="small" text-anchor="start">1</text>
+<text x="275" y="275" class="small" text-anchor="middle">S</text>
+<path d="M275,340 V280" class="wire"/>
+<text x="275" y="368" class="" text-anchor="middle">sel_1</text>
+<rect x="600" y="170" width="150" height="110" rx="5" class="box"/>
+<text x="675" y="210" class="" text-anchor="middle">MUX 2</text>
+<text x="675" y="246" class="small" text-anchor="middle">64 位二选一</text>
+<text x="612" y="195" class="small" text-anchor="start">0</text>
+<text x="612" y="260" class="small" text-anchor="start">1</text>
+<text x="675" y="275" class="small" text-anchor="middle">S</text>
+<path d="M675,340 V280" class="wire"/>
+<text x="675" y="368" class="" text-anchor="middle">sel_2</text>
+<text x="45" y="196" class="" text-anchor="start">w29</text>
+<path d="M105,190 H200" class="wire"/>
+<text x="45" y="261" class="" text-anchor="start">out_2</text>
+<path d="M120,255 H200" class="wire"/>
+<path d="M350,225 H470 V255 H600" class="wire"/>
+<text x="455" y="210" class="small" text-anchor="middle">w1</text>
+<text x="450" y="153" class="" text-anchor="start">w27</text>
+<path d="M510,146 H550 V190 H600" class="wire"/>
+<path d="M750,225 H915 V445 H750" class="wire"/>
+<text x="800" y="207" class="small" text-anchor="start">w2</text>
+<rect x="420" y="400" width="330" height="90" rx="5" fill="#fafbfd" stroke="#98a9b9" stroke-dasharray="6 4"/>
+<text x="585" y="437" class="" text-anchor="middle">第 3～20 级 MUX</text>
+<text x="585" y="470" class="small" text-anchor="middle">继续在前级结果与其他数据间选择</text>
+<path d="M420,445 H115 V675 H200" class="wire"/>
+<text x="132" y="531" class="small" text-anchor="start">w20</text>
+<rect x="200" y="590" width="150" height="110" rx="5" class="box"/>
+<text x="275" y="630" class="" text-anchor="middle">MUX 21</text>
+<text x="275" y="666" class="small" text-anchor="middle">64 位二选一</text>
+<text x="212" y="615" class="small" text-anchor="start">0</text>
+<text x="212" y="680" class="small" text-anchor="start">1</text>
+<text x="275" y="695" class="small" text-anchor="middle">S</text>
+<path d="M275,760 V700" class="wire"/>
+<text x="275" y="788" class="" text-anchor="middle">sel_21</text>
+<rect x="600" y="590" width="150" height="110" rx="5" class="box"/>
+<text x="675" y="630" class="" text-anchor="middle">MUX 22</text>
+<text x="675" y="666" class="small" text-anchor="middle">64 位二选一</text>
+<text x="612" y="615" class="small" text-anchor="start">0</text>
+<text x="612" y="680" class="small" text-anchor="start">1</text>
+<text x="675" y="695" class="small" text-anchor="middle">S</text>
+<path d="M675,760 V700" class="wire"/>
+<text x="675" y="788" class="" text-anchor="middle">sel_22</text>
+<text x="140" y="574" class="" text-anchor="start">w23</text>
+<path d="M180,585 V610 H200" class="wire"/>
+<path d="M350,645 H470 V675 H600" class="wire"/>
+<text x="455" y="630" class="small" text-anchor="middle">w21</text>
+<text x="450" y="573" class="" text-anchor="start">in_22</text>
+<path d="M515,566 H550 V610 H600" class="wire"/>
+<path d="M750,645 H950" class="wire"/>
+<text x="848" y="620" class="" text-anchor="middle">out_1[63:0]</text>
+<text x="45" y="862" class="h" text-anchor="start">读图示例：</text>
+<text x="45" y="905" class="" text-anchor="start">sel_22=0  →  out_1=in_22</text>
+<text x="45" y="946" class="" text-anchor="start">sel_22=1 且 sel_21=0  →  out_1=w23</text>
+</svg>

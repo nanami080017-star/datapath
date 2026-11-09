@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1320" viewBox="0 0 1320 1320">
+<title>case_4647：连乘模块与选择网络功能结构</title>
+<desc>上图为八路四输入连乘及二十二级二选一选择网络，下图展开一路连乘的三个乘法运算。连线标明数据位宽与端口功能。</desc>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#334155"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;fill:#172b41;font-size:21px} .title{font-size:29px;font-weight:600}.head{font-size:24px;font-weight:600}.small{font-size:18px}.mono{font-family:"DejaVu Sans Mono",monospace;font-size:19px}.wire{fill:none;stroke:#334155;stroke-width:2;marker-end:url(#a)}.box{fill:#f2f7fc;stroke:#466b91;stroke-width:2}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:1.5}.muted{fill:#516275}</style>
+<rect width="1320" height="1320" fill="white"/>
+
+<text x="44" y="49" class="title" text-anchor="start">case_4647：先看原始 RTL 的功能结构</text>
+<text x="44" y="82" class="small muted" text-anchor="start">数据线上的数字表示位宽；下图展开其中一路连乘。</text>
+<rect x="35" y="108" width="1250" height="445" rx="6" class="panel"/>
+<text x="57" y="145" class="head" text-anchor="start">① 整体结构：8 路连乘 + 22 级选择网络</text>
+<rect x="310" y="210" width="395" height="240" rx="6" class="box"/>
+<text x="507" y="248" class="head" text-anchor="middle">8 路连乘模块</text>
+<text x="507" y="284" class="small" text-anchor="middle">每路：4×16 位输入 → 1×64 位输出</text>
+<text x="337" y="326" class="mono" text-anchor="start">w22：in_1·in_2·in_3·in_4</text>
+<text x="337" y="362" class="mono" text-anchor="start">w23：in_2·in_4·in_3·in_1</text>
+<text x="507" y="402" class="small" text-anchor="middle">其余 6 路使用各自指定的输入组合</text>
+<text x="507" y="431" class="small muted" text-anchor="middle">各路之间存在输入信号复用</text>
+<text x="63" y="292" class="" text-anchor="start">in_1 … in_18</text>
+<text x="63" y="324" class="small" text-anchor="start">18 组 × 16 位</text>
+<path d="M 225,310 H 310" class="wire"/>
+<text x="251" y="296" class="small" text-anchor="start">18×16</text>
+<path d="M266,302 l-9,16" stroke="#334155" stroke-width="2"/>
+<path d="M 705,259 H 1215" class="wire"/>
+<text x="1140" y="241" class="" text-anchor="middle">out_2[63:0]</text>
+<circle cx="807" cy="259" r="4" fill="#334155"/>
+<path d="M 807,259 V 354 H 890" class="wire"/>
+<text x="819" y="330" class="small" text-anchor="start">64</text>
+<path d="M 705,395 H 890" class="wire"/>
+<text x="720" y="377" class="small" text-anchor="start">其余 7 路 × 64 位</text>
+<rect x="890" y="335" width="280" height="117" rx="6" class="box"/>
+<text x="1030" y="371" class="head" text-anchor="middle">22 级二选一选择链</text>
+<text x="1030" y="407" class="small" text-anchor="middle">每一级处理 64 位数据</text>
+<text x="1030" y="436" class="small" text-anchor="middle">按 sel_1 … sel_22 逐级选择</text>
+<text x="1030" y="290" class="small" text-anchor="middle">22 个 1 位选择信号</text>
+<path d="M 1030,303 V 335" class="wire"/>
+<path d="M 1170,395 H 1250" class="wire"/>
+<text x="1210" y="373" class="small" text-anchor="middle">out_1</text>
+<text x="1210" y="427" class="small" text-anchor="middle">64 位</text>
+<text x="1030" y="512" class="" text-anchor="middle">in_19 … in_22：4 组 × 64 位</text>
+<path d="M 1030,485 V 452" class="wire"/>
+<text x="62" y="503" class="small" text-anchor="start">out_2 同时连接输出端口和选择网络。</text>
+<text x="62" y="532" class="small muted" text-anchor="start">此图将 22 个 MUX 合并成一个功能框。</text>
+<rect x="35" y="578" width="1250" height="497" rx="6" class="panel"/>
+<text x="57" y="620" class="head" text-anchor="start">② 展开一路：四输入连乘 y = a × b × c × d</text>
+<rect x="300" y="656" width="886" height="304" rx="6" class="panel" stroke-dasharray="6 5"/>
+<text x="322" y="687" class="small muted" text-anchor="start">4 输入 / 1 输出功能模块</text>
+<rect x="375" y="720" width="150" height="112" rx="6" class="box"/>
+<text x="450" y="750" class="" text-anchor="middle">乘法 1</text>
+<text x="450" y="785" class="" text-anchor="middle">u₁ = a × b</text>
+<text x="450" y="815" class="small" text-anchor="middle">16 × 16 → 32 位</text>
+<rect x="650" y="720" width="150" height="112" rx="6" class="box"/>
+<text x="725" y="750" class="" text-anchor="middle">乘法 2</text>
+<text x="725" y="785" class="" text-anchor="middle">u₂ = u₁ × c</text>
+<text x="725" y="815" class="small" text-anchor="middle">32 × 16 → 48 位</text>
+<rect x="925" y="720" width="150" height="112" rx="6" class="box"/>
+<text x="1000" y="750" class="" text-anchor="middle">乘法 3</text>
+<text x="1000" y="785" class="" text-anchor="middle">y = u₂ × d</text>
+<text x="1000" y="815" class="small" text-anchor="middle">48 × 16 → 64 位</text>
+<text x="100" y="753" class="mono" text-anchor="start">a[15:0]</text>
+<text x="100" y="803" class="mono" text-anchor="start">b[15:0]</text>
+<text x="100" y="883" class="mono" text-anchor="start">c[15:0]</text>
+<text x="100" y="943" class="mono" text-anchor="start">d[15:0]</text>
+<path d="M 225,746 H 375" class="wire"/>
+<path d="M 225,796 H 375" class="wire"/>
+<path d="M 525,774 H 585 V 746 H 650" class="wire"/>
+<text x="584" y="727" class="small" text-anchor="middle">u₁：32 位</text>
+<path d="M 225,876 H 602 V 796 H 650" class="wire"/>
+<path d="M 800,774 H 860 V 746 H 925" class="wire"/>
+<text x="861" y="727" class="small" text-anchor="middle">u₂：48 位</text>
+<path d="M 225,936 H 877 V 796 H 925" class="wire"/>
+<path d="M 1075,774 H 1245" class="wire"/>
+<text x="1217" y="750" class="mono" text-anchor="middle">y[63:0]</text>
+<text x="322" y="860" class="small" text-anchor="start">每个乘法框的内部：部分积生成 → 部分积相加 / 进位处理</text>
+<text x="322" y="909" class="small" text-anchor="start">例如：a=2，b=3，c=4，d=5 → u₁=6 → u₂=24 → y=120</text>
+<text x="60" y="1005" class="small" text-anchor="start">位宽按完整乘积所需的有效位数标注：16+16=32，32+16=48，48+16=64。</text>
+<text x="60" y="1040" class="small" text-anchor="start">图示为功能运算关系；整个原始电路为组合逻辑，无时钟、无寄存器。</text>
+<text x="44" y="1102" class="small muted" text-anchor="start">来源：MutexShare-Case-Set / case_4647 / tc.v</text>
+</svg>

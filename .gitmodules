@@ -19,3 +19,9 @@
 [submodule "benchmarks/rtl/MutexShare-Case-Set"]
 	path = benchmarks/rtl/MutexShare-Case-Set
 	url = https://github.com/tianchen5246/MutexShare-Case-Set.git
+[submodule "baselines/logic/Resource-Sharing"]
+	path = baselines/logic/Resource-Sharing
+	url = https://github.com/Yang-Qirui/Resource-Sharing.git
+[submodule "baselines/logic/nextmap"]
+	path = baselines/logic/nextmap
+	url = https://github.com/UCSBarchlab/nextmap.git

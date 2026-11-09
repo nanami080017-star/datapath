@@ -28,7 +28,13 @@ def main():
     parser.add_argument("--name", help="Output directory name under run/")
     parser.add_argument("--jobs", type=int, choices=range(1, 11), default=10,
                         help="Maximum concurrent cases (1-10, default: 10)")
+    parser.add_argument("--sharing-plugin", type=Path,
+                        help="Load the XLS sharing plugin; default uses original opt_share")
     args = parser.parse_args()
+    if args.sharing_plugin:
+        args.sharing_plugin = args.sharing_plugin.resolve()
+        if not args.sharing_plugin.is_file():
+            parser.error("--sharing-plugin must name an existing plugin")
     if any(n < 1 or n > 5000 for n in args.case):
         parser.error("--case must be between 1 and 5000")
     now = datetime.now(timezone(timedelta(hours=8)))
@@ -73,12 +79,25 @@ def main():
         "inputs_sha256": {str(p.relative_to(ROOT)):
             hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs},
     }
+    if args.sharing_plugin:
+        source = ROOT / "src/xls_share"
+        manifest["sharing_plugin"] = {
+            "implementation": "XLS RTLIL adaptation, local characterized-area deltas; one final ABC mapping",
+            "path": str(args.sharing_plugin),
+            "sha256": hashlib.sha256(args.sharing_plugin.read_bytes()).hexdigest(),
+            "project_commit": subprocess.check_output(
+                ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
+            "source_sha256": {
+                str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+                for p in sorted(source.iterdir())
+                if p.suffix in (".cc", ".h", ".py") or p.name == "Makefile"},
+        }
     (output / "run.json").write_text(json.dumps(manifest, indent=2) + "\n")
     with (output / "results.csv").open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=["case", "CombArea", "elapsed_s"])
         writer.writeheader()
         with ThreadPoolExecutor(max_workers=workers) as executor:
-            futures = [executor.submit(run_case, number, output, env, slots)
+            futures = [executor.submit(run_case, number, output, env, slots, args.sharing_plugin)
                        for number in cases]
             for future in as_completed(futures):
                 result = future.result()
@@ -105,7 +124,7 @@ def physical_cpu_groups(workers):
     return [cpus[i:i + THREADS] for i in range(0, workers * THREADS, THREADS)]
 
 
-def run_case(number, output, env, slots):
+def run_case(number, output, env, slots, plugin):
     case = f"case_{number:04d}"
     folder = output / case
     folder.mkdir()
@@ -120,7 +139,10 @@ def run_case(number, output, env, slots):
         f'tee -o area.json stat -json -liberty "{LIBERTY}"\n')
     cpus = slots.get()
     command = ["taskset", "--cpu-list", ",".join(map(str, cpus)),
-               str(YOSYS), "-s", str(script)]
+               str(YOSYS)]
+    if plugin:
+        command.extend(["-m", str(plugin)])
+    command.extend(["-s", str(script)])
     start = time.monotonic()
     try:
         with (folder / "yosys.log").open("w") as log:

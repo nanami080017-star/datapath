@@ -58,23 +58,8 @@ Yosys 的并行步骤受线程上限控制；opt_share 和单个 ABC 映射任�
 - [Python 3.8 concurrent.futures](https://docs.python.org/3.8/library/concurrent.futures.html)：ThreadPoolExecutor 调度独立外部综合进程，as_completed 收集完成结果。
 4 核与最多 10 例并发是用户执行配置；没有将其标为工具默认值。
 
-## 验证状态
+## 固定基线结果
 
-已完成一次 case_0001 的实际运行：
-
-- 命令：python3 run.py --case 1 --name verify_case_0001。
-- 输出：run/verify_case_0001/。
-- CombArea：15424.013800；映射单元数：5404；sequential_area：0.0。
-- 整个 Yosys/ABC 进程 elapsed_s：1.298269。
-- 已核对日志中的默认 ABC 命令、映射单元属于原始库、CSV 数值与原始 JSON 报告一致。
-- Yosys、ABC 和用例仓库的受版本控制文件均未修改。
-- 未执行 5000 例全量实验。
-
-## 并发与线程上限验证
-
-- 命令：python3 run.py --case 1 2 --jobs 2 --name verify_parallel_4t。
-- 两例核心分别为 [0, 1, 2, 3]、[4, 5, 6, 7]，均设置 YOSYS_MAX_THREADS=4。
-- 核心分组互不重叠，执行时间区间重叠 1.286993 秒，已确认两例并发。
-- case_0001 的 CombArea 与先前单例验证一致；两例 CSV 均与原始面积报告一致。
-- 原版工具二进制摘要与先前单例验证一致。
-- 未运行 5000 例全量实验，未进行 3 GHz 运行时间归一化。
+完整 5000 例的面积和耗时保存在 `run/baseline_5000_10x4_20261102_104733/results.csv`。
+同目录 `run.json` 记录工具、输入和 10 例并发配置。每例绑定 4 个独立物理核。
+`case_0001` 的 CombArea 为 15424.013800，映射单元数为 5404。

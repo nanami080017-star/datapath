@@ -316,6 +316,60 @@
       "bytes": 189127,
       "sha256": "de37c19144246e6f6563776523b8bc4be826b6bdc59814ee92d63661b61321ae",
       "retrieved_utc": "2026-10-28T09:57:14.275370+00:00"
+    },
+    {
+      "name": "Yang2023_MCTS_Resource_Sharing.pdf",
+      "title": "A Resource Sharing Approach for Logic Synthesis Based on Monte Carlo Tree Search",
+      "url": "https://numbda.cs.tsinghua.edu.cn/papers/iseda23.pdf",
+      "final_url": "https://numbda.cs.tsinghua.edu.cn/papers/iseda23.pdf",
+      "path": "ref/papers/Yang2023_MCTS_Resource_Sharing.pdf",
+      "status": "downloaded",
+      "bytes": 1359439,
+      "sha256": "3f5477159cf77c22158cc1a305f29c637a82060e352ace06d4dff66ca9dcdff6",
+      "retrieved_utc": "2026-11-03T09:42:28.504670+00:00",
+      "attempts": []
+    },
+    {
+      "name": "Yu2016_DAG_Aware_Datapath.pdf",
+      "title": "DAG-Aware Logic Synthesis of Datapaths",
+      "url": "https://www.cs.nthu.edu.tw/~tingting/Als_23/presentation_paper/paper15.pdf",
+      "final_url": "https://www.cs.nthu.edu.tw/~tingting/Als_23/presentation_paper/paper15.pdf",
+      "path": "ref/papers/Yu2016_DAG_Aware_Datapath.pdf",
+      "status": "downloaded",
+      "bytes": 428868,
+      "sha256": "94b9084d191b649986b7d50d6723d721771c0b5446a96386dfe4370120fce641",
+      "retrieved_utc": "2026-11-03T09:42:31.741989+00:00",
+      "attempts": [
+        {
+          "url": "https://people.umass.edu/ycunxi/papers/dac-2016-cunxi-ibm-muxmove.pdf",
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ],
+      "version": "Publisher PDF mirrored on NTHU course page; author corrected-version URL unavailable"
+    },
+    {
+      "name": "Brisk2009_Port_Assignment.pdf",
+      "title": "On the Complexity of the Port Assignment Problem for Binary Commutative Operators in High-Level Synthesis",
+      "url": "https://www.epfl.ch/labs/lap/wp-content/uploads/2018/05/BriskApr09_OnTheComplexityOfThePortAssignmentProblemForBinaryCommutativeOperators_VLSIDAT09_corrected.pdf",
+      "final_url": "https://www.epfl.ch/labs/lap/wp-content/uploads/2018/05/BriskApr09_OnTheComplexityOfThePortAssignmentProblemForBinaryCommutativeOperators_VLSIDAT09_corrected.pdf",
+      "path": "ref/papers/Brisk2009_Port_Assignment.pdf",
+      "status": "downloaded",
+      "bytes": 348430,
+      "sha256": "62b9776e845ff3e7af7c3632efd1004e2dc4e1b083a314138363e07bb4a33ef7",
+      "retrieved_utc": "2026-11-03T09:42:30.264843+00:00",
+      "attempts": []
+    },
+    {
+      "name": "Nextmap_PLDI2026.pdf",
+      "title": "Improving Equality Saturation for EDA via Semantic E-Graphs",
+      "url": "https://zsisco.net/papers/nextmap-pldi26.pdf",
+      "final_url": "https://zsisco.net/papers/nextmap-pldi26.pdf",
+      "path": "ref/papers/Nextmap_PLDI2026.pdf",
+      "status": "downloaded",
+      "bytes": 1384181,
+      "sha256": "4d450b5ad020a0e066bcf6702b779f6017276fe093b42bfc622c3ad1e880ef27",
+      "retrieved_utc": "2026-11-03T09:46:53.750068+00:00",
+      "doi": "10.1145/3808299"
     }
   ],
   "repositories": [
@@ -447,6 +501,28 @@
       "retrieved_utc": "2026-10-30T13:19:43.443482+00:00",
       "role": "static timing analysis; no compilation or timing analysis performed",
       "build_status": "compiled"
+    },
+    {
+      "name": "Resource-Sharing",
+      "repository": "https://github.com/Yang-Qirui/Resource-Sharing",
+      "commit": "866064ee3ca9f812061f62e456a1e460941ca80a",
+      "status": "downloaded",
+      "path": "baselines/logic/Resource-Sharing",
+      "retrieved_utc": "2026-11-03T09:46:53.750068+00:00",
+      "representation": "git clone --depth 1; original source unchanged",
+      "role": "Author public research prototype: MCTS, greedy and exhaustive column merging, plus Verilog generation; README calls it a demo and does not identify it as the complete ISEDA 2023 artifact.",
+      "execution_status": "not executed"
+    },
+    {
+      "name": "nextmap",
+      "repository": "https://github.com/UCSBarchlab/nextmap",
+      "commit": "e57faff1177bda01ea27186e8b9f2c2feba9603b",
+      "status": "downloaded",
+      "path": "baselines/logic/nextmap",
+      "retrieved_utc": "2026-11-03T09:46:53.750068+00:00",
+      "representation": "git clone --depth 1; original source unchanged",
+      "role": "Author open-source implementation of Nextmap, named in PLDI 2026 paper footnote 2. Paper section 6.3 describes partial reimplementation of ROVER arithmetic and logic rewrites.",
+      "execution_status": "not executed"
     }
   ],
   "download_attempts": [
